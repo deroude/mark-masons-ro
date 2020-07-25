@@ -33,6 +33,6 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Deploy to Firebase
-      run: ./web/node_modules/.bin/firebase deploy --only hosting
+      run: ./web/node_modules/.bin/firebase deploy
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
