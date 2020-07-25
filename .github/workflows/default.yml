@@ -25,7 +25,8 @@ jobs:
       uses: actions/setup-node@v2.1.1
     
     - name: Build Web app
-      run: cd web & npm ci & npm build
+      run: npm ci && npm build
+      working-directory: web
 
     # Runs a set of commands using the runners shell
     - name: Deploy to Firebase
