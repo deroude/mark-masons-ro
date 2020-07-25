@@ -25,11 +25,11 @@ jobs:
       uses: actions/setup-node@v2.1.1
     
     - name: Build Web app
-      run: npm i -g firebase-tools && npm ci && npm run build
+      run: npm ci && npm run build
       working-directory: web
 
     # Runs a set of commands using the runners shell
     - name: Deploy to Firebase
-      run: firebase deploy --only hosting
+      run: ./web/node_modules/.bin/firebase deploy --only hosting
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
