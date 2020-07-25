@@ -24,6 +24,10 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.1
     
+
+    - name: Generate Env file
+      run: mkdir -p web/src/environments && cat ${{ secrets.FIREBASE_ENV }} > web/src/environments/environment.prod.ts
+
     - name: Build Web app
       run: npm ci && npm run build
       working-directory: web
