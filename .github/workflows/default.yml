@@ -23,10 +23,9 @@ jobs:
     # Setup node env
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.1
-      run: npm i -g firebase-tools
     
     - name: Build Web app
-      run: npm ci && npm run build
+      run: npm i -g firebase-tools && npm ci && npm run build
       working-directory: web
 
     # Runs a set of commands using the runners shell
