@@ -1,0 +1,20 @@
+<ng-container *ngIf="(user$|async)?.status==='ACTIVE'">
+    <main-nav></main-nav>
+    <app-progress></app-progress>
+    <router-outlet></router-outlet>
+</ng-container>
+
+<mat-card *ngIf="(user$|async)?.status==='INACTIVE'">
+    <mat-card-header>
+        <app-progress></app-progress>
+        <object data="assets/logo.main.svg" type="image/svg+xml" class="mlnr-logo">
+            <img src="assets/logo.main.svg" style="height:6rem" />
+        </object>
+    </mat-card-header>
+    <mat-card-content>
+        <h3 i18n="@@inactive.message">Your account is inactive. Please contact your L:. Admin to activate it.</h3>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="logout()" color="primary" cdkFocusInitial i18n="@@logout">Logout</button>
+    </mat-card-actions>
+</mat-card>

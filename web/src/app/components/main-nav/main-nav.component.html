@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <a [routerLink]="['/']">
+    <object data="assets/logo.svg" type="image/svg+xml" class="mlnr-logo">
+      <img src="assets/logo.svg" style="height:3rem" />
+    </object>
+  </a>
+  <div class="lodge-box" *ngIf="(auth.lodge$|async)!==null">
+    <strong>{{(auth.lodge$|async)?.name}}</strong>
+    <span>{{(auth.lodge$|async)?.id}}, <ng-container i18n="@@lodge.orient">Orient</ng-container>
+      {{(auth.lodge$|async)?.orient}}</span>
+  </div>
+  <span style="margin-left:auto"></span>
+  <a [routerLink]="['/events']" mat-stroked-button i18n="@@events" routerLinkActive="active">Events</a>
+  <a [routerLink]="['/report']" mat-stroked-button i18n="@@report" routerLinkActive="active">Attendance report</a>
+  <a *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'" [routerLink]="['/users']" mat-stroked-button i18n="@@users"
+    routerLinkActive="active">Users</a>
+  <ng-container *ngIf="(auth.user$|async)!==null">
+    <span class="mat-body-1">
+      <ng-container i18n="@@hello">Hello</ng-container>, {{(auth.user$|async)?.name}}
+    </span>
+    <button mat-stroked-button (click)="logout()" i18n="@@logout">Logout</button>
+  </ng-container>
+</mat-toolbar>

@@ -1,0 +1,5 @@
+<h1 mat-dialog-title>{{event.title}}</h1>
+<div mat-dialog-content>
+    <div [innerHTML]="event.invitation"></div>
+    <div *ngIf="event.notes" [innerHTML]="event.notes"></div>
+</div>

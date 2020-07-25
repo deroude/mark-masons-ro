@@ -1,0 +1,8 @@
+<h1 mat-dialog-title i18n="@@events.editor.notes">Edit Event Notes</h1>
+<form mat-dialog-content [formGroup]="eventForm" (ngSubmit)="save()">
+    <quill-editor formControlName="notes"></quill-editor>
+</form>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" i18n="@@cancel">Cancel</button>
+    <button mat-raised-button (click)="save()" color="primary" cdkFocusInitial i18n="@@save">Save</button>
+</div>

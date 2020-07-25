@@ -1,0 +1,75 @@
+<mat-accordion>
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title i18n="@@events.upcoming">
+                Upcoming events
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <dl mat-list-item *ngFor="let e of upcoming$|async" class="event" [ngClass]="e.type">
+                <dt>{{e.title}}</dt>
+                <dt i18n="@@events.date">Date</dt>
+                <dd><time [attr.datetime]="e.date">{{e.date|timestamp|date:'dd MMM, yyyy HH:mm'}}</time></dd>
+                <dt i18n="@@events.location">Location</dt>
+                <dd>{{e.location}}</dd>
+                <button mat-raised-button (click)="info(e)" *ngIf="(auth.user$|async)?.privilege==='USER'">
+                    <mat-icon>info</mat-icon>&nbsp;
+                    <ng-container i18n="@@info">Info</ng-container>
+                </button>
+                <button mat-raised-button (click)="edit(e)" *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'">
+                    <mat-icon>edit</mat-icon>&nbsp;
+                    <ng-container i18n="@@edit">Edit</ng-container>
+                </button>
+                <button mat-raised-button (click)="delete(e)" *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'">
+                    <mat-icon>delete</mat-icon>&nbsp;
+                    <ng-container i18n="@@delete">Delete</ng-container>
+                </button>
+                <button mat-raised-button (click)="attendance(e)" *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'">
+                    <mat-icon>people</mat-icon>&nbsp;
+                    <ng-container i18n="@@attendance">Attendance</ng-container>
+                </button>
+            </dl>
+        </mat-list>
+        <mat-action-row>
+            <button mat-raised-button color="primary" (click)="add()" i18n="@@events.add">Add event</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title i18n="@@events.past">
+                Past events
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let yr of past$|async">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{yr.year}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                    <dl mat-list-item *ngFor="let e of yr.events" class="event" [ngClass]="e.type">
+                        <dt>{{e.title}}</dt>
+                        <dt i18n="@@events.date">Date</dt>
+                        <dd><time [attr.datetime]="e.date">{{e.date|timestamp|date:'dd MMM, yyyy HH:mm'}}</time></dd>
+                        <dt i18n="@@events.location">Location</dt>
+                        <dd>{{e.location}}</dd>
+                        <button mat-raised-button (click)="info(e)">
+                            <mat-icon>info</mat-icon>&nbsp;
+                            <ng-container i18n="@@info">Info</ng-container>
+                        </button>
+                        <button mat-raised-button (click)="editPast(e)" *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'">
+                            <mat-icon>edit</mat-icon>&nbsp;
+                            <ng-container i18n="@@edit">Edit</ng-container>
+                        </button>
+                        <button mat-raised-button (click)="attendance(e,false)"
+                            *ngIf="(auth.user$|async)?.privilege==='LODGE_ADMIN'">
+                            <mat-icon>people</mat-icon>&nbsp;
+                            <ng-container i18n="@@attendance">Attendance</ng-container>
+                        </button>
+                    </dl>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-expansion-panel>
+</mat-accordion>
