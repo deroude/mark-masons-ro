@@ -25,27 +25,10 @@ export class AuthService implements CanActivate {
         this.user$ = this.afAuth.authState.pipe(
             switchMap(auth => {
                 if (auth && !auth.isAnonymous) {
-                    return this.db.doc(`/users/${auth.email}`)
-                        .valueChanges();
+                    return this.db.collection('user', ref => ref.where('email', '==', auth.email))
+                        .valueChanges().pipe(map(c => c[0]));
                 } else {
                     return of(null);
-                }
-            }),
-            shareReplay(1)
-        );
-        this.lodge$ = this.user$.pipe(
-            switchMap(u => {
-                if (u === null) {
-                    return of(null);
-                } else {
-                    return this.db.doc(`/lodges/${u.lodge}`)
-                        .snapshotChanges().pipe(
-                            map(c => {
-                                if (c.payload.exists) {
-                                    return { ...c.payload.data(), id: c.payload.id };
-                                } else { return null; }
-                            })
-                        );
                 }
             }),
             shareReplay(1)
@@ -55,13 +38,13 @@ export class AuthService implements CanActivate {
 
     public login(user: string, password: string): Observable<any> {
         this.progress.start();
-        return from(this.afAuth.auth.signInWithEmailAndPassword(user, password))
+        return from(this.afAuth.signInWithEmailAndPassword(user, password))
             .pipe(tap(() => this.progress.stop(), () => this.progress.stop(), () => this.progress.stop()));
         // tap next,error and complete
     }
 
-    public logout() {
-        this.afAuth.auth.signOut();
+    public logout(): void {
+        this.afAuth.signOut();
         this.router.navigate(['login']);
     }
 
@@ -71,20 +54,20 @@ export class AuthService implements CanActivate {
         const pass = user.password;
         delete user.password;
         return from(this.db.collection('users').doc(user.email).set(user)).pipe(
-            switchMap(u => from(this.afAuth.auth.createUserWithEmailAndPassword(user.email, pass))),
+            switchMap(u => from(this.afAuth.createUserWithEmailAndPassword(user.email, pass))),
             tap(() => this.progress.stop(), () => this.progress.stop(), () => this.progress.stop())
         );
     }
 
     public resetPassword(email: string): Observable<any> {
         this.progress.start();
-        return from(this.afAuth.auth.sendPasswordResetEmail(email)).pipe(
+        return from(this.afAuth.sendPasswordResetEmail(email)).pipe(
             tap(() => this.progress.stop(), () => this.progress.stop(), () => this.progress.stop())
         );
     }
 
     public changePassword(newPass: string): Observable<void> {
-        return from(this.afAuth.auth.currentUser.updatePassword(newPass));
+        return from(this.afAuth.currentUser).pipe(switchMap(u => u.updatePassword(newPass)));
     }
 
     canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {

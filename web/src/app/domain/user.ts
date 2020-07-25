@@ -1,9 +1,12 @@
+import { firestore } from 'firebase';
+
 export interface User {
+    id?: string;
     email: string;
     name: string;
     password?: string;
-    privilege?: string;
     rank?: string;
-    status?: string;
-    lodge: string;
+    privilege: string;
+    status: string;
+    joinedDate: firestore.Timestamp;
 }

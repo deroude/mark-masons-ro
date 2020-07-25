@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, ErrorStateMatcher } from '@angular/material';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { FormBuilder, Validators, FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth';
 import { Router } from '@angular/router';
 import { FirestoreService } from 'src/app/services/firestore';
 import { switchMap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { firestore } from 'firebase';
 
 
 export class PasswordMatchStateMatcher implements ErrorStateMatcher {
@@ -29,7 +30,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private firestore: FirestoreService,
     private router: Router,
     private fb: FormBuilder) {
   }
@@ -50,9 +50,9 @@ export class RegisterComponent implements OnInit {
         rank: this.registrationForm.value.rank,
         email: this.registrationForm.value.email,
         password: this.registrationForm.value.password,
+        joinedDate: new firestore.Timestamp(new Date().getTime() / 1000, 0),
         privilege: 'USER',
-        status: 'INACTIVE',
-        lodge: this.registrationForm.value.lodge
+        status: 'INACTIVE'
       }).subscribe(() => this.router.navigate(['']), err => this.error = err);
     }
   }
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
       && (this.registrationForm.hasError(error, [field]) || this.registrationForm.hasError(error));
   }
 
-  private checkPasswords(group: FormGroup) {
+  private checkPasswords(group: FormGroup): { notSame: boolean } {
     const pass = group.controls.password.value;
     const passwordRetype = group.controls.passwordRetype.value;
     return pass === passwordRetype ? null : { notSame: true };

@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { EventHandle } from 'src/app/domain/event';
 import { SelectionModel } from '@angular/cdk/collections';
 import { FirestoreService } from 'src/app/services/firestore';
@@ -36,7 +38,7 @@ export class AttendanceComponent implements OnInit {
   }
 
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {

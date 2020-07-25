@@ -8,13 +8,13 @@ export class ProgressService {
 
     private taskCount = 0;
 
-    public start() {
+    public start(): void {
         if (this.taskCount++ === 0) {
             this.loading$.next(true);
         }
     }
 
-    public stop() {
+    public stop(): void {
         if (--this.taskCount === 0) {
             this.loading$.next(false);
         }

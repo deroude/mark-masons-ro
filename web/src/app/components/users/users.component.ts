@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/domain/user';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { map } from 'rxjs/operators';
 
 @Component({

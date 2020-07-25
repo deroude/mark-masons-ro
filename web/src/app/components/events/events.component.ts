@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore';
 import { Observable } from 'rxjs';
 import { EventHandle } from 'src/app/domain/event';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { EventsInfoComponent } from './events.info.component';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { EventsEditorComponent } from './events.editor.component';
@@ -39,7 +39,7 @@ export class EventsComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   info(event: EventHandle): void {
@@ -54,7 +54,7 @@ export class EventsComponent implements OnInit {
     }).afterClosed().pipe(withLatestFrom(this.auth.user$))
       .subscribe(([ev, u]) => {
         if (ev) {
-          this.db.saveEvent({ ...ev, lodge: u.lodge, id: event.id });
+          this.db.saveEvent({ ...ev, id: event.id });
         }
       });
   }
@@ -65,12 +65,12 @@ export class EventsComponent implements OnInit {
     }).afterClosed().pipe(withLatestFrom(this.auth.user$))
       .subscribe(([ev, u]) => {
         if (ev) {
-          this.db.saveEvent({ ...ev, lodge: u.lodge, id: event.id });
+          this.db.saveEvent({ ...ev,  id: event.id });
         }
       });
   }
 
-  add() {
+  add(): void {
     this.edit(new EventHandle());
   }
 

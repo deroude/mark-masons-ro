@@ -45,14 +45,14 @@ export class FirestoreService {
         );
     }
 
+
+    // TODO actual query
+
     getMyPastEvents(): Observable<EventHandle[]> {
         this.progress.start();
         return this.auth.user$.pipe(
             switchMap(u =>
-                this.db.collection<EventHandle>('events',
-                    evr => evr.where('lodge', '==', u.lodge)
-                        .where('date', '<', new Date())
-                        .orderBy('date'))
+                this.db.collection<EventHandle>('event')
                     .snapshotChanges().pipe(
                         map(arr => arr.reverse()
                             .map(er => ({ ...er.payload.doc.data(), id: er.payload.doc.id })))
@@ -67,10 +67,7 @@ export class FirestoreService {
         this.progress.start();
         return this.auth.user$.pipe(
             switchMap(u =>
-                this.db.collection<EventHandle>('events',
-                    evr => evr.where('lodge', '==', u.lodge)
-                        .where('date', '>=', new Date())
-                        .orderBy('date'))
+                this.db.collection<EventHandle>('event')
                     .snapshotChanges().pipe(map(this.snapshotMapArray))
             ),
             catchError(err => { console.log(err); return EMPTY; }),
