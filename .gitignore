@@ -106,3 +106,5 @@ dist
 web/src/environments/
 
 .firebase
+
+.vscode

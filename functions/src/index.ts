@@ -15,18 +15,34 @@ export const addNotifications = functions
     .region('europe-west3')
     .firestore.document('/event/{eventId}')
     .onCreate(async (snapshot: any, context: any) => {
-        const event = snapshot.data();
-        const eventId = context.params.eventId;
+        const event = snapshot;
         const batch = db.batch();
-        const lodge = db.doc(event.lodge);
-        const subscribedUsers = await db.collection('membership').where('lodge', '==', lodge).where('subscribed', '==', true).get();
+        const subscribedUsers = await db.collection('membership').where('lodge', '==', event.data().managingLodge).where('subscribed', '==', true).get();
         subscribedUsers.forEach(user => {
             const newNotification = db.collection('eventNotification').doc();
             batch.set(newNotification, {
-                event: `/event/${eventId}`,
+                event: event.ref,
                 status: 'NOT_SENT',
-                subscriber: user.data().email
+                subscriber: user.data().user
             });
         });
         await batch.commit();
     })
+
+// export const test = functions.region('europe-west3').https.onRequest(async (req,res) => {
+//     const event = await db.doc('event/GMOKFeCW5dDEVsibCbhl').get();
+//     const batch = db.batch();
+//     if (event.exists) {
+//         const subscribedUsers = await db.collection('membership').where('lodge', '==', event.data()?.managingLodge).where('subscribed', '==', true).get();
+//         subscribedUsers.forEach(user => {
+//             const newNotification = db.collection('eventNotification').doc();
+//             batch.set(newNotification, {
+//                 event:event.ref,
+//                 status: 'NOT_SENT',
+//                 subscriber: user.data().user
+//             });
+//         });
+//         await batch.commit();
+//         res.send('');
+//     }
+// });
