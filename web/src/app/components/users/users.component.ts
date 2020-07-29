@@ -19,14 +19,14 @@ export class UsersComponent implements OnInit {
 
   constructor(private db: FirestoreService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.db.getUsers().subscribe(ulist => {
       this.dataSource = new MatTableDataSource(ulist);
       this.dataSource.sort = this.sort;
     });
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

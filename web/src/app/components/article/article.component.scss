@@ -1,0 +1,25 @@
+mat-card {
+    .mat-card-image {
+        @media (max-width:480px) {
+            display: none;
+        }
+
+        @media (max-width:800px) {
+            width: calc(100% - 32px)!important;
+            margin-left:16px;
+        }
+
+        width: 30%;
+        display: block;
+        margin-right: 1rem;
+    }
+
+    mat-card-content {
+        @media (max-width:800px) {
+            width: calc(100% - 32px)!important;
+            margin-left:16px;
+        }
+        width: 67%;
+        display: block;
+    }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth';
+import { AuthService } from '../../services/auth';
 import { Observable } from 'rxjs';
-import { User } from '../domain/user';
+import { User } from '../../domain/user';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
     this.user$ = this.auth.user$;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  logout() {
+  logout(): void {
     this.auth.logout();
   }
 

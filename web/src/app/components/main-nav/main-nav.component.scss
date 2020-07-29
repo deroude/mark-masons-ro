@@ -2,33 +2,51 @@
   height: 3rem;
   margin-top: .5rem;
   cursor: pointer;
+
+  @media (max-width:480px) {
+    display: none;
+  }
 }
 
 .lodge-box {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
+  margin-right: auto;
+
   strong {
     margin-bottom: -0.5rem;
   }
+
   span {
     font-size: small;
   }
 }
 
+.link-box {
+  margin-left:1rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-box{
+  margin-left:1rem;
+  margin-bottom:0.5rem;
+}
+
 .mat-stroked-button {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  &.active{
-    border:1px solid gray;
+
+  &.active {
+    border: 1px solid gray;
   }
 }
 
- mat-toolbar{
-   display:flex;
-   flex-direction: row;
-   justify-content: flex-start;
-   flex-wrap: wrap;
-   height: auto!important;
-   padding-bottom: .5rem;
- }
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: auto !important;
+  padding-bottom: .5rem;
+}

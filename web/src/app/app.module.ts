@@ -22,7 +22,7 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { EventsComponent } from './components/events/events.component';
 import { TimestampPipe } from './pipes/timestamp.pipe';
 import { EventsInfoComponent } from './components/events/events.info.component';
@@ -35,6 +35,8 @@ import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { RsvpMessageComponent } from './components/rsvp/rsvp.message.component';
 import { AttendanceSavedMessageComponent } from './components/attendance/attendance.saved.message.component';
 import { ReportComponent } from './components/report/report.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ReportComponent } from './components/report/report.component';
     AttendanceSavedMessageComponent,
     RsvpComponent,
     RsvpMessageComponent,
-    ReportComponent
+    ReportComponent,
+    BlogComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

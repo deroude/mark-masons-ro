@@ -1,3 +1,5 @@
-path{
-    fill:white;
-}
+path {
+    fill: none!important;
+    stroke: black;
+    stroke-width: 2;
+  }

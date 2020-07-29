@@ -7,7 +7,7 @@ $mlnr-typography: mat-typography-config($font-family: '"Ubuntu", sans-serif;');
 @include mat-core($mlnr-typography);
 // define 3 theme color
 // mat-palette accepts $palette-name, main, lighter and darker variants
-$mlnr-primary: mat-palette($mat-purple, 800, 300, 900);
+$mlnr-primary: mat-palette($mat-gray, 100, 300, 900);
 $mlnr-accent: mat-palette($mat-blue-gray);
 $mlnr-warn: mat-palette($mat-deep-orange, A200);
 

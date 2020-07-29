@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -46,7 +47,8 @@ const material = [
     MatChipsModule,
     ScrollingModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FlexLayoutModule
 ];
 
 @NgModule({
