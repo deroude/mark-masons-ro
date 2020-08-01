@@ -18,10 +18,10 @@ export const generateArticle = (): Article => ({
     id: faker.random.uuid(),
     author: faker.internet.email(),
     title: faker.lorem.sentence(),
-    text: faker.lorem.paragraphs(5),
+    text: faker.lorem.paragraphs(15),
     slug: faker.lorem.slug(),
     audience: 'PUBLIC',
     imageUrl: faker.random.image(),
-    cutoff: faker.lorem.paragraph(),
+    cutoff: faker.lorem.paragraphs(5),
     publishTimestamp: new firestore.Timestamp(1596029170, 0)
 });

@@ -1,0 +1,16 @@
+:host {
+    top:4rem;
+    position: relative;
+}
+
+div.mark-blog {
+    max-width: 50rem;
+    min-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    mark-article {
+        display: block;
+        margin-top: 3rem;
+    }
+}
