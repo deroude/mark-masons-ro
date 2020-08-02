@@ -4,7 +4,8 @@ import { ProgressService } from 'src/app/services/progress';
 
 
 @Component({
-  selector: 'app-progress',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss']
 })
@@ -16,7 +17,7 @@ export class ProgressComponent implements OnInit {
 
   loading$: Observable<boolean>;
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../../domain/user';
 
 @Component({
-  selector: 'app-home',
+  selector: 'mark-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

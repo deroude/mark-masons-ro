@@ -8,7 +8,7 @@ import { filter, switchMap } from 'rxjs/operators';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'main-nav',
+  selector: 'mark-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
 })
@@ -17,13 +17,13 @@ export class MainNavComponent implements OnInit {
   constructor(public auth: AuthService, private firestore: FirestoreService) {
   }
 
-  user$: Observable<User>;
-  lodge$: Observable<Lodge>;
+  user$: Observable<User> = this.auth.user$;
+  lodge$: Observable<Lodge> = this.auth.lodge$;
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  logout() {
+  logout(): void {
     this.auth.logout();
   }
 

@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 import { AttendanceReport } from 'src/app/domain/report';
 
 @Component({
-  selector: 'app-report',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss']
 })
@@ -23,10 +24,10 @@ export class ReportComponent implements OnInit {
 
   constructor(private db: FirestoreService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  applyFilter() {
+  applyFilter(): void {
     this.db.getAttendanceReport(this.dstart, this.dend).subscribe(ulist => {
       this.dataSource = new MatTableDataSource(ulist);
       this.dataSource.sort = this.sort;

@@ -9,7 +9,7 @@ import { Attendance } from 'src/app/domain/attendance';
 import { combineLatest } from 'rxjs';
 
 @Component({
-  selector: 'app-attendance',
+  selector: 'mark-attendance',
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.scss']
 })
@@ -38,17 +38,17 @@ export class AttendanceComponent implements OnInit {
   }
 
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
+  isAllSelected(): boolean {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource ? this.dataSource.data.length : 0;
     return numSelected === numRows;
   }
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
-  masterToggle() {
+  masterToggle(): void {
     this.isAllSelected() ?
       this.selection.clear() :
       this.dataSource.data.forEach(row => this.selection.select(row));
@@ -62,11 +62,11 @@ export class AttendanceComponent implements OnInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.email}`;
   }
 
-  close() {
+  close(): void {
     this.dialogRef.close();
   }
 
-  send() {
+  send(): void {
     const attlist = this.selection.selected.map(att => {
       return {
         id: att.id || null,

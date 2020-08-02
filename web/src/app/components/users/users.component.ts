@@ -7,7 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-users',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })

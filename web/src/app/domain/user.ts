@@ -8,5 +8,5 @@ export interface User {
     rank?: string;
     privilege: string;
     status: string;
-    joinedDate: firestore.Timestamp;
+    joinedDate?: firestore.Timestamp;
 }

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-login',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     this.auth.login(this.username, this.password).subscribe(
-      () => this.router.navigate(['']), err => this.error = 'Login error'
+      () => this.router.navigate(['/']), err => this.error = 'Login error'
     );
   }
 

@@ -6,7 +6,8 @@ import { RsvpMessageComponent } from './rsvp.message.component';
 
 
 @Component({
-  selector: 'app-rsvp',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-rsvp',
   templateUrl: './rsvp.component.html',
   styleUrls: ['./rsvp.component.scss']
 })
@@ -30,13 +31,13 @@ export class RsvpComponent implements OnInit {
     });
   }
 
-  rsvp(re: boolean) {
+  rsvp(re: boolean): void {
     if (this.attendanceId) {
       this.db.rsvp(this.attendanceId, re, this.comment)
         .subscribe(() => this.snackBar.openFromComponent(RsvpMessageComponent, { duration: 3000 }));
     }
   }
-  goHome() {
+  goHome(): void {
     this.router.navigate(['/']);
   }
 }

@@ -10,7 +10,7 @@ import { combineLatest } from 'rxjs';
 import { AttendanceSavedMessageComponent } from './attendance.saved.message.component';
 
 @Component({
-  selector: 'app-attendance-aftermath',
+  selector: 'mark-attendance-aftermath',
   templateUrl: './attendance.aftermath.component.html',
   styleUrls: ['./attendance.aftermath.component.scss']
 })
@@ -39,13 +39,13 @@ export class AttendanceAftermathComponent implements OnInit {
   }
 
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
-  close() {
+  close(): void {
     this.dialogRef.close();
   }
 
-  save() {
+  save(): void {
     const attlist = this.dataSource.data.map(att => {
       return {
         id: att.id || null,

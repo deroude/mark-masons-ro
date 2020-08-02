@@ -1,7 +1,11 @@
-.mlnr-logo {
+.mark-logo {
   height: 3rem;
+  width: 7rem;
   margin-top: .5rem;
   cursor: pointer;
+  padding: .2rem;
+
+  background: center/contain no-repeat url('/assets/logo.main.svg');
 
   @media (max-width:480px) {
     display: none;
@@ -24,13 +28,13 @@
 }
 
 .link-box {
-  margin-left:1rem;
+  margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.login-box{
-  margin-left:1rem;
-  margin-bottom:0.5rem;
+.login-box {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .mat-stroked-button {

@@ -1,25 +1,28 @@
 <mat-toolbar color="primary">
-  <a [routerLink]="['/']">
-    <object data="assets/logo.svg" type="image/svg+xml" class="mlnr-logo">
-      <img src="assets/logo.svg" style="height:3rem" />
-    </object>
-  </a>
+  <button mat-button class="mark-logo" [routerLink]="['/blog']">
+
+  </button>
   <div class="lodge-box">
     <strong>Mark Masons România</strong>
-    <span>Toleranță și Fraternitate <ng-container i18n="@@lodge.orient">Orient</ng-container>
+    <span *ngIf="lodge$|async">Toleranță și Fraternitate <ng-container i18n="@@lodge.orient">Orient</ng-container>
       București</span>
   </div>
   
-  <div class="link-box">
+  <div class="link-box" *ngIf="user$|async">
     <a [routerLink]="['/events']" mat-stroked-button i18n="@@events" routerLinkActive="active">Events</a>
     <a [routerLink]="['/charity']" mat-stroked-button i18n="@@charity" routerLinkActive="active">Charity</a>
     <a [routerLink]="['/users']" mat-stroked-button i18n="@@users" routerLinkActive="active">Users</a>
   </div>
 
-  <div class="login-box">
+  <div class="login-box" *ngIf="user$|async;else notLoggedIn">
     <span class="mat-body-1">
       <ng-container i18n="@@hello">Hello</ng-container>, Thomas Dunckerley
     </span>
     <button mat-stroked-button (click)="logout()" i18n="@@logout">Logout</button>
   </div>
+  <ng-template #notLoggedIn>
+    <div class="login-box" >
+      <button mat-stroked-button [routerLink]="['/login']" i18n="@@login">Login</button>
+    </div>
+  </ng-template>
 </mat-toolbar>

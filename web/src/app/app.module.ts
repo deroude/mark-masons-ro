@@ -25,18 +25,26 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { EventsComponent } from './components/events/events.component';
 import { TimestampPipe } from './pipes/timestamp.pipe';
-import { EventsInfoComponent } from './components/events/events.info.component';
-import { EventsEditorComponent } from './components/events/events.editor.component';
 import { UsersComponent } from './components/users/users.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
 import { AttendanceAftermathComponent } from './components/attendance/attendance.aftermath.component';
-import { EventsPastEditorComponent } from './components/events/events.past.editor.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { RsvpMessageComponent } from './components/rsvp/rsvp.message.component';
 import { AttendanceSavedMessageComponent } from './components/attendance/attendance.saved.message.component';
 import { ReportComponent } from './components/report/report.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/article/article.component';
+
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([
+  listPlugin,
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -47,9 +55,6 @@ import { ArticleComponent } from './components/article/article.component';
     ProgressComponent,
     HomeComponent,
     EventsComponent,
-    EventsInfoComponent,
-    EventsEditorComponent,
-    EventsPastEditorComponent,
     TimestampPipe,
     UsersComponent,
     AttendanceComponent,
@@ -72,14 +77,12 @@ import { ArticleComponent } from './components/article/article.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    QuillModule
+    QuillModule,
+    FullCalendarModule
   ],
   providers: [AuthService, FirestoreService, ProgressService
   ],
   entryComponents: [
-    EventsInfoComponent,
-    EventsEditorComponent,
-    EventsPastEditorComponent,
     AttendanceComponent,
     AttendanceAftermathComponent,
     AttendanceSavedMessageComponent,

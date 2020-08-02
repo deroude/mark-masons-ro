@@ -19,7 +19,8 @@ export class PasswordMatchStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-register',
+  // tslint:disable-next-line:component-selector
+  selector: 'mark-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })

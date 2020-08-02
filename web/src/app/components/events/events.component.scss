@@ -1,49 +1,6 @@
-dl {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  button {
-    margin: 0 0.5rem 0.5rem 0;
-    padding: 0 0.5rem;
-    text-align: left;
-  }
-
-  dd,
-  dt {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  dd {
-    margin-inline-start: 0;
-  }
-
-  dt {
-    font-weight: bold;
-  }
-
-  dt:first-child {
-    font-weight: bold;
-    min-width: 10rem;
-  }
-
-  &.REGULAR {
-    dt:first-child {
-      background: #c3cfde;
-    }
-  }
-
-  &.GRAND_LODGE {
-    dt:first-child {
-      background: #cbc8e2;
-    }
-  }
-
-  &.SINGLE_EVENT {
-    dt:first-child {
-      background: #c0ded6;
-    }
-  }
+mat-card {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
 }
