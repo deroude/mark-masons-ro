@@ -1,7 +1,25 @@
 :host {
-    top:4rem;
+    top: 4rem;
     position: relative;
 }
+
+mat-toolbar {
+    display: flex;
+    background: none !important;
+
+    mat-form-field {
+        flex: 1 1;
+        font-size: small;
+    }
+
+    button {
+        flex: 0 0 6rem;
+         margin-right: 1rem;
+    }
+}
+
+
+
 
 div.mark-blog {
     max-width: 50rem;

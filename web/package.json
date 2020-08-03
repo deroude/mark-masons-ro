@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0",
+    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,6 +20,7 @@
     "@angular/forms": "~10.0.5",
     "@angular/localize": "^10.0.5",
     "@angular/material": "^10.1.0",
+    "@angular/material-moment-adapter": "10.0.2",
     "@angular/platform-browser": "~10.0.5",
     "@angular/platform-browser-dynamic": "~10.0.5",
     "@angular/router": "~10.0.5",
@@ -35,6 +36,7 @@
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3",
+    "moment": "^2.27.0",
     "faker": "^4.1.0",
     "@types/faker": "^4.1.12"
   },

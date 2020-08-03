@@ -39,6 +39,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
+import { ArticleEditorComponent } from './components/article-editor/article-editor.component';
+import { EventEditorComponent } from './components/event-editor/event-editor.component';
 
 FullCalendarModule.registerPlugins([
   listPlugin,
@@ -64,7 +66,9 @@ FullCalendarModule.registerPlugins([
     RsvpMessageComponent,
     ReportComponent,
     BlogComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticleEditorComponent,
+    EventEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ FullCalendarModule.registerPlugins([
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    QuillModule,
+    QuillModule.forRoot(),
     FullCalendarModule
   ],
   providers: [AuthService, FirestoreService, ProgressService
@@ -86,7 +90,9 @@ FullCalendarModule.registerPlugins([
     AttendanceComponent,
     AttendanceAftermathComponent,
     AttendanceSavedMessageComponent,
-    RsvpMessageComponent
+    RsvpMessageComponent,
+    ArticleEditorComponent,
+    EventEditorComponent
   ],
   bootstrap: [AppComponent]
 })

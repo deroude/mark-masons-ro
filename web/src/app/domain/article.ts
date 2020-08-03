@@ -5,8 +5,8 @@ export class Article {
     title: string;
     text: string;
     slug?: string;
-    publishTimestamp: firestore.Timestamp;
-    author: string;
+    publishTimestamp?: firestore.Timestamp;
+    author?: string;
     audience: string;
     cutoff?: string;
     imageUrl?: string;

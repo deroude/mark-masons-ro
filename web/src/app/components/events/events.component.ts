@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarOptions, EventClickArg } from '@fullcalendar/angular';
 import { generateEvent } from 'src/app/domain/mock';
 import { EventInstance } from 'src/app/domain/event';
+import { MatDialog } from '@angular/material/dialog';
+import { EventEditorComponent } from '../event-editor/event-editor.component';
 
 @Component({
   selector: 'mark-events',
@@ -10,26 +12,40 @@ import { EventInstance } from 'src/app/domain/event';
 })
 export class EventsComponent implements OnInit {
 
+  events: EventInstance[];
+
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,listMonth'
+    },
     eventClick: this.onEventSelect.bind(this)
   };
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    const events: EventInstance[] = [];
+    this.events = [];
     for (let i = 0; i < 100; i++) {
-      events.push(generateEvent(true));
+      this.events.push(generateEvent(true));
     }
     for (let i = 0; i < 100; i++) {
-      events.push(generateEvent(false));
+      this.events.push(generateEvent(false));
     }
-    this.calendarOptions.events = events.map(ev => ({ title: ev.title, date: ev.date.toDate() }));
+    this.calendarOptions.events = this.events.map(ev => ({ title: ev.title, date: ev.date.toDate(), id: ev.id }));
   }
 
   onEventSelect(ev: EventClickArg): void {
-    alert(ev.event.title);
+    const dialogRef = this.dialog.open(EventEditorComponent, {
+      width: '600px',
+      data: this.events.find(e => e.id === ev.event.id)
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // this.article = result;
+    });
   }
 
 }

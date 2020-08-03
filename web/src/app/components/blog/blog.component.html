@@ -1,3 +1,15 @@
 <div class="mark-blog">
+
+    <mat-toolbar>
+        <button mat-stroked-button *ngIf="user$|async">
+            Add article
+        </button>
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input type="text" matInput>
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </mat-toolbar>
+
     <mark-article [article]="article" *ngFor="let article of articles"></mark-article>
 </div>

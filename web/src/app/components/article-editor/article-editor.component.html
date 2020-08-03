@@ -1,0 +1,34 @@
+<h1 mat-dialog-title i18n="@@article.editor">Edit Article</h1>
+<form mat-dialog-content [formGroup]="articleForm" (ngSubmit)="save()">
+    <mat-form-field>
+        <input matInput formControlName="title" type="text" i18n-placeholder="@@title" placeholder="Title">
+        <mat-error *ngIf="hasError('required','title')" i18n="@@error.field.required">
+            This field is required.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="date" i18n-placeholder="@@date" placeholder="Date"
+            [matDatepicker]="dp">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+        <mat-error *ngIf="hasError('required','date')" i18n="@@error.field.required">
+            This field is required.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label i18n="@@audience">Audience</mat-label>
+        <mat-select formControlName="audience">
+            <mat-option value="PUBLIC" i18n="@@audience.public">Public</mat-option>
+            <mat-option value="LODGE" i18n="@@audience.lodge">Lodge only</mat-option>
+            <mat-option value="ORDER" i18n="@@audience.order">Order wide</mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('required','audience')" i18n="@@error.field.required">
+            This field is required
+        </mat-error>
+    </mat-form-field>
+    <quill-editor formControlName="text"></quill-editor>
+</form>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" i18n="@@cancel">Cancel</button>
+    <button mat-raised-button (click)="save()" color="primary" cdkFocusInitial i18n="@@save">Save</button>
+</div>
