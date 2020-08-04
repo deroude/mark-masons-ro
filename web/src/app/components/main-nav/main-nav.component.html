@@ -7,22 +7,18 @@
     <span *ngIf="lodge$|async">Toleranță și Fraternitate <ng-container i18n="@@lodge.orient">Orient</ng-container>
       București</span>
   </div>
-  
-  <div class="link-box" *ngIf="user$|async">
+
+  <ng-container *ngIf="user$|async;else notLoggedIn">
     <a [routerLink]="['/events']" mat-stroked-button i18n="@@events" routerLinkActive="active">Events</a>
     <a [routerLink]="['/charity']" mat-stroked-button i18n="@@charity" routerLinkActive="active">Charity</a>
     <a [routerLink]="['/users']" mat-stroked-button i18n="@@users" routerLinkActive="active">Users</a>
-  </div>
 
-  <div class="login-box" *ngIf="user$|async;else notLoggedIn">
     <span class="mat-body-1">
       <ng-container i18n="@@hello">Hello</ng-container>, Thomas Dunckerley
     </span>
     <button mat-stroked-button (click)="logout()" i18n="@@logout">Logout</button>
-  </div>
+  </ng-container>
   <ng-template #notLoggedIn>
-    <div class="login-box" >
-      <button mat-stroked-button [routerLink]="['/login']" i18n="@@login">Login</button>
-    </div>
+    <button mat-stroked-button [routerLink]="['/login']" i18n="@@login">Login</button>
   </ng-template>
 </mat-toolbar>

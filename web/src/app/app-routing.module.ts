@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/blog', pathMatch: 'full' },
       { path: 'blog', component: BlogComponent },
       { path: 'events', component: EventsComponent },
-      { path: 'users', component: UsersComponent, canActivate: [AuthService], },
+      { path: 'users', component: UsersComponent },
       { path: 'report', component: ReportComponent, canActivate: [AuthService], }
     ]
   },

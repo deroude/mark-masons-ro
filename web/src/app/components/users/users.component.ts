@@ -5,6 +5,7 @@ import { User } from 'src/app/domain/user';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { map } from 'rxjs/operators';
+import { generateUser } from 'src/app/domain/mock';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -21,10 +22,16 @@ export class UsersComponent implements OnInit {
   constructor(private db: FirestoreService) { }
 
   ngOnInit(): void {
-    this.db.getUsers().subscribe(ulist => {
-      this.dataSource = new MatTableDataSource(ulist);
-      this.dataSource.sort = this.sort;
-    });
+    const ulist: User[] = [];
+    for (let i = 0; i < 50; i++) {
+      ulist.push(generateUser());
+    }
+    this.dataSource = new MatTableDataSource(ulist);
+    this.dataSource.sort = this.sort;
+    // this.db.getUsers().subscribe(ulist => {
+    //   this.dataSource = new MatTableDataSource(ulist);
+    //   this.dataSource.sort = this.sort;
+    // });
   }
 
   applyFilter(filterValue: string): void {
