@@ -1,0 +1,49 @@
+<mat-card class="charity-card">
+    <article>
+        <mat-card-header>
+            <mat-card-title>{{charity.title}}</mat-card-title>
+            <mat-card-subtitle>published: {{charity.publishDate|timestamp|date}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>end Date: {{charity.endDate|timestamp|date}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            {{charity.description.text}}
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button *ngIf="user$|async" (click)="edit()">
+                Edit
+            </button>
+            <button mat-button *ngIf="user$|async" (click)="contribute()">
+                Contribute
+            </button>
+        </mat-card-actions>
+    </article>
+    <aside>
+        <mat-card-header>
+            <mat-card-title i18n="@@contributions">Contributions</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ng-container *ngFor="let contribution of charity.contributions">
+                <mat-card *ngIf="contribution.anonymous !== 'FULL'">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <ng-container *ngIf="contribution.anonymous !== 'NAME'; else anonymous">
+                                {{contribution.from.name}}
+                            </ng-container>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <ng-container *ngIf="contribution.anonymous !== 'AMOUNT' else anonymous">
+                                {{contribution.currency}}
+                                {{contribution.amount}}
+                            </ng-container>
+                        </mat-card-subtitle>
+                        <ng-template #anonymous>
+                            <ng-container i18n="@@anonymous">Anonymous</ng-container>
+                        </ng-template>
+                    </mat-card-header>
+                </mat-card>
+            </ng-container>
+        </mat-card-content>
+    </aside>    
+</mat-card>

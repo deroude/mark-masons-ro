@@ -41,6 +41,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { ArticleEditorComponent } from './components/article-editor/article-editor.component';
 import { EventEditorComponent } from './components/event-editor/event-editor.component';
+import { CharityComponent } from './components/charity/charity.component';
+import { CharityEditorComponent } from './components/charity-editor/charity-editor.component';
+import { CharityListComponent } from './components/charity-list/charity-list.component';
+import { CharityContributionComponent } from './components/charity-contribution/charity-contribution.component';
 
 FullCalendarModule.registerPlugins([
   listPlugin,
@@ -68,7 +72,11 @@ FullCalendarModule.registerPlugins([
     BlogComponent,
     ArticleComponent,
     ArticleEditorComponent,
-    EventEditorComponent
+    EventEditorComponent,
+    CharityComponent,
+    CharityEditorComponent,
+    CharityListComponent,
+    CharityContributionComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +100,8 @@ FullCalendarModule.registerPlugins([
     AttendanceSavedMessageComponent,
     RsvpMessageComponent,
     ArticleEditorComponent,
-    EventEditorComponent
+    EventEditorComponent,
+    CharityEditorComponent
   ],
   bootstrap: [AppComponent]
 })

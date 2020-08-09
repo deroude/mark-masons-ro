@@ -9,6 +9,7 @@ import { UsersComponent } from './components/users/users.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { ReportComponent } from './components/report/report.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { CharityListComponent } from './components/charity-list/charity-list.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/blog', pathMatch: 'full' },
       { path: 'blog', component: BlogComponent },
       { path: 'events', component: EventsComponent },
+      { path: 'charity', component: CharityListComponent },
       { path: 'users', component: UsersComponent },
       { path: 'report', component: ReportComponent, canActivate: [AuthService], }
     ]

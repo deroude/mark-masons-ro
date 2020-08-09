@@ -4,6 +4,7 @@ import { firestore } from 'firebase';
 import { Article } from './article';
 import { EventHandle, EventInstance } from './event';
 import { Lodge } from './lodge';
+import { Charity } from './charity';
 
 export const generateUser = (): User => ({
     id: faker.random.uuid(),
@@ -13,7 +14,7 @@ export const generateUser = (): User => ({
     rank: 'MASTER',
     privilege: 'USER',
     status: 'ACTIVE',
-    joinedDate: new firestore.Timestamp(1596029170, 0)
+    joinedDate: firestore.Timestamp.fromDate(new Date())
 });
 
 export const generateLodge = (): Lodge => ({
@@ -32,15 +33,34 @@ export const generateArticle = (): Article => ({
     audience: 'PUBLIC',
     imageUrl: faker.random.image(),
     cutoff: faker.lorem.paragraphs(5),
-    publishTimestamp: new firestore.Timestamp(1596029170, 0)
+    publishTimestamp: firestore.Timestamp.fromDate(new Date())
 });
 
 export const generateEvent = (past: boolean): EventInstance => ({
     id: faker.random.uuid(),
     title: faker.lorem.sentence(),
     invitation: generateArticle(),
-    date: new firestore.Timestamp((past ? faker.date.past() : faker.date.future()).getTime() / 1000, 0),
+    date: firestore.Timestamp.fromDate(past ? faker.date.past() : faker.date.future()),
     location: faker.address.streetAddress(),
     lodge: generateLodge(),
     type: 'REGULAR'
+});
+
+export const generateCharity = (): Charity => ({
+    description: generateArticle(),
+    publishDate: firestore.Timestamp.fromDate(faker.date.past()),
+    raisedAmount: faker.random.number({ min: 100, max: 2000 }),
+    status: 'AVAILABLE',
+    targetCurrency: 'EUR',
+    title: faker.lorem.sentence(),
+    targetAmount: faker.random.number({ min: 1000, max: 20000 }),
+    endDate: firestore.Timestamp.fromDate(faker.date.future()),
+    contributions: new Array(10).fill(null).map(() => ({
+        amount: faker.random.number({ min: 1000, max: 20000 }),
+        anonymous: faker.random.arrayElement(['FULL', 'NAME', 'AMOUNT', 'NONE']),
+        currency: 'EUR',
+        from: generateUser(),
+        payDate: firestore.Timestamp.fromDate(faker.date.past()),
+        status: 'ACCEPTED'
+    }))
 });
