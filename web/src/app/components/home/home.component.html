@@ -1,5 +1,17 @@
-<ng-container>
+<section id="top">
+    <mark-top-nav></mark-top-nav>
     <mark-main-nav></mark-main-nav>
     <mark-progress></mark-progress>
+    <div id="logo">
+        <button mat-button class="mark-logo" [routerLink]="['/blog']"></button>
+        <span class="mark-title">Mark Mastermasons</span>
+    </div>
+</section>
+<main>
+    <div class="jumbotron"></div>
     <router-outlet></router-outlet>
-</ng-container>
+</main>
+
+<section id="bottom">
+    <mark-bottom-nav></mark-bottom-nav>
+</section>

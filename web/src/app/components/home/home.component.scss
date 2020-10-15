@@ -1,0 +1,43 @@
+section#top {
+    width: calc(100% - 10px);
+    z-index: 5;
+
+    div#logo {
+        height: 288px;
+        width: 226px;
+        left: 60px;
+        top: -9px;
+        position: absolute;
+        background: center / contain no-repeat url('/assets/logo.bg.png');
+        text-align: center;
+
+        button.mark-logo {
+            position: absolute;
+            height: 156px;
+            width: 156px;
+            top: 30px;
+            left: 35px;
+            background: center / contain no-repeat url('/assets/logo.main.svg');
+        }
+
+        span.mark-title {
+            top: 200px;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            font-size: 24px;
+            color: #F9E562;
+            text-transform: uppercase;
+        }
+    }
+}
+
+main {
+    div.jumbotron {
+        height: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        background: center / contain no-repeat url('/assets/home.pic.svg');
+    }
+    background: no-repeat url('/assets/home.bg.svg');
+}

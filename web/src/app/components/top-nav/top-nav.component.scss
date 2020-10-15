@@ -1,0 +1,14 @@
+nav {
+  min-width: 1024px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  background-color: #363636;
+  color: white;
+  padding-right: 20px;
+
+  a.active {
+    background-color: #565656;
+  }
+}

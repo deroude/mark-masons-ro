@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;900&display=swap');
 
 @import '~@angular/material/theming';
 
-$mlnr-typography: mat-typography-config($font-family: '"Ubuntu", sans-serif;');
+$mlnr-typography: mat-typography-config($font-family: '"Roboto Slab", sans-serif;');
 
 @include mat-core($mlnr-typography);
 // define 3 theme color

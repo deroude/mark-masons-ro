@@ -1,46 +1,36 @@
-.mark-logo {
-  height: 3rem;
-  width: 7rem;
-  margin-top: .5rem;
-  cursor: pointer;
-  padding: .2rem;
-
-  background: center/contain no-repeat url('/assets/logo.main.svg');
-
-  @media (max-width:480px) {
-    display: none;
-  }
-}
-
-.lodge-box {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  margin-right: auto;
-
-  strong {
-    margin-bottom: -0.5rem;
-  }
-
-  span {
-    font-size: small;
-  }
-}
-
-.mat-stroked-button {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-
-  &.active {
-    border: 1px solid gray;
-  }
-}
-
-mat-toolbar {
+nav#main-nav {
+  padding: 10px 20px 10px 300px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  height: auto !important;
-  padding-bottom: .5rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #26417E;
+
+  a {
+    margin-right: 10px;
+    border: none;
+  }
+
+  nav#links {
+    min-width:400px;
+    a::after{
+      content: "»"
+    }
+  }
+
+  nav#utility {
+    min-width:350px;
+    a.flag{
+      display:inline-block;
+      width:24px;
+      height:16px;
+      margin-bottom:-3px;
+      &[href='/en']{
+        background: center / contain no-repeat url('/assets/en-UK.svg');
+      }
+      &[href='/ro']{
+        background: center / contain no-repeat url('/assets/ro-RO.svg');
+      }
+    }
+  }
 }

@@ -20,6 +20,8 @@ import { FirestoreService } from './services/firestore';
 import { AuthService } from './services/auth';
 import { ProgressComponent } from './components/progress/progress.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -58,6 +60,8 @@ FullCalendarModule.registerPlugins([
     LoginComponent,
     RegisterComponent,
     MainNavComponent,
+    TopNavComponent,
+    BottomNavComponent,
     ProgressComponent,
     HomeComponent,
     EventsComponent,
