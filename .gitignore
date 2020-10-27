@@ -108,3 +108,7 @@ web/src/environments/
 .firebase
 
 .vscode
+
+generated/
+
+.sqless/
