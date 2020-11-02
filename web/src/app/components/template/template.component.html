@@ -1,0 +1,23 @@
+<h2>{{src}}</h2>
+<ng-container *ngFor="let f of fields">
+    <mat-form-field appearance="fill" *ngIf="f.type==='string'">
+        <mat-label>{{f.title}}</mat-label>
+        <input matInput [(ngModel)]="value[f.id]">
+    </mat-form-field>
+
+    <ng-container *ngIf="f.type==='array'">
+        <button mat-raised-button (click)="addRow(f.id)">Add {{f.title}}</button>
+        <mat-list>
+            <mat-list-item *ngFor="let ro of value[f.id]; let ri = index">
+                <mat-form-field appearance="fill" *ngFor="let rf of f.children">
+                    <mat-label>{{rf.title}}</mat-label>
+                    <input matInput [(ngModel)]="ro[rf.id]">
+                </mat-form-field>
+                <button mat-raised-button (click)="removeRow(f.id,ri)">Delete</button>
+            </mat-list-item>
+        </mat-list>
+    </ng-container>
+
+</ng-container>
+
+<button mat-raised-button (click)="download()">Download document</button>

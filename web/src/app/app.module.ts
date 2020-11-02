@@ -36,6 +36,7 @@ import { AttendanceSavedMessageComponent } from './components/attendance/attenda
 import { ReportComponent } from './components/report/report.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/article/article.component';
+import { TemplateComponent } from './components/template/template.component';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -47,6 +48,7 @@ import { CharityComponent } from './components/charity/charity.component';
 import { CharityEditorComponent } from './components/charity-editor/charity-editor.component';
 import { CharityListComponent } from './components/charity-list/charity-list.component';
 import { CharityContributionComponent } from './components/charity-contribution/charity-contribution.component';
+
 
 FullCalendarModule.registerPlugins([
   listPlugin,
@@ -80,7 +82,8 @@ FullCalendarModule.registerPlugins([
     CharityComponent,
     CharityEditorComponent,
     CharityListComponent,
-    CharityContributionComponent
+    CharityContributionComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

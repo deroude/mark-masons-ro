@@ -48,9 +48,12 @@ paths:
       responses:
         '200':
           description: Articles retrieved
-        '400':
-          description: Invalid ID supplied
-          content: {}
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
     post:
       tags:
         - article
@@ -66,6 +69,10 @@ paths:
       responses:
         '201':
           description: Article created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
         '400':
           description: Invalid object supplied
           content: {}
@@ -479,6 +486,153 @@ paths:
       security:
         - mark_auth:
             - 'write:user'
+
+  /template:
+    get:
+      tags:
+        - template
+      summary: Get all templates
+      operationId: getTemplates
+      parameters: 
+        - in: query
+          name: filter
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Templates retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Template'
+      security:
+        - mark_auth:
+            - 'read:template'
+    post:
+      tags:
+        - template
+      summary: Add a template
+      operationId: addTemplate
+      requestBody:
+        description: Template object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Template'
+        required: true
+      responses:
+        '201':
+          description: Template created
+          content:
+            application/json:
+              schema:                
+                $ref: '#/components/schemas/Template'
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'write:template'
+  /template/{id}:
+    put:
+      tags:
+        - template
+      summary: Modify a template
+      operationId: updateTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Template that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Template'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+        '404':
+          description: Template not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:template'
+    delete:
+      tags:
+        - template
+      summary: Delete a template
+      operationId: deleteTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Template deleted
+        '404':
+          description: Template not found
+      security:
+        - mark_auth:
+            - 'write:template'
+
+  /template/{id}/render:
+    post:
+      tags:
+        - template
+      summary: Render a template
+      operationId: renderTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Template parameters
+        content:
+          application/json:
+            schema:
+              type: object
+        required: false
+      responses:
+        '201':
+          description: Template rendered
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Template not found
+          content: {}
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'read:template'
 components:
   schemas:
     Article:
@@ -653,6 +807,8 @@ components:
             'write:user': modify users
             'read:event': view events
             'write:event': add or modify events, view attendance
+            'write:template': add or modify templates
+            'read:template': render templates
     api_key:
       type: apiKey
       name: api_key

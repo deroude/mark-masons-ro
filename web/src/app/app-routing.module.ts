@@ -10,6 +10,7 @@ import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { ReportComponent } from './components/report/report.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CharityListComponent } from './components/charity-list/charity-list.component';
+import { TemplateComponent } from './components/template/template.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'events', component: EventsComponent },
       { path: 'charity', component: CharityListComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'template', component: TemplateComponent },
       { path: 'report', component: ReportComponent, canActivate: [AuthService], }
     ]
   },

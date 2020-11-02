@@ -32,6 +32,12 @@ section#top {
     }
 }
 
+section#content{
+    margin-left:300px;
+    width:calc(100% - 400px);
+    margin-bottom:5rem;
+}
+
 main {
     div.jumbotron {
         height: 500px;
