@@ -1,0 +1,991 @@
+openapi: 3.0.1
+info:
+  title: Mark Portal API
+  description: >-
+    Mark Portal API BE.
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:9000/'
+  - url: 'https://sqless.net/mark-masons/'
+tags:
+  - name: article
+    description: Everything concerning articles, comments
+  - name: lodge
+    description: Lodge management
+  - name: event
+    description: Event and invitation management
+  - name: charity
+    description: Charity donations
+  - name: user
+    description: Operations about user
+  - name: template
+    description: Templateable library object
+paths:  
+  /article:
+    get:
+      tags:
+        - article
+      summary: Get all articles
+      operationId: getArticles
+      parameters: 
+        - in: query
+          name: category
+          schema:
+            type: string
+        - in: query
+          name: filter
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Articles retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
+    post:
+      tags:
+        - article
+      summary: Add an article
+      operationId: addArticle
+      requestBody:
+        description: Article object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+        required: true
+      responses:
+        '201':
+          description: Article created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'write:article'
+            
+  /article/{id}:
+    put:
+      tags:
+        - article
+      summary: Modify an article
+      operationId: updateArticle
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Article that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '200':
+          description: Article updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '404':
+          description: Article not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:article'
+    delete:
+      tags:
+        - article
+      summary: Delete an article
+      operationId: deleteArticle
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Article deleted
+        '404':
+          description: Article not found
+      security:
+        - mark_auth:
+            - 'write:article'
+  /event:
+    get:
+      tags: 
+        - event
+      summary: Get all events
+      operationId: getEvents
+      parameters:
+        - in: query
+          name: fromDate
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: toDate
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: future
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Retrieved events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+      security:
+        - mark_auth:
+            - 'read:event'
+    post:
+      tags:
+        - event
+      summary: Add an event
+      operationId: addEvent
+      requestBody:
+        description: Event object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+        required: true
+      responses:
+        '201':
+          description: Event created
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'write:event'
+
+  /event/{id}:
+    put:
+      tags:
+        - event
+      summary: Modify an event
+      operationId: updateEvent
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Event that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Event updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        '404':
+          description: Event not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:event'
+    delete:
+      tags:
+        - event
+      summary: Delete an event
+      operationId: deleteEvent
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Event deleted
+        '404':
+          description: Article not found
+      security:
+        - mark_auth:
+            - 'write:event'
+
+  
+  /event/{eventId}/attendance:
+    get:
+      tags: 
+        - event
+      summary: Get attendance report for event
+      operationId: getAttendance
+      parameters:
+        - in: path
+          name: eventId
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '200':
+          description: Retrieved attendance
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Attendance'
+        '404':
+          description: event id not found
+      security:
+        - mark_auth:
+            - 'read:event'
+    post:
+      tags:
+        - event
+      summary: Add attendance list for an event
+      operationId: addAttendance
+      parameters:
+        - in: path
+          name: eventId
+          schema:
+            type: integer
+            format: int64
+          required: true
+      requestBody:
+        description: Attendance array to be added
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Attendance'
+        required: true
+      responses:
+        '201':
+          description: Attendance created
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:event'
+    put:
+      tags:
+        - event
+      summary: Replace attendance list for an event
+      operationId: updateAttendance
+      parameters:
+        - in: path
+          name: eventId
+          schema:
+            type: integer
+            format: int64
+          required: true
+      requestBody:
+        description: Attendance array to be updated
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Attendance'
+        required: true
+      responses:
+        '200':
+          description: Attendance updated
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:event'
+  
+  /event/{eventId}/attendance/{attendanceId}:
+    put:
+        tags:
+          - event
+        summary: Update specific attendance item
+        operationId: updateAttendanceItem\
+        parameters:
+        - in: path
+          name: eventId
+          schema:
+            type: integer
+            format: int64
+          required: true
+        - in: path
+          name: attendanceId
+          schema:
+            type: integer
+            format: int64
+          required: true
+        requestBody:
+          description: Attendance item to be updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attendance'
+          required: true
+        responses:
+          '200':
+            description: Attendance updated
+          '404':
+            description: Event or attendance not found
+          '400':
+            description: Invalid object supplied
+        security:
+          - mark_auth:
+              - 'write:event'
+
+  /rsvp/{code}:
+    put:
+        tags:
+          - event
+        summary: Respond to Event invitation
+        operationId: rsvpEvent
+        parameters:
+          - in: path
+            name: code
+            schema:
+              type: string
+            required: true
+          - in: query
+            name: response
+            schema:
+              type: string
+        requestBody:
+          description: Attendance item to be updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attendance'
+          required: true
+        responses:
+          '200':
+            description: Attendance updated
+          '404':
+            description: Event or attendance not found
+          '400':
+            description: Invalid object supplied
+        security:
+          - mark_auth:
+              - 'write:event'
+
+  /user:
+    get:
+      tags:
+        - user
+      summary: Get all users
+      operationId: getUsers
+      parameters: 
+        - in: query
+          name: lodge
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: filter
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Retrieved users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+      security:
+        - mark_auth:
+            - 'write:user'
+
+    post:
+      tags:
+        - event
+      summary: Add user
+      operationId: addUser
+      requestBody:
+        description: User to add
+        content:
+          application/json:
+            schema:            
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:user'
+
+  /whoami:
+    get:
+      tags:
+        - user
+      summary: Get all users
+      operationId: whoAmI      
+      responses:
+        '200':
+          description: Retrieved user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      security:
+        - mark_auth:
+            - 'general'
+
+  /user/{id}:
+    put:
+      tags:
+        - user
+      summary: Modify a user
+      operationId: updateUser
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: User that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:user'
+    delete:
+      tags:
+        - user
+      summary: Delete a user
+      operationId: deleteUser
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User deleted
+        '404':
+          description: User not found
+      security:
+        - mark_auth:
+            - 'write:user'
+
+  /user/{userId}/history:
+    get:
+      tags:
+        - user
+      summary: Get all history for given user
+      operationId: getUserHistory
+      parameters: 
+        - in: path
+          required: true
+          name: userId
+          schema:
+            type: integer
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Retrieved user history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/History'
+      security:
+        - mark_auth:
+            - 'write:user'
+    post:
+      tags:
+        - event
+      summary: Add user history
+      operationId: addUserHistory
+      parameters: 
+      - in: path
+        required: true
+        name: userId
+        schema:
+          type: integer
+      requestBody:
+        description: User history itemto add
+        content:
+          application/json:
+            schema:            
+              $ref: '#/components/schemas/History'
+        required: true
+      responses:
+        '201':
+          description: User history created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/History'
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:user'
+
+  /user/{userId}/history/{id}:
+    put:
+      tags:
+        - user
+      summary: Modify a user history item
+      operationId: updateUserHistory
+      parameters: 
+        - in: path
+          required: true
+          name: userId
+          schema:
+            type: integer
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: User that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/History'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/History'
+        '404':
+          description: User history not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:user'
+    delete:
+      tags:
+        - user
+      summary: Delete a user history item
+      operationId: deleteUserHistory
+      parameters: 
+        - in: path
+          required: true
+          name: userId
+          schema:
+            type: integer
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User history deleted
+        '404':
+          description: User history not found
+      security:
+        - mark_auth:
+            - 'write:user'
+
+  /template:
+    get:
+      tags:
+        - template
+      summary: Get all templates
+      operationId: getTemplates
+      parameters: 
+        - in: query
+          name: filter
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Templates retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Template'
+      security:
+        - mark_auth:
+            - 'read:template'
+    post:
+      tags:
+        - template
+      summary: Add a template
+      operationId: addTemplate
+      requestBody:
+        description: Template object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Template'
+        required: true
+      responses:
+        '201':
+          description: Template created
+          content:
+            application/json:
+              schema:                
+                $ref: '#/components/schemas/Template'
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'write:template'
+  /template/{id}:
+    put:
+      tags:
+        - template
+      summary: Modify a template
+      operationId: updateTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Template that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Template'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+        '404':
+          description: Template not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:template'
+    delete:
+      tags:
+        - template
+      summary: Delete a template
+      operationId: deleteTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Template deleted
+        '404':
+          description: Template not found
+      security:
+        - mark_auth:
+            - 'write:template'
+
+  /template/{id}/render:
+    post:
+      tags:
+        - template
+      summary: Render a template
+      operationId: renderTemplate
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Template parameters
+        content:
+          application/json:
+            schema:
+              type: object
+        required: false
+      responses:
+        '201':
+          description: Template rendered
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Template not found
+          content: {}
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'read:template'
+components:
+  schemas:
+    Article:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        author:
+          $ref: "#/components/schemas/User"
+        category:
+          type: string
+        title:
+          type: string
+        slug:
+          type: string
+        text:
+          type: string
+        tags:
+          type: string
+        language:
+          type: string
+        publishDate:
+          type: string
+          format: date-time
+   
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        email:
+          type: string
+        userStatus:
+          type: string
+        rank:
+          type: string
+        orderPrivilege:
+          type: string
+
+    Lodge:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+        number:
+          type: string
+        orient:
+          type: string
+        location:
+          type: string
+
+    History:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        user:
+          $ref: "#/components/schemas/User"
+        lodge:
+          $ref: "#/components/schemas/Lodge"
+        eventType:
+          type: string
+        status:
+          type: string
+        rank:
+          type: string
+        privilege:
+          type: string
+        role:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+
+    Event:
+      type: object
+      properties:
+        id: 
+          type: integer
+          format: int64
+        title:
+          type: string
+        text:
+          type: string
+        location:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        eventType:
+          type: string
+        status:
+          type: string
+        lodge: 
+          $ref: "#/components/schemas/Lodge"
+
+    Attendance:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+        user:
+          $ref: "#/components/schemas/User"
+        status:
+          type: string
+        statusConfirmation:
+          type: string
+        comment:
+          type: string     
+
+    TemplateBundle:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+
+    Template:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        bundle:
+          $ref: "#/components/schemas/TemplateBundle"
+        name:
+          type: string
+        description:
+          type: string
+        content:
+          type: string
+
+    TemplateItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        template:
+          $ref: "#/components/schemas/Template"
+        label:
+          type: string
+        description:
+          type: string
+        key:
+          type: string           
+    
+  securitySchemes:
+    mark_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8000/auth
+          scopes:
+            'general': basic access scope
+            'write:article': modify articles in your account
+            'write:user': modify users
+            'read:event': view events
+            'write:event': add or modify events, view attendance
+            'write:template': add or modify templates
+            'read:template': render templates
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

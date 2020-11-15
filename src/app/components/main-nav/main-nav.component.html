@@ -1,0 +1,29 @@
+<nav id="main-nav">
+  <nav id="links">
+    <a [routerLink]="['/blog']" mat-stroked-button i18n="@@home" routerLinkActive="active">Home</a>
+    <a [routerLink]="['/history']" mat-stroked-button i18n="@@history" routerLinkActive="active">History</a>
+    <a [routerLink]="['/guidelines']" *ngIf="auth.hasAccess('guidelines')" mat-stroked-button i18n="@@guidelines"
+      routerLinkActive="active">Guidelines</a>
+    <a [routerLink]="['/people']" *ngIf="auth.hasAccess('people')" mat-stroked-button i18n=" @@people"
+      routerLinkActive="active">People</a>
+    <a [routerLink]="['/events']" *ngIf="auth.hasAccess('events')" mat-stroked-button i18n=" @@events"
+      routerLinkActive="active">Events</a>
+    <a [routerLink]="['/charity']" *ngIf="auth.hasAccess('charity')" mat-stroked-button i18n=" @@charity"
+      routerLinkActive="active">Charity</a>
+  </nav>
+  <nav id="utility">
+    <!-- <ng-template #login> -->
+    <button *ngIf="!auth.loggedIn" mat-stroked-button (click)="auth.login()">Login</button>
+    <strong *ngIf="auth.loggedIn">{{auth.userName}}</strong>
+    <button  *ngIf="auth.loggedIn" mat-stroked-button (click)="auth.logout()">Logout</button>
+
+    <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=token&client_id=1054193493527-lqdqib6a7hqfa33h9coko00kunvloaaa.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A4200&scope=openid%20profile%20email">
+      Login Raw
+    </a>
+
+    <!-- </ng-template>     -->
+    <a class="flag" href="/en"></a>
+    <a class="flag" href="/ro"></a>
+  </nav>
+
+</nav>
