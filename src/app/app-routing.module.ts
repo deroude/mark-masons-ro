@@ -6,9 +6,11 @@ import { UsersComponent } from './components/users/users.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { TemplateComponent } from './components/template/template.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: BlogComponent },
+  { path: '', component: HomeComponent },
+  { path: 'blog', component: BlogComponent },
   { path: 'events', component: EventsComponent },
   { path: 'template', component: TemplateComponent },
   { path: 'users', component: UsersComponent, canActivate: [AuthService], },

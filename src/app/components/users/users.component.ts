@@ -5,6 +5,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { map } from 'rxjs/operators';
 import { generateUser } from '../../domain/mock';
+import { UserService } from '@api/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UserEditorComponent } from '../user-editor/user-editor.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -16,24 +19,48 @@ export class UsersComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<User>;
-  displayedColumns = ['email', 'name', 'status', 'rank'];
+  displayedColumns = ['lastName', 'firstName','email',  'status', 'rank', 'orderPrivilege'];
 
-  constructor() { }
+  constructor(private userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    const ulist: User[] = [];
-    for (let i = 0; i < 50; i++) {
-      ulist.push(generateUser());
-    }
-    this.dataSource = new MatTableDataSource(ulist);
-    this.dataSource.sort = this.sort;
-    // this.db.getUsers().subscribe(ulist => {
-    //   this.dataSource = new MatTableDataSource(ulist);
-    //   this.dataSource.sort = this.sort;
-    // });
+    this.refresh();
+  }
+
+  refresh(): void {
+    this.userService.getUsers().subscribe(ulist => {
+      this.dataSource = new MatTableDataSource(ulist);
+      this.dataSource.sort = this.sort;
+    });
   }
 
   applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  onUserSelect(user: User): void {
+    const dialogRef = this.dialog.open(UserEditorComponent, {
+      width: '800px',
+      data: user
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.userService.updateUser(user.id, result).subscribe(() => this.refresh());
+      }
+    });
+  }
+
+  create(): void {
+    const dialogRef = this.dialog.open(UserEditorComponent, {
+      width: '800px',
+      data: { rank: 'BROTHER', orderPrivilege: 'USER', userStatus: 'INACTIVE' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.userService.addUser(result).subscribe(() => this.refresh());
+      }
+    });
   }
 }

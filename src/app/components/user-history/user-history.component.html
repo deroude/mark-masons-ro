@@ -1,0 +1,29 @@
+<div class="mark-users">
+
+    <button mat-button (click)="create()">Add history line</button>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="startDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@users.history.startDate">Start Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.startDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="endDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@users.history.endDate"> End Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.endDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="eventType">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@users.history.event"> Event </th>
+                <td mat-cell *matCellDef="let row"> {{row.eventType}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="update(row)">
+            </tr>
+        </table>
+
+    </div>
+</div>

@@ -33,11 +33,11 @@ export class AuthService implements CanActivate {
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | UrlTree | Promise<boolean | UrlTree> | Observable<boolean | UrlTree> {
-        throw new Error('Method not implemented.');
+        return this.loggedIn;
     }
 
     hasAccess(resource: string): boolean {
-        return false;
+        return true;
     }
 
     login(): void { this.oauthService.initLoginFlow(); }
@@ -58,7 +58,7 @@ export class AuthService implements CanActivate {
         return claims['name'];
     }
 
-    get Roles(): string[] {
+    get roles(): string[] {
         const claims = this.oauthService.getIdentityClaims();
         if (!claims) { return []; }
         // tslint:disable-next-line:no-string-literal

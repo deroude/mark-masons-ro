@@ -32,9 +32,11 @@ section#top {
     }
 }
 
-section#content{
-    margin-left:300px;
-    width:calc(100% - 400px);
+section#content {
+    @media (min-width: 1200px) {
+        margin-left:300px;
+        width:calc(100% - 600px);
+    }
     margin-bottom:5rem;
 }
 
@@ -45,5 +47,6 @@ main {
         margin-right: auto;
         background: center / contain no-repeat url('/assets/home.pic.svg');
     }
-    background: no-repeat url('/assets/home.bg.svg');
+    width:100%;
+    background: no-repeat center / cover url('/assets/home.bg.svg');
 }

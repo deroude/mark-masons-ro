@@ -12,23 +12,32 @@ nav#main-nav {
   }
 
   nav#links {
-    min-width:400px;
-    a::after{
+    min-width: 400px;
+
+    a::after {
       content: "»"
     }
   }
 
   nav#utility {
-    min-width:350px;
-    a.flag{
-      display:inline-block;
-      width:24px;
-      height:16px;
-      margin-bottom:-3px;
-      &[href='/en']{
+    min-width: 350px;
+
+    button {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+
+    a.flag {
+      display: inline-block;
+      width: 24px;
+      height: 16px;
+      margin-bottom: -3px;
+
+      &[href='/en'] {
         background: center / contain no-repeat url('/assets/en-UK.svg');
       }
-      &[href='/ro']{
+
+      &[href='/ro'] {
         background: center / contain no-repeat url('/assets/ro-RO.svg');
       }
     }

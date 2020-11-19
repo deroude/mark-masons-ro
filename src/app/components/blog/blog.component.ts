@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { Article } from '@model/article';
 import { generateArticle } from '../../domain/mock';
 import { AuthService } from '../../services/auth';
@@ -13,16 +13,16 @@ import { Observable } from 'rxjs';
 export class BlogComponent implements OnInit {
 
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, @Inject(LOCALE_ID) public locale: string) {
   }
 
   articles: Article[] = [];
 
+
   ngOnInit(): void {
-    this.articles = [];
-    for (let i = 0; i < 10; i++) {
-      this.articles.push(generateArticle());
-    }
+
   }
+
+
 
 }

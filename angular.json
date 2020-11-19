@@ -10,6 +10,12 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": "en-GB",
+        "locales": {
+          "ro": "src/locale/messages.ro.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "mark",
@@ -48,6 +54,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "localize": true,
               "budgets": [
                 {
                   "type": "initial",

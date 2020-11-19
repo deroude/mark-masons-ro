@@ -46,5 +46,5 @@ testem.log
 Thumbs.db
 
 generated/
-.sqless
 .firebase
+.sqless

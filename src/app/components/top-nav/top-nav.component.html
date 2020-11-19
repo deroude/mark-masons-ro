@@ -3,7 +3,7 @@
   <a [routerLink]="['/history']" mat-stroked-button i18n="@@history" routerLinkActive="active">History</a>
   <a [routerLink]="['/guidelines']" *ngIf="auth.hasAccess('guidelines')" mat-stroked-button i18n="@@guidelines"
     routerLinkActive="active">Guidelines</a>
-  <a [routerLink]="['/people']" *ngIf="auth.hasAccess('people')" mat-stroked-button i18n=" @@people"
+  <a [routerLink]="['/users']" *ngIf="auth.hasAccess('people')" mat-stroked-button i18n=" @@people"
     routerLinkActive="active">People</a>
   <a [routerLink]="['/events']" *ngIf="auth.hasAccess('events')" mat-stroked-button i18n=" @@events"
     routerLinkActive="active">Events</a>

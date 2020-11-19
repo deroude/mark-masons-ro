@@ -36,14 +36,23 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { ArticleEditorComponent } from './components/article-editor/article-editor.component';
 import { EventEditorComponent } from './components/event-editor/event-editor.component';
+import { UserEditorComponent } from './components/user-editor/user-editor.component';
+
+import { ApiModule } from './generated/api.module';
+import { BASE_PATH } from './generated/variables';
+import { UserHistoryComponent } from './components/user-history/user-history.component';
+import { UserHistoryEditorComponent } from './components/user-history-editor/user-history-editor.component';
+import { HomeComponent } from './components/home/home.component';
+import { MarkdownDirective } from './directives/markdown.directive';
 
 
 const config: AuthConfig = {
-  issuer: 'http://localhost:8180/auth/realms/mark_auth',
-  clientId: 'mark_auth-client',
+  clientId: '1054193493527-lqdqib6a7hqfa33h9coko00kunvloaaa.apps.googleusercontent.com',
+  issuer: 'https://accounts.google.com',
+  // issuer: 'http://localhost:8180/auth/realms/mark_auth',
+  // clientId: 'mark_auth-client',
   redirectUri: window.location.origin,
-  scope: 'openid profile email roles',
-  responseType: 'code',
+  scope: 'openid profile email',
   showDebugInformation: true,
   strictDiscoveryDocumentValidation: false,
 
@@ -82,7 +91,12 @@ FullCalendarModule.registerPlugins([
     ArticleComponent,
     ArticleEditorComponent,
     EventEditorComponent,
-    TemplateComponent
+    TemplateComponent,
+    UserEditorComponent,
+    UserHistoryComponent,
+    UserHistoryEditorComponent,
+    HomeComponent,
+    MarkdownDirective
   ],
   imports: [
     BrowserModule,
@@ -94,12 +108,14 @@ FullCalendarModule.registerPlugins([
     AppMaterialModule,
     QuillModule.forRoot(),
     FullCalendarModule,
-    OAuthModule.forRoot(authModuleConfig)
+    OAuthModule.forRoot(authModuleConfig),
+    ApiModule
   ],
   providers: [AuthService, ProgressService,
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
     { provide: OAuthStorage, useValue: localStorage },
-    { provide: AuthConfig, useValue: config }],
+    { provide: AuthConfig, useValue: config },
+    { provide: BASE_PATH, useValue: 'http://localhost:9000' }],
   entryComponents: [
     AttendanceComponent,
     AttendanceAftermathComponent,
@@ -107,6 +123,8 @@ FullCalendarModule.registerPlugins([
     RsvpMessageComponent,
     ArticleEditorComponent,
     EventEditorComponent,
+    UserEditorComponent,
+    UserHistoryEditorComponent
   ],
   bootstrap: [AppComponent]
 })

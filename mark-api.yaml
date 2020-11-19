@@ -439,7 +439,7 @@ paths:
 
     post:
       tags:
-        - event
+        - user
       summary: Add user
       operationId: addUser
       requestBody:
@@ -466,7 +466,7 @@ paths:
     get:
       tags:
         - user
-      summary: Get all users
+      summary: Get currently logged in user
       operationId: whoAmI      
       responses:
         '200':
@@ -567,7 +567,7 @@ paths:
             - 'write:user'
     post:
       tags:
-        - event
+        - user
       summary: Add user history
       operationId: addUserHistory
       parameters: 
@@ -837,6 +837,16 @@ components:
           type: integer
           format: int64
         email:
+          type: string
+        lastName:
+          type: string
+        firstName:
+          type: string
+        address:
+          type: string
+        phoneNumber:
+          type: string
+        profession:
           type: string
         userStatus:
           type: string

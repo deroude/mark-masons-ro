@@ -1,798 +1,664 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="ro">
+  <file source-language="en-GB" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="email" datatype="html">
-        <source>Email</source>
-        <target>Adresă de email</target>
+      <trans-unit id="home" datatype="html">
+        <source>Home</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="history" datatype="html">
+        <source>History</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="guidelines" datatype="html">
+        <source>Guidelines</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="people" datatype="html">
+        <source>People</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description"> </note>
+      </trans-unit>
+      <trans-unit id="events" datatype="html">
+        <source>Events</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
+        <note priority="1" from="description"> </note>
+      </trans-unit>
+      <trans-unit id="charity" datatype="html">
+        <source>Charity</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
+          <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/top-nav/top-nav.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <note priority="1" from="description"> </note>
       </trans-unit>
-      <trans-unit id="password" datatype="html">
-        <source>Password</source>
-        <target>Parolă</target>
+      <trans-unit id="contact" datatype="html">
+        <source>Contact</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="login_error" datatype="html">
-        <source>Login error</source>
-        <target>Eroare de autentificare</target>
+      <trans-unit id="faq" datatype="html">
+        <source>FAQ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="reset_confirmation" datatype="html">
-        <source>Password reset</source>
-        <target state="translated">Parolă resetată</target>
+      <trans-unit id="media" datatype="html">
+        <source>Media</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="help" datatype="html">
+        <source>Help</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="login" datatype="html">
         <source>Login</source>
-        <target state="translated">Autentificare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">67</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="resetpassword" datatype="html">
-        <source>Reset Password</source>
-        <target state="translated">Resetare parolă</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="register" datatype="html">
-        <source>Register</source>
-        <target state="translated">Înregistrare</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/login/login.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">66</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.email.required" datatype="html">
-        <source>
-          Email is required.
-        </source>
-        <target state="translated">Adresa de email trebuie completată</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.email.invalid" datatype="html">
-        <source>
-          Email is invalid
-        </source>
-        <target state="translated">Adresa de email este invalidă</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="lodge.number" datatype="html">
-        <source>Lodge id</source>
-        <target>Identificatorul L∴</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.lodge.required" datatype="html">
-        <source>
-          Lodge is required.
-        </source>
-        <target>Identificatorul L∴ trebuie completat</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="name" datatype="html">
-        <source>Name</source>
-        <target>Nume</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.name.required" datatype="html">
-        <source>
-          Your full name is required.
-        </source>
-        <target state="translated">Numele trebuie completat</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.name.length" datatype="html">
-        <source>
-          Your name must have minimum 6 characters
-        </source>
-        <target state="translated">Numele trebuie să aibă minim 6 caractere</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.password.required" datatype="html">
-        <source>
-          Password is required.
-        </source>
-        <target state="translated">Parola trebuie completată</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">36</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.password.length" datatype="html">
-        <source>
-          Password must have minimum 6 characters
-        </source>
-        <target state="translated">Parola trebuie să aibă minim 6 caractere</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="password.repeat" datatype="html">
-        <source>Repeat password</source>
-        <target>Repetare parolă</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.password.match" datatype="html">
-        <source>
-          Passwords do not match
-        </source>
-        <target state="translated">Parolele nu se potrivesc</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="rank" datatype="html">
-        <source>Rank</source>
-        <target state="translated">Grad</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">51</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="apprentice" datatype="html">
-        <source>Apprentice</source>
-        <target state="translated">Uc∴</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">53</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companion" datatype="html">
-        <source>Companion</source>
-        <target state="translated">C∴</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">54</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="master" datatype="html">
-        <source>Master</source>
-        <target state="translated">M∴</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">55</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.rank.required" datatype="html">
-        <source>
-          Rank is required
-        </source>
-        <target state="translated">Gradul trebuie completat</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">57</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="error.registration" datatype="html">
-        <source>Registration error</source>
-        <target state="translated">Eroare la înregistrare</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/register/register.component.html</context>
-          <context context-type="linenumber">62</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="lodge.orient" datatype="html">
-        <source>Orient</source>
-        <target>Orientul</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
+          <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="events" datatype="html">
-        <source>Events</source>
-        <target>Evenimente</target>
+      <trans-unit id="user.editor" datatype="html">
+        <source>Edit User</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="report" datatype="html">
-        <source>Attendance report</source>
-        <target>Raport de prezență</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="users" datatype="html">
-        <source>Users</source>
-        <target>Utilizatori</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="hello" datatype="html">
-        <source>Hello</source>
-        <target>Bun venit</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="logout" datatype="html">
-        <source>Logout</source>
-        <target>Ieșire</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/main-nav/main-nav.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="inactive.message" datatype="html">
-        <source>Your account is inactive. Please contact your L:. Admin to activate it.</source>
-        <target>Contul Dvs. este inactiv. Vă rugăm contactați Administratorul L∴ pentru a-l activa.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/home/home.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.editor" datatype="html">
-        <source>Edit Event</source>
-        <target>Editare Eveniment</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="title" datatype="html">
-        <source>Title</source>
-        <target>Titlu</target>
+      <trans-unit id="lastName" datatype="html">
+        <source>Last name</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="error.field.required" datatype="html">
         <source>
-            This field is required.
-        </source>
-        <target>Acest câmp trebuie completat</target>
+                This field is required.
+            </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="location" datatype="html">
-        <source>Location</source>
-        <target>Locație</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="date" datatype="html">
-        <source>Date</source>
-        <target>Dată</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="type" datatype="html">
-        <source>Type</source>
-        <target>Tip</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.regular" datatype="html">
-        <source>Regular Workshop</source>
-        <target>Atelier obișnuit</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.convent" datatype="html">
-        <source>Convent Assembly</source>
-        <target>Convent</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="events.single" datatype="html">
-        <source>Single Event</source>
-        <target>Eveniment izolat</target>
+      <trans-unit id="firstName" datatype="html">
+        <source>First name</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="phoneNumber" datatype="html">
+        <source>Phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="profession" datatype="html">
+        <source>Profession</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.status" datatype="html">
+        <source>Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.status.active" datatype="html">
+        <source>Active</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.status.inactive" datatype="html">
+        <source>Inactive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.rank" datatype="html">
+        <source>Rank</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.rank.brother" datatype="html">
+        <source>Brother</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.rank.rbrother" datatype="html">
+        <source>R. Brother</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.rank.mrbrother" datatype="html">
+        <source>M. R. Brother</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.orderPrivilege" datatype="html">
+        <source>Order Privilege</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.orderPrivilege.user" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.orderPrivilege.officer" datatype="html">
+        <source>Officer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cancel" datatype="html">
         <source>Cancel</source>
-        <target>Anulare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">70</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">61</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">62</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.past.editor.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Save</source>
-        <target>Salvare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.editor.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">71</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">63</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.past.editor.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="attendance" datatype="html">
-        <source>Attendance</source>
-        <target>Prezență</target>
+      <trans-unit id="filter" datatype="html">
+        <source>Filter</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="users.lastName" datatype="html">
+        <source> Last name </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="users.firstName" datatype="html">
+        <source> First name </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="users.email" datatype="html">
         <source> Email </source>
-        <target>Adresă de email</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="users.name" datatype="html">
-        <source> Name </source>
-        <target>Nume</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="users.rank" datatype="html">
         <source> Rank </source>
-        <target>Grad</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="users.orderPrivilege" datatype="html">
+        <source> Order Privilege </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="users.status" datatype="html">
         <source> Status </source>
-        <target>Stare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="active" datatype="html">
+        <source>Active</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="inactive" datatype="html">
+        <source>Inactive</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/users.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="attendance" datatype="html">
+        <source>Attendance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.name" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="apprentice" datatype="html">
+        <source>Apprentice</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companion" datatype="html">
+        <source>Companion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="master" datatype="html">
+        <source>Master</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.not.invited" datatype="html">
         <source>Not invited</source>
-        <target>Nu a fost invitat</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.pending" datatype="html">
         <source>Invitation pending</source>
-        <target>Invitație în curs de procesare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.invited" datatype="html">
         <source>Invited</source>
-        <target>Invitație trimisă</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.accepted" datatype="html">
         <source>Accepted</source>
-        <target>Invitație acceptată</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.rejected" datatype="html">
         <source>Rejected</source>
-        <target>Invitație refuzată</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">50</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.send" datatype="html">
         <source>Send
     invitation</source>
-        <target>Trimitere invitații</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.saved.message" datatype="html">
         <source>Attendance information saved</source>
-        <target>Prezența a fost salvată</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.saved.message.component.ts</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.saved.message.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.present" datatype="html">
         <source> Present </source>
-        <target>Prezent</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.contribution" datatype="html">
         <source> Contribution </source>
-        <target>Contribuție</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/attendance/attendance.aftermath.component.html</context>
+          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">51</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.editor.notes" datatype="html">
-        <source>Edit Event Notes</source>
-        <target>Minuta Evenimentului</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.past.editor.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.upcoming" datatype="html">
-        <source>
-                Upcoming events
-            </source>
-        <target>Evenimente viitoare</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.date" datatype="html">
-        <source>Date</source>
-        <target>Dată</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">53</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.location" datatype="html">
-        <source>Location</source>
-        <target>Locație</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">55</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="info" datatype="html">
-        <source>Info</source>
-        <target>Informații</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">59</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="edit" datatype="html">
-        <source>Edit</source>
-        <target>Editare</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">63</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="delete" datatype="html">
-        <source>Delete</source>
-        <target>Ștergere</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.add" datatype="html">
-        <source>Add event</source>
-        <target>Adăugare eveniment</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="events.past" datatype="html">
-        <source>
-                Past events
-            </source>
-        <target>Evenimente din trecut</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/events/events.component.html</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="filter" datatype="html">
-        <source>Filter</source>
-        <target>Filtrare</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="active" datatype="html">
-        <source>Active</source>
-        <target>Activ</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="inactive" datatype="html">
-        <source>Inactive</source>
-        <target>Inactiv</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/components/users/users.component.html</context>
-          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="rsvp.thanks" datatype="html">
         <source>Your RSVP was saved, thank you!</source>
-        <target>Răspunsul Dvs. a fost salvat, vă mulțumim!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/rsvp/rsvp.message.component.ts</context>
+          <context context-type="sourcefile">src/app/components/rsvp/rsvp.message.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="rsvp.comment" datatype="html">
         <source>Leave a comment for your RSVP</source>
-        <target>Lăsați un comentariu pentru răspunsul Dvs.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/rsvp/rsvp.component.html</context>
+          <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="yes" datatype="html">
         <source>Yes</source>
-        <target>Da</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/rsvp/rsvp.component.html</context>
+          <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="no" datatype="html">
         <source>No</source>
-        <target>Nu</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/rsvp/rsvp.component.html</context>
+          <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="date.start" datatype="html">
-        <source>Start date</source>
-        <target>Dată început</target>
+      <trans-unit id="article.editor" datatype="html">
+        <source>Edit Article</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="title" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="date.end" datatype="html">
-        <source>End date</source>
-        <target>Dată sfârșit</target>
+      <trans-unit id="date" datatype="html">
+        <source>Date</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="report.show" datatype="html">
-        <source>Display result</source>
-        <target>Afișare rezultat</target>
+      <trans-unit id="audience" datatype="html">
+        <source>Audience</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/report/report.component.html</context>
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="audience.public" datatype="html">
+        <source>Public</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="audience.lodge" datatype="html">
+        <source>Lodge only</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="audience.order" datatype="html">
+        <source>Order wide</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.history.startDate" datatype="html">
+        <source>Start Date </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.history.endDate" datatype="html">
+        <source> End Date </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.history.event" datatype="html">
+        <source> Event </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home-text" datatype="html">
+        <source>
+Ordinul Maeștrilor Masoni ai Mărcii este un Ordin al Francmasoneriei de origine britanică, guvernat de Marea Lojă a Maeștrilor Masoni ai Mărcii din Anglia, Țara Galilor, Districtelor și Lojilor din Străinătate.
+Ordinul Maeștrilor Masoni ai Mărcii transpune în simboluri evoluția unui Frate Francmason pe tot parcursul vieții sale de auto-perfecționare. Ajutat de moralitate și de o forță nediminuată de trecerea timpului, Ordinul îl pune în comuniune cu alți Frați, înțelegând că oricare dintre ei poate reprezenta Cheia de Boltă, dacă munca și perseverența lor, modestia și altruismul, dragostea și purtarea de grijă lor pentru Idealurile Masonice Universale, sunt valorile pe care le îmbrățișează și le transmit, într-o ritualizare plină de bucurie, optimism și energie pozitivă.
+Gradul de Maestru Mason al Mărcii este accesibil tuturor Maeștrilor Masoni. Marca la care se face referire în titlul își ia numele de la marca sau simbolul cu care pietrarul și-a însemnat lucrarea și poate fi încă întâlnită în multe catedrale și clădiri importante din lume.
+Mărci s-au găsit pe pietrele folosite în Egiptul Antic și în alte părți, inclusiv castele, biserici și în catedrale europene construite începând cu 1100. Vitraliile, sculpturile și manuscrisele ne oferă o idee despre metodele zidarilor medievali. Aceștia au cioplit pietre pentru ziduri obișnuite dar și cu rol ornamental. A devenit să își pună semne pe pietre în cariere. Aceste mărci au identificat lucrările unui anumit zidar pentru plata salariului și au indicat că piatra era acceptabilă pentru utilizare.
+Ceremonia avansării la gradul de Maestru Mason al Mărcii se concentrează pe practica tradițională de a alege și utiliza un semn distinctiv pentru a identifica munca fiecărui meșter, astfel încât acesta să poată primi dreptul la salariu. Temele gradului fac trimitere la regularitate, diligență și disciplină.
+Gradul de Maestru Mason al Mărcii este unul de speranță și încurajare. Acest grad demonstrează meritele persistenței în fața adversității și convingerea că adevărul va prevala.
+Prima mențiune despre faptul că un frate a fost numit Maestru Mason al Mărcii a fost la o Lojă din Newcastle în ianuarie 1756, deși sunt cunoscute referințele anterioare la un Frate care „și-a primit marca”. Dar din aceste înregistrări nu este clar dacă se desfășura o ceremonie specială în acest sens.
+Prima întâlnire a Marii Loji a Maeștrilor Masoni ai Mărcii a avut loc luni, 23 iunie 1856.
+Un Maestru Mason al Mărcii poartă un șorț asemănător cu cel al unui Maestru Mason, cu excepția faptului că șorțul gradului de Maestru Mason al Mărcii este înconjurat de o panglică albastru deschis cu margini roșii. De asemenea, el poartă o bijuterie pe piept sub forma unei chei de boltă suspendată de o panglică de albastru deschis și purpuriu.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
     </body>
