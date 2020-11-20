@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run generate:api && npm run build:default && npm run build:ro",
+    "build": "npm run generate:api && ng build --prod --localize",
     "build:default":"ng build --configuration=production",
     "build:ro":"ng build --configuration=production,ro",
     "generate:api": "openapi-generator generate -g typescript-angular -i mark-api.yaml -o ./src/app/generated",
