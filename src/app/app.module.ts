@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { QuillModule } from 'ngx-quill';
@@ -44,6 +44,7 @@ import { UserHistoryComponent } from './components/user-history/user-history.com
 import { UserHistoryEditorComponent } from './components/user-history-editor/user-history-editor.component';
 import { HomeComponent } from './components/home/home.component';
 import { MarkdownDirective } from './directives/markdown.directive';
+import { DefaultOAuthInterceptor } from './services/auth-interceptor';
 
 
 const config: AuthConfig = {
@@ -113,9 +114,11 @@ FullCalendarModule.registerPlugins([
   ],
   providers: [AuthService, ProgressService,
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
-    { provide: OAuthStorage, useValue: localStorage },
+    { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
-    { provide: BASE_PATH, useValue: 'http://localhost:9000' }],
+    { provide: BASE_PATH, useValue: 'http://localhost:9000' },
+    { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
+  ],
   entryComponents: [
     AttendanceComponent,
     AttendanceAftermathComponent,

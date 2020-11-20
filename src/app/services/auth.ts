@@ -37,7 +37,7 @@ export class AuthService implements CanActivate {
     }
 
     hasAccess(resource: string): boolean {
-        return true;
+        return this.loggedIn;
     }
 
     login(): void { this.oauthService.initLoginFlow(); }
