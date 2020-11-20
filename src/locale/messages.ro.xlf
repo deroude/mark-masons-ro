@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-GB" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="home" datatype="html">
         <source>Home</source>
+        <target>Acasă</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">3</context>
@@ -15,6 +16,7 @@
       </trans-unit>
       <trans-unit id="history" datatype="html">
         <source>History</source>
+        <target>Istoric</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">4</context>
@@ -26,6 +28,7 @@
       </trans-unit>
       <trans-unit id="guidelines" datatype="html">
         <source>Guidelines</source>
+        <target>Principii</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">6</context>
@@ -37,6 +40,7 @@
       </trans-unit>
       <trans-unit id="people" datatype="html">
         <source>People</source>
+        <target>Personalități</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">8</context>
@@ -49,6 +53,7 @@
       </trans-unit>
       <trans-unit id="events" datatype="html">
         <source>Events</source>
+        <target>Evenimente</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">10</context>
@@ -61,6 +66,7 @@
       </trans-unit>
       <trans-unit id="charity" datatype="html">
         <source>Charity</source>
+        <target>Caritate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">12</context>
@@ -73,6 +79,7 @@
       </trans-unit>
       <trans-unit id="contact" datatype="html">
         <source>Contact</source>
+        <target>Contact</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">3</context>
@@ -80,6 +87,7 @@
       </trans-unit>
       <trans-unit id="faq" datatype="html">
         <source>FAQ</source>
+        <target>Întrebări frecvente</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">4</context>
@@ -87,6 +95,7 @@
       </trans-unit>
       <trans-unit id="media" datatype="html">
         <source>Media</source>
+        <target>Media</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">5</context>
@@ -94,6 +103,7 @@
       </trans-unit>
       <trans-unit id="help" datatype="html">
         <source>Help</source>
+        <target>Ajutor</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">6</context>
@@ -101,6 +111,7 @@
       </trans-unit>
       <trans-unit id="login" datatype="html">
         <source>Login</source>
+        <target>Autentificare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/bottom-nav/bottom-nav.component.html</context>
           <context context-type="linenumber">9</context>
@@ -108,6 +119,7 @@
       </trans-unit>
       <trans-unit id="user.editor" datatype="html">
         <source>Edit User</source>
+        <target>Editare Utilizator</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">1</context>
@@ -115,6 +127,7 @@
       </trans-unit>
       <trans-unit id="lastName" datatype="html">
         <source>Last name</source>
+        <target>Nume de familie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">6</context>
@@ -122,7 +135,7 @@
       </trans-unit>
       <trans-unit id="error.field.required" datatype="html">
         <source>
-                This field is required.
+                Acest câmp nu poate lipsi
             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
@@ -163,6 +176,7 @@
       </trans-unit>
       <trans-unit id="firstName" datatype="html">
         <source>First name</source>
+        <target>Prenume</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">13</context>
@@ -170,6 +184,7 @@
       </trans-unit>
       <trans-unit id="phoneNumber" datatype="html">
         <source>Phone number</source>
+        <target>Telefon</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">20</context>
@@ -177,6 +192,7 @@
       </trans-unit>
       <trans-unit id="address" datatype="html">
         <source>Address</source>
+        <target>Adresă</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">23</context>
@@ -184,6 +200,7 @@
       </trans-unit>
       <trans-unit id="profession" datatype="html">
         <source>Profession</source>
+        <target>Profesie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">27</context>
@@ -191,6 +208,7 @@
       </trans-unit>
       <trans-unit id="email" datatype="html">
         <source>Email</source>
+        <target>Adresă de email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">30</context>
@@ -198,6 +216,7 @@
       </trans-unit>
       <trans-unit id="user.status" datatype="html">
         <source>Status</source>
+        <target>Stare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">36</context>
@@ -205,6 +224,7 @@
       </trans-unit>
       <trans-unit id="user.status.active" datatype="html">
         <source>Active</source>
+        <target>Activ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">38</context>
@@ -212,6 +232,7 @@
       </trans-unit>
       <trans-unit id="user.status.inactive" datatype="html">
         <source>Inactive</source>
+        <target>Inactiv</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">39</context>
@@ -219,6 +240,7 @@
       </trans-unit>
       <trans-unit id="user.rank" datatype="html">
         <source>Rank</source>
+        <target>Rang</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">46</context>
@@ -226,6 +248,7 @@
       </trans-unit>
       <trans-unit id="user.rank.brother" datatype="html">
         <source>Brother</source>
+        <target>Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">48</context>
@@ -237,6 +260,7 @@
       </trans-unit>
       <trans-unit id="user.rank.rbrother" datatype="html">
         <source>R. Brother</source>
+        <target>R. Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">49</context>
@@ -248,6 +272,7 @@
       </trans-unit>
       <trans-unit id="user.rank.mrbrother" datatype="html">
         <source>M. R. Brother</source>
+        <target>P. R. Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">50</context>
@@ -259,6 +284,7 @@
       </trans-unit>
       <trans-unit id="user.orderPrivilege" datatype="html">
         <source>Order Privilege</source>
+        <target>Rol în cadrul Ordinului</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">57</context>
@@ -266,6 +292,7 @@
       </trans-unit>
       <trans-unit id="user.orderPrivilege.user" datatype="html">
         <source>User</source>
+        <target>Utilizator</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">59</context>
@@ -277,6 +304,7 @@
       </trans-unit>
       <trans-unit id="user.orderPrivilege.officer" datatype="html">
         <source>Officer</source>
+        <target>Ofițer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">60</context>
@@ -288,6 +316,7 @@
       </trans-unit>
       <trans-unit id="cancel" datatype="html">
         <source>Cancel</source>
+        <target>Anulare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">70</context>
@@ -307,6 +336,7 @@
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Save</source>
+        <target>Salvare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">71</context>
@@ -322,6 +352,7 @@
       </trans-unit>
       <trans-unit id="filter" datatype="html">
         <source>Filter</source>
+        <target>Fitru</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">3</context>
@@ -329,6 +360,7 @@
       </trans-unit>
       <trans-unit id="users.lastName" datatype="html">
         <source> Last name </source>
+        <target>Nume de familie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">12</context>
@@ -336,6 +368,7 @@
       </trans-unit>
       <trans-unit id="users.firstName" datatype="html">
         <source> First name </source>
+        <target>Prenume</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">17</context>
@@ -343,6 +376,7 @@
       </trans-unit>
       <trans-unit id="users.email" datatype="html">
         <source> Email </source>
+        <target> Email </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">22</context>
@@ -358,6 +392,7 @@
       </trans-unit>
       <trans-unit id="users.rank" datatype="html">
         <source> Rank </source>
+        <target> Rang </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">27</context>
@@ -373,6 +408,7 @@
       </trans-unit>
       <trans-unit id="users.orderPrivilege" datatype="html">
         <source> Order Privilege </source>
+        <target> Rol în cadrul Ordinului </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">38</context>
@@ -380,6 +416,7 @@
       </trans-unit>
       <trans-unit id="users.status" datatype="html">
         <source> Status </source>
+        <target> Stare </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">48</context>
@@ -395,6 +432,7 @@
       </trans-unit>
       <trans-unit id="active" datatype="html">
         <source>Active</source>
+        <target>Activ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">51</context>
@@ -402,6 +440,7 @@
       </trans-unit>
       <trans-unit id="inactive" datatype="html">
         <source>Inactive</source>
+        <target>Inactiv</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">52</context>
@@ -409,6 +448,7 @@
       </trans-unit>
       <trans-unit id="attendance" datatype="html">
         <source>Attendance</source>
+        <target>Prezență</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">1</context>
@@ -420,6 +460,7 @@
       </trans-unit>
       <trans-unit id="users.name" datatype="html">
         <source> Name </source>
+        <target> Nume </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">23</context>
@@ -429,41 +470,10 @@
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="apprentice" datatype="html">
-        <source>Apprentice</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companion" datatype="html">
-        <source>Companion</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="master" datatype="html">
-        <source>Master</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
+     
       <trans-unit id="attendance.not.invited" datatype="html">
         <source>Not invited</source>
+        <target>Nu a fost invitat</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">43</context>
@@ -475,6 +485,7 @@
       </trans-unit>
       <trans-unit id="attendance.pending" datatype="html">
         <source>Invitation pending</source>
+        <target>Invitația a fost trimisă</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">45</context>
@@ -486,6 +497,7 @@
       </trans-unit>
       <trans-unit id="attendance.invited" datatype="html">
         <source>Invited</source>
+        <target>Invitat</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">46</context>
@@ -497,6 +509,7 @@
       </trans-unit>
       <trans-unit id="attendance.accepted" datatype="html">
         <source>Accepted</source>
+        <target>Invitație acceptată</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">49</context>
@@ -508,6 +521,7 @@
       </trans-unit>
       <trans-unit id="attendance.rejected" datatype="html">
         <source>Rejected</source>
+        <target>Invitație refuzată</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">50</context>
@@ -518,8 +532,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="attendance.send" datatype="html">
-        <source>Send
-    invitation</source>
+        <source>Send invitation</source>
+        <target>Trimitere invitație</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">62</context>
@@ -527,6 +541,7 @@
       </trans-unit>
       <trans-unit id="attendance.saved.message" datatype="html">
         <source>Attendance information saved</source>
+        <target>Prezența salvată</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.saved.message.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -534,6 +549,7 @@
       </trans-unit>
       <trans-unit id="attendance.present" datatype="html">
         <source> Present </source>
+        <target> Prezent </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">44</context>
@@ -541,6 +557,7 @@
       </trans-unit>
       <trans-unit id="attendance.contribution" datatype="html">
         <source> Contribution </source>
+        <target> Contribuție </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
           <context context-type="linenumber">51</context>
@@ -548,6 +565,7 @@
       </trans-unit>
       <trans-unit id="rsvp.thanks" datatype="html">
         <source>Your RSVP was saved, thank you!</source>
+        <target>Răspunsul Dvs. a fost salvat, mulțumim!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/rsvp/rsvp.message.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -555,6 +573,7 @@
       </trans-unit>
       <trans-unit id="rsvp.comment" datatype="html">
         <source>Leave a comment for your RSVP</source>
+        <target>Lăsați un comentariu împreună cu confirmarea Dvs.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">13</context>
@@ -562,6 +581,7 @@
       </trans-unit>
       <trans-unit id="yes" datatype="html">
         <source>Yes</source>
+        <target>Da</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">18</context>
@@ -569,6 +589,7 @@
       </trans-unit>
       <trans-unit id="no" datatype="html">
         <source>No</source>
+        <target>Nu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">19</context>
@@ -576,6 +597,7 @@
       </trans-unit>
       <trans-unit id="article.editor" datatype="html">
         <source>Edit Article</source>
+        <target>Editare articol</target>        
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">1</context>
@@ -583,6 +605,7 @@
       </trans-unit>
       <trans-unit id="title" datatype="html">
         <source>Title</source>
+        <target>Titlu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">4</context>
@@ -590,6 +613,7 @@
       </trans-unit>
       <trans-unit id="date" datatype="html">
         <source>Date</source>
+        <target>Dată</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">10</context>
@@ -597,6 +621,7 @@
       </trans-unit>
       <trans-unit id="audience" datatype="html">
         <source>Audience</source>
+        <target>Audiență</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">19</context>
@@ -604,6 +629,7 @@
       </trans-unit>
       <trans-unit id="audience.public" datatype="html">
         <source>Public</source>
+        <target>Public</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">21</context>
@@ -611,6 +637,7 @@
       </trans-unit>
       <trans-unit id="audience.lodge" datatype="html">
         <source>Lodge only</source>
+        <target>Doar loja</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">22</context>
@@ -618,6 +645,7 @@
       </trans-unit>
       <trans-unit id="audience.order" datatype="html">
         <source>Order wide</source>
+        <target>Tot Ordinul</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">23</context>
@@ -625,6 +653,7 @@
       </trans-unit>
       <trans-unit id="users.history.startDate" datatype="html">
         <source>Start Date </source>
+        <target>Dată început</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">9</context>
@@ -632,6 +661,7 @@
       </trans-unit>
       <trans-unit id="users.history.endDate" datatype="html">
         <source> End Date </source>
+        <target>Dată sfârșit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">14</context>
@@ -639,23 +669,66 @@
       </trans-unit>
       <trans-unit id="users.history.event" datatype="html">
         <source> Event </source>
+        <target>Eveniment</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home-text" datatype="html">
-        <source>
+      <source>
+          The Order of Mark Master Masons is an appendant Order of Freemasonry with Britannic origin, governed by The Grand
+    Lodge of Mark Master Masons of England and Wales and its Districts and Lodges Overseas.
+//
+    The Order of Mark Master Masons transposes into symbols the evolution of a Freemason Brother throughout his Life of
+    Self-improvement. Aided by morality and a force undiminished by the passage of time, the Order places him in
+    communion with other Brothers, understanding that any of them can represent the Vault Key, if their work and
+    perseverance, their modesty and altruism, their love and care for the Universal Masonic Ideals, are the values that
+    they embrace and transmit, in a ritualization full of joy, optimism and positive energy.
+//
+    The Degree of Mark Master Mason is open to all Master Masons. The Mark referred to in its title takes its name from
+    the mark or symbol with which the stonemason identified his work and can still be found in many cathedrals and
+    important buildings around the world.
+//
+    Marks have been found on stones used in Ancient Egypt and elsewhere, including castles, churches and in the
+    cathedrals of Europe built from 1100 onwards. Stained glass windows, carvings and manuscripts give us some idea of
+    the methods of the mediaeval stone masons. Masons carved stones for ordinary building blocks, and also for
+    decoration. It became customary for them to place marks upon stones in the quarries. These Marks identified the work
+    of a particular mason for the payment of wages, and signified that the stone was acceptable for use. The ceremony of
+    advancement to the degree of Mark Master Mason centers on the traditional practice of choosing and using a
+    distinguishing mark to identify each craftsman's work, so that he may be entitled to receive his wages. The themes
+    of the degree include regularity, diligence and discipline. The Mark degree is one of hope and encouragement. The
+    Mark degree demonstrates the merits of persistence in the face of adversity, and the conviction that truth will
+    prevail.
+//
+    The first mention of a brother being made a Mark Mason was at a Lodge in Newcastle in January 1756, although earlier
+    references to a brother having "received his mark' are known. But it is not clear from these records whether a
+    degree ceremony was being worked.
+//
+    The first meeting of the Grand Lodge of Mark Master Masons was held on Monday, 23 June 1856.
+    A Mark Master Mason wears an apron similar to that of a Master Mason, except that the Mark apron is bordered with
+    light blue with crimson edges. He also wears a breast jewel in the form of a keystone suspended from a ribbon of
+    light blue and crimson.
+      </source>
+        <target>
 Ordinul Maeștrilor Masoni ai Mărcii este un Ordin al Francmasoneriei de origine britanică, guvernat de Marea Lojă a Maeștrilor Masoni ai Mărcii din Anglia, Țara Galilor, Districtelor și Lojilor din Străinătate.
+//
 Ordinul Maeștrilor Masoni ai Mărcii transpune în simboluri evoluția unui Frate Francmason pe tot parcursul vieții sale de auto-perfecționare. Ajutat de moralitate și de o forță nediminuată de trecerea timpului, Ordinul îl pune în comuniune cu alți Frați, înțelegând că oricare dintre ei poate reprezenta Cheia de Boltă, dacă munca și perseverența lor, modestia și altruismul, dragostea și purtarea de grijă lor pentru Idealurile Masonice Universale, sunt valorile pe care le îmbrățișează și le transmit, într-o ritualizare plină de bucurie, optimism și energie pozitivă.
+//
 Gradul de Maestru Mason al Mărcii este accesibil tuturor Maeștrilor Masoni. Marca la care se face referire în titlul își ia numele de la marca sau simbolul cu care pietrarul și-a însemnat lucrarea și poate fi încă întâlnită în multe catedrale și clădiri importante din lume.
+//
 Mărci s-au găsit pe pietrele folosite în Egiptul Antic și în alte părți, inclusiv castele, biserici și în catedrale europene construite începând cu 1100. Vitraliile, sculpturile și manuscrisele ne oferă o idee despre metodele zidarilor medievali. Aceștia au cioplit pietre pentru ziduri obișnuite dar și cu rol ornamental. A devenit să își pună semne pe pietre în cariere. Aceste mărci au identificat lucrările unui anumit zidar pentru plata salariului și au indicat că piatra era acceptabilă pentru utilizare.
+//
 Ceremonia avansării la gradul de Maestru Mason al Mărcii se concentrează pe practica tradițională de a alege și utiliza un semn distinctiv pentru a identifica munca fiecărui meșter, astfel încât acesta să poată primi dreptul la salariu. Temele gradului fac trimitere la regularitate, diligență și disciplină.
+//
 Gradul de Maestru Mason al Mărcii este unul de speranță și încurajare. Acest grad demonstrează meritele persistenței în fața adversității și convingerea că adevărul va prevala.
+//
 Prima mențiune despre faptul că un frate a fost numit Maestru Mason al Mărcii a fost la o Lojă din Newcastle în ianuarie 1756, deși sunt cunoscute referințele anterioare la un Frate care „și-a primit marca”. Dar din aceste înregistrări nu este clar dacă se desfășura o ceremonie specială în acest sens.
+//
 Prima întâlnire a Marii Loji a Maeștrilor Masoni ai Mărcii a avut loc luni, 23 iunie 1856.
+//
 Un Maestru Mason al Mărcii poartă un șorț asemănător cu cel al unui Maestru Mason, cu excepția faptului că șorțul gradului de Maestru Mason al Mărcii este înconjurat de o panglică albastru deschis cu margini roșii. De asemenea, el poartă o bijuterie pe piept sub forma unei chei de boltă suspendată de o panglică de albastru deschis și purpuriu.
-</source>
+</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
           <context context-type="linenumber">1</context>

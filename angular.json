@@ -11,9 +11,11 @@
         }
       },
       "i18n": {
-        "sourceLocale": "en-GB",
+        "sourceLocale": "en",
         "locales": {
-          "ro": "src/locale/messages.ro.xlf"
+          "ro": {
+            "translation": "src/locale/messages.ro.xlf"
+          }
         }
       },
       "root": "",
@@ -54,7 +56,8 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "localize": true,
+              "aot": true,
+              "deleteOutputPath": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -67,6 +70,12 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "ro": {
+              "localize": [
+                "ro"
+              ],
+              "baseHref": "/ro"
             }
           }
         },
