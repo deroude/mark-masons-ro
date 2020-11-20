@@ -11,15 +11,14 @@
         }
       },
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": {
+          "code":"en",
+          "baseHref": "/en"
+        },
         "locales": {
           "ro": {
             "translation": "src/locale/messages.ro.xlf",
             "baseHref": "/ro"
-          },
-          "en": {
-            "translation": "src/locale/messages.xlf",
-            "baseHref": "/en"
           }
         }
       },
