@@ -39,14 +39,3 @@ section#content {
     }
     margin-bottom:5rem;
 }
-
-main {
-    div.jumbotron {
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        background: center / contain no-repeat url('/assets/home.pic.svg');
-    }
-    width:100%;
-    background: no-repeat center / cover url('/assets/home.bg.svg');
-}

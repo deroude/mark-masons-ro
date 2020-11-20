@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<User>;
-  displayedColumns = ['lastName', 'firstName','email',  'status', 'rank', 'orderPrivilege'];
+  displayedColumns = ['lastName', 'firstName', 'email', 'userStatus', 'rank', 'orderPrivilege'];
 
   constructor(private userService: UserService, public dialog: MatDialog) { }
 

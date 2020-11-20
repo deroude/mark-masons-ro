@@ -33,11 +33,11 @@ nav#main-nav {
       height: 16px;
       margin-bottom: -3px;
 
-      &[href='/en'] {
+      &.lang-en {
         background: center / contain no-repeat url('/assets/en-UK.svg');
       }
 
-      &[href='/ro'] {
+      &.lang-ro {
         background: center / contain no-repeat url('/assets/ro-RO.svg');
       }
     }
