@@ -65,3 +65,8 @@
     </mat-form-field>
 
 </form>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" i18n="@@cancel">Cancel</button>
+    <button mat-raised-button (click)="save()" color="primary" cdkFocusInitial i18n="@@save">Save</button>
+</div>
