@@ -116,7 +116,7 @@ FullCalendarModule.registerPlugins([
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
     { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
-    { provide: BASE_PATH, useValue: 'http://localhost:9000' },
+    { provide: BASE_PATH, useValue: 'https://sqless.net' },
     { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
   ],
   entryComponents: [
