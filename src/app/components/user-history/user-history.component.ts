@@ -43,7 +43,7 @@ export class UserHistoryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.updateUserHistory(this.userId, result.id, result).subscribe(() => this.refresh());
+        this.userService.updateUserHistory(this.userId, item.id, result).subscribe(() => this.refresh());
       }
     });
   }
