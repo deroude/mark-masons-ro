@@ -117,36 +117,36 @@
         <source>Last name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="error.field.required" datatype="html">
         <source>
-                This field is required.
-            </source>
+                    This field is required.
+                </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">70</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
@@ -160,75 +160,98 @@
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="firstName" datatype="html">
         <source>First name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dob" datatype="html">
+        <source>Date of birth</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="phoneNumber" datatype="html">
         <source>Phone number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="address" datatype="html">
         <source>Address</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="profession" datatype="html">
         <source>Profession</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="email" datatype="html">
         <source>Email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status" datatype="html">
         <source>Status</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status.active" datatype="html">
         <source>Active</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status.inactive" datatype="html">
         <source>Inactive</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.rank" datatype="html">
         <source>Rank</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.rank.brother" datatype="html">
         <source>Brother</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -239,7 +262,7 @@
         <source>R. Brother</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -250,7 +273,7 @@
         <source>M. R. Brother</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -261,14 +284,14 @@
         <source>Order Privilege</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.orderPrivilege.user" datatype="html">
         <source>User</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">67</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -279,18 +302,32 @@
         <source>Officer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">68</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="user-details" datatype="html">
+        <source>User Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user-history" datatype="html">
+        <source>User History</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cancel" datatype="html">
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">81</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
@@ -309,7 +346,7 @@
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">82</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
@@ -623,6 +660,105 @@
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="user.history.eventType" datatype="html">
+        <source>Event type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.eventType.lodge" datatype="html">
+        <source>Lodge event</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.eventType.order" datatype="html">
+        <source>Order event</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event" datatype="html">
+        <source>Event</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event.founded" datatype="html">
+        <source>Founded</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event.joined" datatype="html">
+        <source>Joined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event.left" datatype="html">
+        <source>Left</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event.role" datatype="html">
+        <source>Role assigned</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.event.title" datatype="html">
+        <source>Title assigned</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.history.detail" datatype="html">
+        <source>Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lodge" datatype="html">
+        <source>Lodge</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="startDate" datatype="html">
+        <source>Start Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="endDate" datatype="html">
+        <source>End Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="users.history.startDate" datatype="html">
         <source>Start Date </source>
         <context-group purpose="location">
@@ -630,8 +766,8 @@
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="users.history.endDate" datatype="html">
-        <source> End Date </source>
+      <trans-unit id="users.history.eventType" datatype="html">
+        <source> Event Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">14</context>
@@ -642,6 +778,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.history.lodge" datatype="html">
+        <source> Lodge </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users.history.comment" datatype="html">
+        <source> Detail </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home-text" datatype="html">
@@ -665,13 +815,13 @@
     decoration. It became customary for them to place marks upon stones in the quarries. These Marks identified the work
     of a particular mason for the payment of wages, and signified that the stone was acceptable for use. The ceremony of
     advancement to the degree of Mark Master Mason centers on the traditional practice of choosing and using a
-    distinguishing mark to identify each craftsman's work, so that he may be entitled to receive his wages. The themes
+    distinguishing mark to identify each craftsman&apos;s work, so that he may be entitled to receive his wages. The themes
     of the degree include regularity, diligence and discipline. The Mark degree is one of hope and encouragement. The
     Mark degree demonstrates the merits of persistence in the face of adversity, and the conviction that truth will
     prevail.
 //
     The first mention of a brother being made a Mark Mason was at a Lodge in Newcastle in January 1756, although earlier
-    references to a brother having "received his mark' are known. But it is not clear from these records whether a
+    references to a brother having &quot;received his mark&apos; are known. But it is not clear from these records whether a
     degree ceremony was being worked.
 //
     The first meeting of the Grand Lodge of Mark Master Masons was held on Monday, 23 June 1856.
@@ -681,7 +831,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
     </body>
