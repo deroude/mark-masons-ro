@@ -52,16 +52,16 @@
 
     <mat-form-field>
         <mat-label i18n="@@startDate">Start Date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="startDate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="stpicker" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="stpicker"></mat-datepicker-toggle>
+        <mat-datepicker #stpicker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label i18n="@@endDate">End Date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="endDate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="etpicker" formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="etpicker"></mat-datepicker-toggle>
+        <mat-datepicker #etpicker></mat-datepicker>
     </mat-form-field>
 
 </form>
