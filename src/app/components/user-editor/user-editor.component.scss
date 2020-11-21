@@ -1,16 +1,5 @@
-section {
-    display: flex;
-    flex-direction: row;
-
     form {
         display: flex;
         flex-direction: column;
         min-width: 20rem;
     }
-
-    mark-user-history {
-        margin-left: 2rem;
-        min-width: 25rem;
-    }
-
-}

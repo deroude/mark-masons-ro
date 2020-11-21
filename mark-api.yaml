@@ -994,13 +994,9 @@ components:
           $ref: "#/components/schemas/Lodge"
         eventType:
           type: string
-        status:
+        event:
           type: string
-        rank:
-          type: string
-        privilege:
-          type: string
-        role:
+        comment:
           type: string
         startDate:
           type: string
