@@ -3,10 +3,10 @@ main {
         height: 500px;
         margin-left: auto;
         margin-right: auto;
-        background: center / contain no-repeat url('/assets/home.pic.svg');
+        background: center / contain no-repeat url('../../../assets/home.pic.svg');
     }
     width:100%;
-    background: no-repeat center / cover url('/assets/home.bg.svg');
+    background: no-repeat center / cover url('../../../assets/home.bg.svg');
 }
 
 article{

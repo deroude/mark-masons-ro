@@ -17,6 +17,7 @@ export class UserEditorComponent implements OnInit {
       email: [this.user.email, [Validators.required]],
       firstName: [this.user.firstName, [Validators.required]],
       lastName: [this.user.lastName, [Validators.required]],
+      birthdate: [this.user.birthdate],
       address: [this.user.address],
       phoneNumber: [this.user.phoneNumber],
       profession: [this.user.profession],

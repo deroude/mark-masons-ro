@@ -25,7 +25,7 @@ export class UserHistoryEditorComponent implements OnInit {
       endDate: [this.history.endDate],
       eventType: [this.history.eventType, [Validators.required]],
       event: [this.history.event, [Validators.required]],
-      commrny: [this.history.comment],
+      comment: [this.history.comment],
       lodge: [this.history.lodge, [Validators.required]],
     });
   }

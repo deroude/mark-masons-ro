@@ -35,7 +35,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "outputHashing": "bundles",
-            "rebaseRootRelativeCssUrls": true,
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -63,7 +62,6 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "aot": true,
-              "deleteOutputPath": false,
               "budgets": [
                 {
                   "type": "initial",

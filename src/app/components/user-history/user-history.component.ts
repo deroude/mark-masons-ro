@@ -17,7 +17,7 @@ export class UserHistoryComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<History>;
-  displayedColumns = ['startDate', 'eventType', 'lodge'];
+  displayedColumns = ['startDate', 'eventType', 'event', 'lodge', 'comment'];
 
   @Input()
   userId: number;
