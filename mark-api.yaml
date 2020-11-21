@@ -132,6 +132,116 @@ paths:
       security:
         - mark_auth:
             - 'write:article'
+  /lodge:
+    get:
+      tags:
+        - lodge
+      summary: Get all lodges
+      operationId: getLodges
+      parameters: 
+        - in: query
+          name: filter
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: itemsPerPage
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Lodges retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Lodge'
+      security:
+        - mark_auth:
+            - 'read:lodge'
+    post:
+      tags:
+        - lodge
+      summary: Add a lodge
+      operationId: addLodge
+      requestBody:
+        description: Lodge object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Lodge'
+        required: true
+      responses:
+        '201':
+          description: Lodge created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lodge'
+        '400':
+          description: Invalid object supplied
+          content: {}
+      security:
+        - mark_auth:
+            - 'write:lodge'
+            
+  /lodge/{id}:
+    put:
+      tags:
+        - lodge
+      summary: Modify a lodge
+      operationId: updateLodge
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      requestBody:
+        description: Lodge that is updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Lodge'
+      responses:
+        '200':
+          description: Lodge updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lodge'
+        '404':
+          description: Lodge not found
+        '400':
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - 'write:lodge'
+    delete:
+      tags:
+        - lodge
+      summary: Delete a lodge
+      operationId: deleteLodge
+      parameters: 
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lodge deleted
+        '404':
+          description: Lodge not found
+      security:
+        - mark_auth:
+            - 'write:lodge'
   /event:
     get:
       tags: 
@@ -995,6 +1105,8 @@ components:
             'write:event': add or modify events, view attendance
             'write:template': add or modify templates
             'read:template': render templates
+            'read:lodge': view lodges
+            'write:ldoge': modify lodge
     api_key:
       type: apiKey
       name: api_key

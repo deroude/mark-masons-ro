@@ -12,13 +12,13 @@
       },
       "i18n": {
         "sourceLocale": {
-          "code":"en",
-          "baseHref": "/en"
+          "code": "en",
+          "baseHref": "/en/"
         },
         "locales": {
           "ro": {
             "translation": "src/locale/messages.ro.xlf",
-            "baseHref": "/ro"
+            "baseHref": "/ro/"
           }
         }
       },
