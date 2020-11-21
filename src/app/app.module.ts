@@ -52,7 +52,7 @@ const config: AuthConfig = {
   issuer: 'https://accounts.google.com',
   // issuer: 'http://localhost:8180/auth/realms/mark_auth',
   // clientId: 'mark_auth-client',
-  redirectUri: `${window.location.origin}`,
+  redirectUri: `${window.location.origin}/en/`,
   scope: 'openid profile email',
   showDebugInformation: true,
   strictDiscoveryDocumentValidation: false,
