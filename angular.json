@@ -34,6 +34,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "outputHashing": "bundles",
+            "rebaseRootRelativeCssUrls": true,
             "aot": true,
             "assets": [
               "src/favicon.ico",

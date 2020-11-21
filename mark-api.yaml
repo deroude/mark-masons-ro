@@ -5,8 +5,8 @@ info:
     Mark Portal API BE.
   version: 1.0.0
 servers:
-  - url: 'http://localhost:9000/'
-  - url: 'https://sqless.net/mark-masons/'
+  - url: "http://localhost:9000/"
+  - url: "https://sqless.net/mark-masons/"
 tags:
   - name: article
     description: Everything concerning articles, comments
@@ -20,14 +20,14 @@ tags:
     description: Operations about user
   - name: template
     description: Templateable library object
-paths:  
+paths:
   /article:
     get:
       tags:
         - article
       summary: Get all articles
       operationId: getArticles
-      parameters: 
+      parameters:
         - in: query
           name: category
           schema:
@@ -47,14 +47,14 @@ paths:
             type: integer
             default: 20
       responses:
-        '200':
+        "200":
           description: Articles retrieved
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Article'
+                  $ref: "#/components/schemas/Article"
     post:
       tags:
         - article
@@ -65,29 +65,29 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Article'
+              $ref: "#/components/schemas/Article"
         required: true
       responses:
-        '201':
+        "201":
           description: Article created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Article'
-        '400':
+                $ref: "#/components/schemas/Article"
+        "400":
           description: Invalid object supplied
           content: {}
       security:
         - mark_auth:
-            - 'write:article'
-            
+            - "write:article"
+
   /article/{id}:
     put:
       tags:
         - article
       summary: Modify an article
       operationId: updateArticle
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -98,47 +98,47 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Article'
+              $ref: "#/components/schemas/Article"
       responses:
-        '200':
+        "200":
           description: Article updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Article'
-        '404':
+                $ref: "#/components/schemas/Article"
+        "404":
           description: Article not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:article'
+            - "write:article"
     delete:
       tags:
         - article
       summary: Delete an article
       operationId: deleteArticle
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Article deleted
-        '404':
+        "404":
           description: Article not found
       security:
         - mark_auth:
-            - 'write:article'
+            - "write:article"
   /lodge:
     get:
       tags:
         - lodge
       summary: Get all lodges
       operationId: getLodges
-      parameters: 
+      parameters:
         - in: query
           name: filter
           schema:
@@ -154,17 +154,17 @@ paths:
             type: integer
             default: 20
       responses:
-        '200':
+        "200":
           description: Lodges retrieved
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Lodge'
+                  $ref: "#/components/schemas/Lodge"
       security:
         - mark_auth:
-            - 'read:lodge'
+            - "read:lodge"
     post:
       tags:
         - lodge
@@ -175,29 +175,29 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Lodge'
+              $ref: "#/components/schemas/Lodge"
         required: true
       responses:
-        '201':
+        "201":
           description: Lodge created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Lodge'
-        '400':
+                $ref: "#/components/schemas/Lodge"
+        "400":
           description: Invalid object supplied
           content: {}
       security:
         - mark_auth:
-            - 'write:lodge'
-            
+            - "write:lodge"
+
   /lodge/{id}:
     put:
       tags:
         - lodge
       summary: Modify a lodge
       operationId: updateLodge
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -208,43 +208,43 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Lodge'
+              $ref: "#/components/schemas/Lodge"
       responses:
-        '200':
+        "200":
           description: Lodge updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Lodge'
-        '404':
+                $ref: "#/components/schemas/Lodge"
+        "404":
           description: Lodge not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:lodge'
+            - "write:lodge"
     delete:
       tags:
         - lodge
       summary: Delete a lodge
       operationId: deleteLodge
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Lodge deleted
-        '404':
+        "404":
           description: Lodge not found
       security:
         - mark_auth:
-            - 'write:lodge'
+            - "write:lodge"
   /event:
     get:
-      tags: 
+      tags:
         - event
       summary: Get all events
       operationId: getEvents
@@ -265,17 +265,17 @@ paths:
             type: boolean
             default: true
       responses:
-        '200':
+        "200":
           description: Retrieved events
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Event'
+                  $ref: "#/components/schemas/Event"
       security:
         - mark_auth:
-            - 'read:event'
+            - "read:event"
     post:
       tags:
         - event
@@ -286,17 +286,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Event'
+              $ref: "#/components/schemas/Event"
         required: true
       responses:
-        '201':
+        "201":
           description: Event created
-        '400':
+        "400":
           description: Invalid object supplied
           content: {}
       security:
         - mark_auth:
-            - 'write:event'
+            - "write:event"
 
   /event/{id}:
     put:
@@ -304,7 +304,7 @@ paths:
         - event
       summary: Modify an event
       operationId: updateEvent
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -315,45 +315,44 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Event'
+              $ref: "#/components/schemas/Event"
       responses:
-        '200':
+        "200":
           description: Event updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Event'
-        '404':
+                $ref: "#/components/schemas/Event"
+        "404":
           description: Event not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:event'
+            - "write:event"
     delete:
       tags:
         - event
       summary: Delete an event
       operationId: deleteEvent
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Event deleted
-        '404':
+        "404":
           description: Article not found
       security:
         - mark_auth:
-            - 'write:event'
+            - "write:event"
 
-  
   /event/{eventId}/attendance:
     get:
-      tags: 
+      tags:
         - event
       summary: Get attendance report for event
       operationId: getAttendance
@@ -365,19 +364,19 @@ paths:
             format: int64
           required: true
       responses:
-        '200':
+        "200":
           description: Retrieved attendance
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Attendance'
-        '404':
+                  $ref: "#/components/schemas/Attendance"
+        "404":
           description: event id not found
       security:
         - mark_auth:
-            - 'read:event'
+            - "read:event"
     post:
       tags:
         - event
@@ -397,16 +396,16 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Attendance'
+                $ref: "#/components/schemas/Attendance"
         required: true
       responses:
-        '201':
+        "201":
           description: Attendance created
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:event'
+            - "write:event"
     put:
       tags:
         - event
@@ -426,24 +425,24 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/Attendance'
+                $ref: "#/components/schemas/Attendance"
         required: true
       responses:
-        '200':
+        "200":
           description: Attendance updated
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:event'
-  
+            - "write:event"
+
   /event/{eventId}/attendance/{attendanceId}:
     put:
-        tags:
-          - event
-        summary: Update specific attendance item
-        operationId: updateAttendanceItem\
-        parameters:
+      tags:
+        - event
+      summary: Update specific attendance item
+      operationId: updateAttendanceItem\
+      parameters:
         - in: path
           name: eventId
           schema:
@@ -456,57 +455,57 @@ paths:
             type: integer
             format: int64
           required: true
-        requestBody:
-          description: Attendance item to be updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Attendance'
-          required: true
-        responses:
-          '200':
-            description: Attendance updated
-          '404':
-            description: Event or attendance not found
-          '400':
-            description: Invalid object supplied
-        security:
-          - mark_auth:
-              - 'write:event'
+      requestBody:
+        description: Attendance item to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Attendance"
+        required: true
+      responses:
+        "200":
+          description: Attendance updated
+        "404":
+          description: Event or attendance not found
+        "400":
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - "write:event"
 
   /rsvp/{code}:
     put:
-        tags:
-          - event
-        summary: Respond to Event invitation
-        operationId: rsvpEvent
-        parameters:
-          - in: path
-            name: code
-            schema:
-              type: string
-            required: true
-          - in: query
-            name: response
-            schema:
-              type: string
-        requestBody:
-          description: Attendance item to be updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Attendance'
+      tags:
+        - event
+      summary: Respond to Event invitation
+      operationId: rsvpEvent
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
           required: true
-        responses:
-          '200':
-            description: Attendance updated
-          '404':
-            description: Event or attendance not found
-          '400':
-            description: Invalid object supplied
-        security:
-          - mark_auth:
-              - 'write:event'
+        - in: query
+          name: response
+          schema:
+            type: string
+      requestBody:
+        description: Attendance item to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Attendance"
+        required: true
+      responses:
+        "200":
+          description: Attendance updated
+        "404":
+          description: Event or attendance not found
+        "400":
+          description: Invalid object supplied
+      security:
+        - mark_auth:
+            - "write:event"
 
   /user:
     get:
@@ -514,7 +513,7 @@ paths:
         - user
       summary: Get all users
       operationId: getUsers
-      parameters: 
+      parameters:
         - in: query
           name: lodge
           schema:
@@ -535,17 +534,17 @@ paths:
             type: integer
             default: 20
       responses:
-        '200':
+        "200":
           description: Retrieved users
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
 
     post:
       tags:
@@ -556,38 +555,38 @@ paths:
         description: User to add
         content:
           application/json:
-            schema:            
-              $ref: '#/components/schemas/User'
+            schema:
+              $ref: "#/components/schemas/User"
         required: true
       responses:
-        '201':
+        "201":
           description: User created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
+                $ref: "#/components/schemas/User"
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
 
   /whoami:
     get:
       tags:
         - user
       summary: Get currently logged in user
-      operationId: whoAmI      
+      operationId: whoAmI
       responses:
-        '200':
+        "200":
           description: Retrieved user
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
       security:
         - mark_auth:
-            - 'general'
+            - "general"
 
   /user/{id}:
     put:
@@ -595,7 +594,7 @@ paths:
         - user
       summary: Modify a user
       operationId: updateUser
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -606,40 +605,40 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
       responses:
-        '200':
+        "200":
           description: User updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '404':
+                $ref: "#/components/schemas/User"
+        "404":
           description: User not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
     delete:
       tags:
         - user
       summary: Delete a user
       operationId: deleteUser
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: User deleted
-        '404':
+        "404":
           description: User not found
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
 
   /user/{userId}/history:
     get:
@@ -647,7 +646,7 @@ paths:
         - user
       summary: Get all history for given user
       operationId: getUserHistory
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: userId
@@ -664,47 +663,47 @@ paths:
             type: integer
             default: 20
       responses:
-        '200':
+        "200":
           description: Retrieved user history
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/History'
+                  $ref: "#/components/schemas/History"
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
     post:
       tags:
         - user
       summary: Add user history
       operationId: addUserHistory
-      parameters: 
-      - in: path
-        required: true
-        name: userId
-        schema:
-          type: integer
+      parameters:
+        - in: path
+          required: true
+          name: userId
+          schema:
+            type: integer
       requestBody:
         description: User history itemto add
         content:
           application/json:
-            schema:            
-              $ref: '#/components/schemas/History'
+            schema:
+              $ref: "#/components/schemas/History"
         required: true
       responses:
-        '201':
+        "201":
           description: User history created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/History'
-        '400':
+                $ref: "#/components/schemas/History"
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
 
   /user/{userId}/history/{id}:
     put:
@@ -712,7 +711,7 @@ paths:
         - user
       summary: Modify a user history item
       operationId: updateUserHistory
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: userId
@@ -728,27 +727,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/History'
+              $ref: "#/components/schemas/History"
       responses:
-        '200':
+        "200":
           description: User updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/History'
-        '404':
+                $ref: "#/components/schemas/History"
+        "404":
           description: User history not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
     delete:
       tags:
         - user
       summary: Delete a user history item
       operationId: deleteUserHistory
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: userId
@@ -760,13 +759,13 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: User history deleted
-        '404':
+        "404":
           description: User history not found
       security:
         - mark_auth:
-            - 'write:user'
+            - "write:user"
 
   /template:
     get:
@@ -774,7 +773,7 @@ paths:
         - template
       summary: Get all templates
       operationId: getTemplates
-      parameters: 
+      parameters:
         - in: query
           name: filter
           schema:
@@ -790,17 +789,17 @@ paths:
             type: integer
             default: 20
       responses:
-        '200':
+        "200":
           description: Templates retrieved
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Template'
+                  $ref: "#/components/schemas/Template"
       security:
         - mark_auth:
-            - 'read:template'
+            - "read:template"
     post:
       tags:
         - template
@@ -811,28 +810,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Template'
+              $ref: "#/components/schemas/Template"
         required: true
       responses:
-        '201':
+        "201":
           description: Template created
           content:
             application/json:
-              schema:                
-                $ref: '#/components/schemas/Template'
-        '400':
+              schema:
+                $ref: "#/components/schemas/Template"
+        "400":
           description: Invalid object supplied
           content: {}
       security:
         - mark_auth:
-            - 'write:template'
+            - "write:template"
   /template/{id}:
     put:
       tags:
         - template
       summary: Modify a template
       operationId: updateTemplate
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -843,40 +842,40 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Template'
+              $ref: "#/components/schemas/Template"
       responses:
-        '200':
+        "200":
           description: User updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Template'
-        '404':
+                $ref: "#/components/schemas/Template"
+        "404":
           description: Template not found
-        '400':
+        "400":
           description: Invalid object supplied
       security:
         - mark_auth:
-            - 'write:template'
+            - "write:template"
     delete:
       tags:
         - template
       summary: Delete a template
       operationId: deleteTemplate
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Template deleted
-        '404':
+        "404":
           description: Template not found
       security:
         - mark_auth:
-            - 'write:template'
+            - "write:template"
 
   /template/{id}/render:
     post:
@@ -884,7 +883,7 @@ paths:
         - template
       summary: Render a template
       operationId: renderTemplate
-      parameters: 
+      parameters:
         - in: path
           required: true
           name: id
@@ -898,22 +897,22 @@ paths:
               type: object
         required: false
       responses:
-        '201':
+        "201":
           description: Template rendered
           content:
             application/pdf:
               schema:
                 type: string
                 format: binary
-        '404':
+        "404":
           description: Template not found
           content: {}
-        '400':
+        "400":
           description: Invalid object supplied
           content: {}
       security:
         - mark_auth:
-            - 'read:template'
+            - "read:template"
 components:
   schemas:
     Article:
@@ -939,7 +938,7 @@ components:
         publishDate:
           type: string
           format: date-time
-   
+
     User:
       type: object
       properties:
@@ -956,6 +955,9 @@ components:
           type: string
         phoneNumber:
           type: string
+        birthdate:
+          type: string
+          format: date-time
         profession:
           type: string
         userStatus:
@@ -1008,7 +1010,7 @@ components:
     Event:
       type: object
       properties:
-        id: 
+        id:
           type: integer
           format: int64
         title:
@@ -1024,7 +1026,7 @@ components:
           type: string
         status:
           type: string
-        lodge: 
+        lodge:
           $ref: "#/components/schemas/Lodge"
 
     Attendance:
@@ -1042,7 +1044,7 @@ components:
         statusConfirmation:
           type: string
         comment:
-          type: string     
+          type: string
 
     TemplateBundle:
       type: object
@@ -1085,8 +1087,8 @@ components:
         description:
           type: string
         key:
-          type: string           
-    
+          type: string
+
   securitySchemes:
     mark_auth:
       type: oauth2
@@ -1094,15 +1096,15 @@ components:
         implicit:
           authorizationUrl: http://localhost:8000/auth
           scopes:
-            'general': basic access scope
-            'write:article': modify articles in your account
-            'write:user': modify users
-            'read:event': view events
-            'write:event': add or modify events, view attendance
-            'write:template': add or modify templates
-            'read:template': render templates
-            'read:lodge': view lodges
-            'write:ldoge': modify lodge
+            "general": basic access scope
+            "write:article": modify articles in your account
+            "write:user": modify users
+            "read:event": view events
+            "write:event": add or modify events, view attendance
+            "write:template": add or modify templates
+            "read:template": render templates
+            "read:lodge": view lodges
+            "write:ldoge": modify lodge
     api_key:
       type: apiKey
       name: api_key
