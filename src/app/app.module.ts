@@ -64,6 +64,7 @@ const authModuleConfig: OAuthModuleConfig = {
   // Inject "Authorization: Bearer ..." header for these APIs:
   resourceServer: {
     allowedUrls: ['https://sqless.net'],
+    // allowedUrls: ['http://localhost:9000'],
     sendAccessToken: true,
   },
 };
@@ -117,6 +118,7 @@ FullCalendarModule.registerPlugins([
     { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
     { provide: BASE_PATH, useValue: 'https://sqless.net' },
+    // { provide: BASE_PATH, useValue: 'http://localhost:9000' },
     { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
   ],
   entryComponents: [

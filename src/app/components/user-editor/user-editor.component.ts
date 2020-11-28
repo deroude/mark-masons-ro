@@ -19,11 +19,17 @@ export class UserEditorComponent implements OnInit {
       lastName: [this.user.lastName, [Validators.required]],
       birthdate: [this.user.birthdate],
       address: [this.user.address],
+      correspondenceAddress: [this.user.correspondenceAddress],
       phoneNumber: [this.user.phoneNumber],
+      secondaryPhoneNumber: [this.user.secondaryPhoneNumber],
       profession: [this.user.profession],
+      workplace: [this.user.workplace],
       rank: [this.user.rank, [Validators.required]],
+      mmh: [this.user.mmh, [Validators.required]],
       userStatus: [this.user.userStatus, [Validators.required]],
       orderPrivilege: [this.user.orderPrivilege, [Validators.required]],
+      nationalId: [this.user.nationalId],
+      nationalIdDetails: [this.user.nationalIdDetails]
     });
   }
 

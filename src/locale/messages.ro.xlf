@@ -13,7 +13,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="history" datatype="html" approved="yes">
-        <source>History</source> <target state="translated">Istoric</target> <context-group purpose="location">
+        <source>History</source>
+        <target state="translated">Istoric</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main-nav/main-nav.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
@@ -121,14 +123,21 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="lastName" datatype="html">
-        <source>Last name</source> <target>Nume de familie</target> <context-group purpose="location">
+      <trans-unit id="mmh" datatype="html">
+        <source>MMH</source>
+        <target>MMH</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="error.field.required" datatype="html" approved="yes">
-        <source>This field is required.</source> <target state="translated">Acest câmp nu poate lipsi</target> <context-group purpose="location">
+        <source>
+                    This field is required.
+                </source>
+        <target state="needs-adaptation">Acest câmp nu poate lipsi</target>
+        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
@@ -138,31 +147,27 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
@@ -181,18 +186,44 @@
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="firstName" datatype="html">
-        <source>First name</source>
-        <target>Prenume</target>
+      <trans-unit id="lastName" datatype="html">
+        <source>Last name</source>
+        <target>Nume de familie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="dob" datatype="html" approved="yes">
-        <source>Date of birth</source> <target state="translated">Data nașterii</target> <context-group purpose="location">
+      <trans-unit id="firstName" datatype="html">
+        <source>First name</source>
+        <target>Prenume</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dob" datatype="html" approved="yes">
+        <source>Date of birth</source>
+        <target state="translated">Data nașterii</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nationalId" datatype="html">
+        <source>National ID</source>
+        <target state="needs-translation">CNP</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nationalIdDetails" datatype="html">
+        <source>National ID series / number</source>
+        <target state="needs-translation">Serie / număr CI</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="phoneNumber" datatype="html">
@@ -200,7 +231,15 @@
         <target>Telefon</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="secondaryPhoneNumber" datatype="html">
+        <source>Secondary phone number</source>
+        <target state="needs-translation">Număr de telefon secundar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="address" datatype="html">
@@ -208,7 +247,15 @@
         <target>Adresă</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="correspondenceAddress" datatype="html">
+        <source>Correspondence Address</source>
+        <target state="needs-translation">Adresă de corespondență</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="profession" datatype="html">
@@ -216,7 +263,15 @@
         <target>Profesie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="workplace" datatype="html">
+        <source>Workplace</source>
+        <target state="needs-translation">Loc de muncă</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="email" datatype="html">
@@ -224,7 +279,7 @@
         <target>Adresă de email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status" datatype="html">
@@ -232,7 +287,7 @@
         <target>Stare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status.active" datatype="html">
@@ -240,7 +295,7 @@
         <target>Activ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.status.inactive" datatype="html">
@@ -248,7 +303,7 @@
         <target>Inactiv</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.rank" datatype="html">
@@ -256,7 +311,7 @@
         <target>Rang</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.rank.brother" datatype="html">
@@ -264,7 +319,7 @@
         <target>Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -276,7 +331,7 @@
         <target>R. Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -288,7 +343,7 @@
         <target>P. R. Frate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -300,7 +355,7 @@
         <target>Rol în cadrul Ordinului</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.orderPrivilege.user" datatype="html">
@@ -308,7 +363,7 @@
         <target>Utilizator</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -320,7 +375,7 @@
         <target>Ofițer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/users.component.html</context>
@@ -328,15 +383,19 @@
         </context-group>
       </trans-unit>
       <trans-unit id="user-details" datatype="html" approved="yes">
-        <source>User Details</source> <target state="translated">Detalii utilizator</target> <context-group purpose="location">
+        <source>User Details</source>
+        <target state="translated">Detalii utilizator</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user-history" datatype="html" approved="yes">
-        <source>User History</source> <target state="translated">Istoric utilizator</target> <context-group purpose="location">
+        <source>User History</source>
+        <target state="translated">Istoric utilizator</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cancel" datatype="html">
@@ -344,7 +403,7 @@
         <target>Anulare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
@@ -358,13 +417,17 @@
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Save</source>
         <target>Salvare</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-editor/user-editor.component.html</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">109</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.aftermath.component.html</context>
@@ -373,6 +436,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
           <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="filter" datatype="html">
@@ -496,7 +563,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="apprentice" datatype="html" approved="yes">
-        <source>Apprentice</source> <target state="translated">Ucenic</target> <context-group purpose="location">
+        <source>Apprentice</source>
+        <target state="translated">Ucenic</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
@@ -506,7 +575,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="companion" datatype="html" approved="yes">
-        <source>Companion</source> <target state="translated">Calfă</target> <context-group purpose="location">
+        <source>Companion</source>
+        <target state="translated">Calfă</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
@@ -516,7 +587,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="master" datatype="html" approved="yes">
-        <source>Master</source> <target state="translated">Maestru</target> <context-group purpose="location">
+        <source>Master</source>
+        <target state="translated">Maestru</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/attendance/attendance.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
@@ -644,9 +717,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="no" datatype="html">
-        <source>No</source>
-        <target>Nu</target>
-        <context-group purpose="location">
+        <source>No</source> <target>Nu</target> <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/rsvp/rsvp.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
@@ -667,44 +738,28 @@
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="date" datatype="html">
-        <source>Date</source>
-        <target>Dată</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
+      <trans-unit id="article.by" datatype="html">
+        <source>by</source> <target state="needs-translation">de</target> <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article/article.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="article.published" datatype="html">
+        <source>published</source> <target state="needs-translation">publicat la</target> <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article/article.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="edit" datatype="html">
+        <source>Edit</source> <target state="needs-translation">Editare</target> <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article/article.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="audience" datatype="html">
-        <source>Audience</source>
-        <target>Audiență</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="audience.public" datatype="html">
-        <source>Public</source>
-        <target>Public</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="audience.lodge" datatype="html">
-        <source>Lodge only</source>
-        <target>Doar loja</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="audience.order" datatype="html">
-        <source>Order wide</source>
-        <target>Tot Ordinul</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/article-editor/article-editor.component.html</context>
-          <context context-type="linenumber">23</context>
+      <trans-unit id="delete" datatype="html" approved="yes">
+        <source>Delete</source> <target state="translated">Ștergere</target> <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/article/article.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.eventType" datatype="html" approved="yes">
@@ -726,7 +781,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event" datatype="html" approved="yes">
-        <source>Event</source> <target state="translated">Eveniment</target> <context-group purpose="location">
+        <source>Event</source>
+        <target state="translated">Eveniment</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
@@ -736,25 +793,33 @@
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event.founded" datatype="html" approved="yes">
-        <source>Founded</source> <target state="translated">Fondare</target> <context-group purpose="location">
+        <source>Founded</source>
+        <target state="translated">Fondare</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event.joined" datatype="html" approved="yes">
-        <source>Joined</source> <target state="translated">Inițiere</target> <context-group purpose="location">
+        <source>Joined</source>
+        <target state="translated">Inițiere</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event.left" datatype="html" approved="yes">
-        <source>Left</source> <target state="translated">Părăsire</target> <context-group purpose="location">
+        <source>Left</source>
+        <target state="translated">Părăsire</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event.role" datatype="html" approved="yes">
-        <source>Role assigned</source> <target state="translated">Asignare rol</target> <context-group purpose="location">
+        <source>Role assigned</source>
+        <target state="translated">Asignare rol</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
@@ -764,31 +829,41 @@
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.event.title" datatype="html" approved="yes">
-        <source>Title assigned</source> <target state="translated">Asignare titlu</target> <context-group purpose="location">
+        <source>Title assigned</source>
+        <target state="translated">Asignare titlu</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.history.detail" datatype="html" approved="yes">
-        <source>Detail</source> <target state="translated">Detaliu</target> <context-group purpose="location">
+        <source>Detail</source>
+        <target state="translated">Detaliu</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="lodge" datatype="html" approved="yes">
-        <source>Lodge</source> <target state="translated">Lojă</target> <context-group purpose="location">
+        <source>Lodge</source>
+        <target state="translated">Lojă</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="startDate" datatype="html" approved="yes">
-        <source>Start Date</source> <target state="translated">Dată început</target> <context-group purpose="location">
+        <source>Start Date</source>
+        <target state="translated">Dată început</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="endDate" datatype="html" approved="yes">
-        <source>End Date</source> <target state="translated">Dată sfârșit</target> <context-group purpose="location">
+        <source>End Date</source>
+        <target state="translated">Dată sfârșit</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history-editor/user-history-editor.component.html</context>
           <context context-type="linenumber">61</context>
         </context-group>
@@ -802,7 +877,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="users.history.eventType" datatype="html" approved="yes">
-        <source>Event Type</source> <target state="translated">Tip eveniment</target> <context-group purpose="location">
+        <source> Event Type</source>
+        <target>Tip eveniment</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
@@ -816,13 +893,17 @@
         </context-group>
       </trans-unit>
       <trans-unit id="users.history.lodge" datatype="html" approved="yes">
-        <source>Lodge</source> <target state="translated">Lojă</target> <context-group purpose="location">
+        <source> Lodge </source>
+        <target>Lojă</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="users.history.comment" datatype="html" approved="yes">
-        <source>Detail</source> <target state="translated">Detaliu</target> <context-group purpose="location">
+        <source> Detail </source>
+        <target>Detaliu</target>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/user-history/user-history.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>

@@ -953,18 +953,30 @@ components:
           type: string
         address:
           type: string
+        correspondenceAddress:
+          type: string
         phoneNumber:
+          type: string
+        secondaryPhoneNumber:
           type: string
         birthdate:
           type: string
           format: date-time
         profession:
           type: string
+        workplace:
+          type: string
         userStatus:
           type: string
         rank:
           type: string
         orderPrivilege:
+          type: string
+        nationalId:
+          type: string
+        nationalIdDetails:
+          type: string
+        mmh:
           type: string
 
     Lodge:

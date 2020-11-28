@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '@model/article';
 import { Observable } from 'rxjs';
 import { User } from '@model/user';
@@ -14,24 +14,23 @@ import { ArticleEditorComponent } from '../article-editor/article-editor.compone
 export class ArticleComponent implements OnInit {
 
   @Input() article: Article;
+  @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
   expanded = false;
 
-  constructor(private auth: AuthService, public dialog: MatDialog) {
+  constructor(public auth: AuthService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
   }
 
-  edit(): void {
-    const dialogRef = this.dialog.open(ArticleEditorComponent, {
-      width: '600px',
-      data: this.article
-    });
+  onEdit(): void {
+    this.edit.emit(this.article);
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
-      // this.article = result;
-    });
+  onDelete(): void {
+    this.delete.emit(this.article);
   }
 
 }

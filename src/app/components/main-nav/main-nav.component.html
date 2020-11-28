@@ -14,7 +14,8 @@
   <nav id="utility">
     <!-- <ng-template #login> -->
     <button *ngIf="!auth.loggedIn" mat-stroked-button (click)="auth.login()">Login</button>
-    <strong *ngIf="auth.loggedIn">{{auth.userName}}</strong>
+    <a (click)="downloadResource()"><strong *ngIf="auth.loggedIn">{{auth.userName}}</strong></a>
+    <a #downloadLink style="display:none"></a>
     <button  *ngIf="auth.loggedIn" mat-stroked-button (click)="auth.logout()">Logout</button>
 
     <!-- </ng-template>     -->

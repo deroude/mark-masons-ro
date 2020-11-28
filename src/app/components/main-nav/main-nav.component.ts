@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '@model/user';
-import { Observable } from 'rxjs';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth';
-import { Lodge } from '@model/lodge';
-import { filter, switchMap } from 'rxjs/operators';
+import { BASE_PATH } from 'app/generated/variables';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -13,10 +11,31 @@ import { filter, switchMap } from 'rxjs/operators';
 })
 export class MainNavComponent implements OnInit {
 
-  constructor(public auth: AuthService) {
+  @ViewChild('downloadLink') private downloadLink: ElementRef;
+
+  constructor(
+    public auth: AuthService,
+    private http: HttpClient,
+    @Inject(BASE_PATH) private path: string) {
+
   }
 
   ngOnInit(): void {
   }
+
+  public downloadResource(): void {
+    this.http.get<Blob>(`${this.path}/user/me/clearance/pdf`,
+      { responseType: 'blob' as 'json' }).subscribe(file => {
+        const url = window.URL.createObjectURL(file);
+
+        const link = this.downloadLink.nativeElement;
+        link.href = url;
+        link.download = 'Clearance.pdf';
+        link.click();
+
+        window.URL.revokeObjectURL(url);
+      });
+  }
+
 
 }

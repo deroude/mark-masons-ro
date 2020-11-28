@@ -1,9 +1,10 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { Article } from '@model/article';
-import { generateArticle } from '../../domain/mock';
 import { AuthService } from '../../services/auth';
-import { User } from '@model/user';
-import { Observable } from 'rxjs';
+import { ArticleService } from '@api/article.service';
+import { ArticleEditorComponent } from '../article-editor/article-editor.component';
+import { MatNoDataRow } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'mark-blog',
@@ -13,16 +14,45 @@ import { Observable } from 'rxjs';
 export class BlogComponent implements OnInit {
 
 
-  constructor(private auth: AuthService, @Inject(LOCALE_ID) public locale: string) {
+  constructor(
+    public auth: AuthService,
+    @Inject(LOCALE_ID) public locale: string,
+    private dialog: MatDialog,
+    private articleService: ArticleService) {
   }
 
   articles: Article[] = [];
 
+  searchTerm = '';
 
   ngOnInit(): void {
-
+    this.search();
   }
 
+  search(): void {
+    this.articleService.getArticles('BLOG', this.searchTerm).subscribe(arts => this.articles = arts);
+  }
 
+  deleteArticle(event: Article): void {
+    this.articleService.deleteArticle(event.id).subscribe(() => this.search());
+  }
+
+  editArticle(event: Article): void {
+    const dialogRef = this.dialog.open(ArticleEditorComponent, {
+      width: '600px',
+      data: event || {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        result.language = this.locale;
+        if (result.id) {
+          this.articleService.updateArticle(result.id, result).subscribe(() => this.search());
+        } else {
+          this.articleService.addArticle(result).subscribe(() => this.search());
+        }
+      }
+    });
+  }
 
 }
