@@ -24,7 +24,7 @@ export class MainNavComponent implements OnInit {
   }
 
   public downloadResource(): void {
-    this.http.get<Blob>(`${this.path}/user/me/clearance/pdf`,
+    this.http.get<Blob>(`${this.path}/user/me/clearance`,
       { responseType: 'blob' as 'json' }).subscribe(file => {
         const url = window.URL.createObjectURL(file);
 
