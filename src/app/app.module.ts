@@ -58,7 +58,6 @@ const config: AuthConfig = {
   scope: 'openid profile email',
   showDebugInformation: true,
   strictDiscoveryDocumentValidation: false,
-
   sessionChecksEnabled: true
 };
 
