@@ -45,14 +45,16 @@ import { UserHistoryEditorComponent } from './components/user-history-editor/use
 import { HomeComponent } from './components/home/home.component';
 import { MarkdownDirective } from './directives/markdown.directive';
 import { DefaultOAuthInterceptor } from './services/auth-interceptor';
+import { MeComponent } from './components/me/me.component';
 
 
 const config: AuthConfig = {
   clientId: '1054193493527-lqdqib6a7hqfa33h9coko00kunvloaaa.apps.googleusercontent.com',
   issuer: 'https://accounts.google.com',
+  tokenEndpoint: 'https://oauth2.googleapis.com/token',
   // issuer: 'http://localhost:8180/auth/realms/mark_auth',
   // clientId: 'mark_auth-client',
-  redirectUri: `${window.location.origin}/en/`,
+  redirectUri: `${window.location.origin}`,
   scope: 'openid profile email',
   showDebugInformation: true,
   strictDiscoveryDocumentValidation: false,
@@ -63,8 +65,8 @@ const config: AuthConfig = {
 const authModuleConfig: OAuthModuleConfig = {
   // Inject "Authorization: Bearer ..." header for these APIs:
   resourceServer: {
-    allowedUrls: ['https://sqless.net'],
-    // allowedUrls: ['http://localhost:9000'],
+    // allowedUrls: ['https://sqless.net'],
+    allowedUrls: ['http://localhost:9000'],
     sendAccessToken: true,
   },
 };
@@ -98,7 +100,8 @@ FullCalendarModule.registerPlugins([
     UserHistoryComponent,
     UserHistoryEditorComponent,
     HomeComponent,
-    MarkdownDirective
+    MarkdownDirective,
+    MeComponent
   ],
   imports: [
     BrowserModule,
@@ -117,8 +120,8 @@ FullCalendarModule.registerPlugins([
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
     { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
-    { provide: BASE_PATH, useValue: 'https://sqless.net' },
-    // { provide: BASE_PATH, useValue: 'http://localhost:9000' },
+    // { provide: BASE_PATH, useValue: 'https://sqless.net' },
+    { provide: BASE_PATH, useValue: 'http://localhost:9000' },
     { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
   ],
   entryComponents: [

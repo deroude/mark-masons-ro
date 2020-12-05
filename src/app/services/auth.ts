@@ -18,11 +18,8 @@ export class AuthService implements CanActivate {
 
     constructor(
         protected router: Router,
-        private userService: UserService,
-        private oauthService: OAuthService,
-        private httpClient: HttpClient,
-        private progress: ProgressService) {
-        oauthService.events.subscribe(e => e instanceof OAuthErrorEvent ? console.error(e) : console.warn(e));
+        private oauthService: OAuthService) {
+        oauthService.events.subscribe(e => e instanceof OAuthErrorEvent ? console.error(e) : console.log(e));
 
         // Load information from Auth0 (could also be configured manually)
         oauthService.loadDiscoveryDocumentAndTryLogin();
@@ -41,8 +38,8 @@ export class AuthService implements CanActivate {
     }
 
     login(): void { this.oauthService.initLoginFlow(); }
-    logout(): void { this.oauthService.logOut(); }
-    refresh(): void { this.oauthService.silentRefresh(); }
+    logout(): void { this.oauthService.logOut(); this.router.navigate(['']); }
+    refresh(): Promise<any> { return this.oauthService.silentRefresh(); }
 
     get userEmail(): string {
         const claims = this.oauthService.getIdentityClaims();
@@ -67,6 +64,10 @@ export class AuthService implements CanActivate {
 
     get loggedIn(): boolean {
         return !!this.oauthService.getAccessToken();
+    }
+
+    get validIdToken(): boolean {
+        return this.oauthService.hasValidIdToken();
     }
 
 

@@ -11,31 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainNavComponent implements OnInit {
 
-  @ViewChild('downloadLink') private downloadLink: ElementRef;
-
-  constructor(
-    public auth: AuthService,
-    private http: HttpClient,
-    @Inject(BASE_PATH) private path: string) {
-
-  }
+  constructor(public auth: AuthService) {}
 
   ngOnInit(): void {
   }
-
-  public downloadResource(): void {
-    this.http.get<Blob>(`${this.path}/user/me/clearance`,
-      { responseType: 'blob' as 'json' }).subscribe(file => {
-        const url = window.URL.createObjectURL(file);
-
-        const link = this.downloadLink.nativeElement;
-        link.href = url;
-        link.download = 'Clearance.pdf';
-        link.click();
-
-        window.URL.revokeObjectURL(url);
-      });
-  }
-
-
 }

@@ -7,9 +7,11 @@ import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { TemplateComponent } from './components/template/template.component';
 import { HomeComponent } from './components/home/home.component';
+import { MeComponent } from './components/me/me.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'me', component: MeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'events', component: EventsComponent },
   { path: 'template', component: TemplateComponent },

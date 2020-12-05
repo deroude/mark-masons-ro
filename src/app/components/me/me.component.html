@@ -1,0 +1,22 @@
+<mat-card *ngIf="me">
+    <mat-card-header>
+        <mat-card-title>{{me.rank}} {{me.firstName}} <strong>{{me.lastName}}</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item><strong i18n="@@address">Address</strong>: {{me.address}} </mat-list-item>
+            <mat-list-item><strong i18n="@@phoneNumber">Phone</strong>: {{me.phoneNumber}} </mat-list-item>
+            <mat-list-item><strong i18n="@@mmh">MMH</strong>: {{me.mmh}} </mat-list-item>
+            <mat-list-item><strong i18n="@@profession">Profession</strong>: {{me.profession}} </mat-list-item>
+            <mat-list-item><strong i18n="@@workplace">Workplace</strong>: {{me.workplace}} </mat-list-item>
+            <mat-list-item><strong i18n="@@nationalId">National ID</strong>: {{me.nationalId}} </mat-list-item>
+            <mat-list-item><strong i18n="@@nationalIdDetails">National ID Details</strong>: {{me.nationalIdDetails}} </mat-list-item>
+            <mat-list-item><strong i18n="@@birthdate">Birthdate</strong>: {{me.birthdate|date}} </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="downloadResource()" i18n="@@me.donwloadClearance">Download clearance
+            document</button>
+        <a #downloadLink style="display:none"></a>
+    </mat-card-actions>
+</mat-card>

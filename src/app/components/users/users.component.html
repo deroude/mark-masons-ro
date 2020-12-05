@@ -3,11 +3,14 @@
     <input matInput (keyup)="applyFilter($event.target.value)" i18n-placeholder="@@filter" placeholder="Filter">
   </mat-form-field>
 
-  <button mat-button (click)="create()">Add user</button>
+  <button mat-button i18n="@@users.add" (click)="create()">Add user</button>
+  <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="import($event)"
+    accept=".csv" />
+  <button mat-button i18n="@@users.import" (click)="csvInput.click()">Import users</button>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
-      
+
       <ng-container matColumnDef="lastName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@users.lastName"> Last name </th>
         <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
@@ -58,6 +61,6 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="onUserSelect(row)">
       </tr>
     </table>
-    
+
   </div>
 </div>

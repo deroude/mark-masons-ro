@@ -571,6 +571,27 @@ paths:
         - mark_auth:
             - "write:user"
 
+    put:
+      tags:
+        - user
+      summary: Upload users as CSV
+      operationId: uploadUsers
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:                
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Users uploaded
+      security:
+        - mark_auth:
+          - "write:user"
+
   /whoami:
     get:
       tags:

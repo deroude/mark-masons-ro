@@ -63,4 +63,8 @@ export class UsersComponent implements OnInit {
       }
     });
   }
+
+  import(event: any): void {
+    this.userService.uploadUsers(event.target.files[0]).subscribe(re => this.refresh());
+  }
 }
