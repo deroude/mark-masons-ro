@@ -30,7 +30,7 @@ export class BlogComponent implements OnInit {
   }
 
   search(): void {
-    this.articleService.getArticles('BLOG', this.searchTerm).subscribe(arts => this.articles = arts);
+    this.articleService.getArticles('BLOG', this.searchTerm, this.locale).subscribe(arts => this.articles = arts);
   }
 
   deleteArticle(event: Article): void {
@@ -43,9 +43,11 @@ export class BlogComponent implements OnInit {
       data: event || {}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result: Article) => {
       if (result) {
         result.language = this.locale;
+        result.category = 'BLOG';
+        result.publishDate = new Date().toISOString();
         if (result.id) {
           this.articleService.updateArticle(result.id, result).subscribe(() => this.search());
         } else {

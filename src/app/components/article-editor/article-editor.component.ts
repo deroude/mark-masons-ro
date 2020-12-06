@@ -18,10 +18,7 @@ export class ArticleEditorComponent implements OnInit {
     this.articleForm = this.fb.group({
       title: [this.article.title, [Validators.required]],
       text: [this.article.text, [Validators.required]],
-      // date: [this.article.publishDate ?
-      //   new Date(this.article.publishDate).toISOString().slice(0, -1) :
-      //   new Date().toISOString().slice(0, -1),
-      // [Validators.required]]
+      audience: [this.article.audience, [Validators.required]]
     });
   }
 
