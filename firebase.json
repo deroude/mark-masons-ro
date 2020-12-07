@@ -8,8 +8,12 @@
     ],
     "rewrites": [
       {
+        "source": "/ro/**",
+        "destination": "/ro/index.html"
+      },
+      {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "/en/index.html"
       }
     ]
   }
