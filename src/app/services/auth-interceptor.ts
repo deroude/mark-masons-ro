@@ -43,7 +43,7 @@ export class DefaultOAuthInterceptor implements HttpInterceptor {
     }
 
     private adjustRequest(req: HttpRequest<any>): HttpRequest<any> {
-        const token = this.authStorage.getItem('id_token');
+        const token = this.authStorage.getItem('access_token');
         const header = 'Bearer ' + token;
 
         const headers = req.headers
