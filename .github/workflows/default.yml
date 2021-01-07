@@ -17,10 +17,10 @@ jobs:
     
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: ls -a via ssh
+    - name: Deploy via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ls -a
+        command: ./deploy.sh
         host: mark-masons.ro
         username: ci
         passphrase: ${{ secrets.CI_KEY_PASSPHRASE }}
