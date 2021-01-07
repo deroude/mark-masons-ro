@@ -11,7 +11,7 @@ migrations:
     applyPath: migrations/001_initial.sql
     rollbackPath: migrations/001_initial_rollback.sql
 apiPath: ../mark-api.yaml
-permissionClaim: https://mark-masons.ro/permissions
+
 methodPaths:
   /article:
     get:

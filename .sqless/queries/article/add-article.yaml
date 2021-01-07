@@ -1,17 +1,12 @@
 pipe:
-  - type: mapping
-    isArray: false
-    from: body
-    builtIn: camelToSnake
-    to: body
   - type: query
     statement: >-
       INSERT INTO "article" ( 
         "author","category","title","slug","text","tags","language","audience","publish_date" 
       )
-      SELECT u.id,$2,$3,$4,$5,$6,$7,$8,now() FROM "user" u where u.email = $1 RETURNING *;
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING *;
     params:      
-      - principal.email
+      - body.author.id
       - body.category
       - body.title
       - body.slug
@@ -19,6 +14,7 @@ pipe:
       - body.tags
       - body.language
       - body.audience
+      - body.publishDate
     resultType: row
     assign: NewArticle
   - type: mapping

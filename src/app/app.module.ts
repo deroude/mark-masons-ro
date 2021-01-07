@@ -30,6 +30,8 @@ import { BlogComponent } from './components/article/blog/blog.component';
 import { ArticleCardComponent } from './components/article/article-card/article-card.component';
 import { TemplateComponent } from './components/template/template.component';
 
+import { MarkdownPipe } from './pipes/markdown.pipe';
+
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
@@ -43,7 +45,6 @@ import { BASE_PATH } from './generated/variables';
 import { UserHistoryListComponent } from './components/user/user-history-list/user-history-list.component';
 import { UserHistoryEditorComponent } from './components/user/user-history-editor/user-history-editor.component';
 import { HomeComponent } from './components/home/home.component';
-import { MarkdownDirective } from './directives/markdown.directive';
 import { DefaultOAuthInterceptor } from './services/auth-interceptor';
 import { MeComponent } from './components/me/me.component';
 import { LodgeListComponent } from './components/lodge/lodge-list/lodge-list.component';
@@ -105,7 +106,7 @@ FullCalendarModule.registerPlugins([
     UserHistoryListComponent,
     UserHistoryEditorComponent,
     HomeComponent,
-    MarkdownDirective,
+    MarkdownPipe,
     MeComponent,
     LodgeListComponent,
     LodgeEditorComponent,

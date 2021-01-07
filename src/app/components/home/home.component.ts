@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { ArticleService } from '@api/article.service';
 
 @Component({
   selector: 'mark-home',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  text = '';
 
-  ngOnInit(): void {}
+  constructor(private articleService: ArticleService, @Inject(LOCALE_ID) private locale: string) { }
+
+  ngOnInit(): void {
+    this.articleService.getArticles('HOME', null, this.locale).subscribe(re => {
+      if (re && re[0]) {
+        this.text = re[0].text;
+      }
+    });
+  }
 
 }

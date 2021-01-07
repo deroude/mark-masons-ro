@@ -447,7 +447,7 @@ paths:
       tags:
         - event
       summary: Update specific attendance item
-      operationId: updateAttendanceItem\
+      operationId: updateAttendanceItem
       parameters:
         - in: path
           name: eventId
