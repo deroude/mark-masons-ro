@@ -11,7 +11,7 @@ export class MarkdownPipe implements PipeTransform {
   constructor(protected sanitizer: DomSanitizer) { }
 
   public transform(value: any, type: string): SafeHtml {
-    const html = marked(value.replace(/\/\//g, '\n\n'));
+    const html = marked(value.replace(/\/\//g, '\n\n').replace('\t', ''));
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 

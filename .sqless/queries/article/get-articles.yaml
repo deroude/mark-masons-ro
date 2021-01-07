@@ -6,9 +6,9 @@ pipe:
       WHERE ($1::varchar IS NULL OR a."category" = $1) AND ($2::varchar IS NULL OR a."language" = $2) 
         AND ($3::varchar IS NULL OR a."title" LIKE '%' || $3 || '%' OR u."last_name" LIKE '%' || $3 || '%' OR u."first_name" LIKE '%' || $3 || '%');
     params:
-      - params.category
-      - params.language
-      - params.filter 
+      - query.category
+      - query.language
+      - query.filter 
     resultType: set
     assign: ListArticle
   - type: mapping

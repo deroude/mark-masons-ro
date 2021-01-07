@@ -35,9 +35,7 @@ export class DefaultOAuthInterceptor implements HttpInterceptor {
             if (this.authService.hasValidIdToken()) {
                 return next.handle(this.adjustRequest(req)).pipe(catchError(err => this.errorHandler.handleError(err)));
             } else {
-                return from(this.authService.silentRefresh()).pipe(switchMap(re => {
-                    return next.handle(this.adjustRequest(req)).pipe(catchError(err => this.errorHandler.handleError(err)));
-                }));
+                return next.handle(req);
             }
         }
     }
