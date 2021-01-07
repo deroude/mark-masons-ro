@@ -22,7 +22,7 @@ export class AuthService implements CanActivate {
         oauthService.events.subscribe(e => e instanceof OAuthErrorEvent ? console.error(e) : console.log(e));
 
         // Load information from Auth0 (could also be configured manually)
-        oauthService.loadDiscoveryDocument();
+        oauthService.loadDiscoveryDocumentAndTryLogin();
 
         oauthService.setupAutomaticSilentRefresh();
     }

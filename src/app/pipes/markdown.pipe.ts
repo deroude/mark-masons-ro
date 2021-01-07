@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, Pipe, PipeTransform } from '@angular/core';
+import { AfterViewInit, ElementRef, Pipe, PipeTransform, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import * as marked from 'marked';
@@ -10,8 +10,8 @@ export class MarkdownPipe implements PipeTransform {
 
   constructor(protected sanitizer: DomSanitizer) { }
 
-  public transform(value: any, type: string): SafeHtml {
-    const html = marked(value.replace(/\/\//g, '\n\n').replace('\t', ''));
+  public transform(value: any): SafeHtml {
+    const html = this.sanitizer.sanitize(SecurityContext.HTML, marked(value.replace(/\/\//g, '\n\n').replace('\t', '')));
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 

@@ -54,12 +54,7 @@ import { UserMarkComponent } from './components/user/user-mark/user-mark.compone
 
 const config: AuthConfig = {
   clientId: 'NRev10wUw2hQ5l2Ve7cxyzcCtSnW9yvv',
-  // clientId: '1054193493527-lqdqib6a7hqfa33h9coko00kunvloaaa.apps.googleusercontent.com',
-  // issuer: 'https://accounts.google.com',
   issuer: 'https://mark-masons-ro.eu.auth0.com/',
-  // tokenEndpoint: 'https://mark-masons-ro.eu.auth0.com/oauth/token',
-  // issuer: 'http://localhost:8180/auth/realms/mark_auth',
-  // clientId: 'mark_auth-client',
   responseType: 'code',
   redirectUri: `${window.location.origin}`,
   scope: 'openid profile email',
@@ -71,8 +66,7 @@ const config: AuthConfig = {
 const authModuleConfig: OAuthModuleConfig = {
   // Inject "Authorization: Bearer ..." header for these APIs:
   resourceServer: {
-    allowedUrls: ['https://mark-masons.ro'],
-    // allowedUrls: ['http://localhost:9000'],
+    allowedUrls: [environment.apiPath],
     sendAccessToken: true
   },
 };
@@ -129,8 +123,7 @@ FullCalendarModule.registerPlugins([
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
     { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
-    { provide: BASE_PATH, useValue: 'https://mark-masons.ro/api' },
-    // { provide: BASE_PATH, useValue: 'http://localhost:9000' },
+    { provide: BASE_PATH, useValue: environment.apiPath },
     { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
   ],
   entryComponents: [
