@@ -1,0 +1,22 @@
+pipe:
+  - type: query
+    statement: >-
+      UPDATE "lodge" SET 
+      "name" = $2,"status" = $3,"number" = $4,"orient" = $5,"location" = $6
+      WHERE id = $1 RETURNING *
+    params:
+      - params.id      
+      - body.name
+      - body.status
+      - body.number
+      - body.orient
+      - body.location
+    resultType: row      
+    assign: UpdatedLodge
+  - type: mapping
+    isArray: false
+    from: UpdatedLodge
+    builtIn: snakeToCamel
+    to: UpdatedLodge
+returnVar: UpdatedLodge
+transactional: true

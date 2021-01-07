@@ -1,0 +1,26 @@
+pipe:
+  - type: query
+    statement: >-
+      UPDATE "article" SET 
+      "author" = $2,"category" = $3,"title" = $4,"slug" = $5,"text" = $6,"tags" = $7,"language" = $8,"audience" = $9,"publish_date" = $10
+      WHERE id = $1 RETURNING *
+    params:
+      - params.id      
+      - body.author.id
+      - body.category
+      - body.title
+      - body.slug
+      - body.text
+      - body.tags
+      - body.language
+      - body.audience
+      - body.publishDate
+    resultType: row      
+    assign: UpdatedArticle
+  - type: mapping
+    isArray: false
+    from: UpdatedArticle
+    builtIn: snakeToCamel
+    to: UpdatedArticle
+returnVar: UpdatedArticle
+transactional: true

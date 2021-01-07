@@ -1,0 +1,15 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT u.* FROM "user" u WHERE u.email = $1;
+    resultType: row
+    params:
+      - principal.email
+    assign: Result
+  - type: mapping
+    from: Result
+    isArray: false
+    builtIn: snakeToCamel
+    to: Result
+returnVar: Result
+transactional: false

@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '@api/user.service';
 import { User } from '@model/user';
@@ -16,25 +15,23 @@ export class MeComponent implements OnInit {
   me: User;
 
   constructor(
-    private http: HttpClient,
+    private userService: UserService,
     @Inject(BASE_PATH) private path: string) { }
 
   ngOnInit(): void {
-    const headers = new HttpHeaders();
-    this.http.get<User>(`${this.path}/user/whoami`).subscribe(re => this.me = re);
+    this.userService.myProfile().subscribe(re => this.me = re);
   }
 
   public downloadResource(): void {
-    this.http.get<Blob>(`${this.path}/user/me/clearance`,
-      { responseType: 'blob' as 'json' }).subscribe(file => {
-        const url = window.URL.createObjectURL(file);
+    this.userService.downloadGoodStanding().subscribe(file => {
+      const url = window.URL.createObjectURL(file);
 
-        const link = this.downloadLink.nativeElement;
-        link.href = url;
-        link.download = 'Clearance.pdf';
-        link.click();
+      const link = this.downloadLink.nativeElement;
+      link.href = url;
+      link.download = 'GoodStanding.pdf';
+      link.click();
 
-        window.URL.revokeObjectURL(url);
-      });
+      window.URL.revokeObjectURL(url);
+    });
   }
 }

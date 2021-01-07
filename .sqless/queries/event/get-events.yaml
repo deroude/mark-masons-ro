@@ -1,0 +1,14 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT "id","title","text","location","start_date","event_type","status","lodge" 
+      FROM "event" ;    
+    resultType: set
+    assign: ListEvent
+  - type: mapping
+    from: ListEvent
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListEvent
+returnVar: ListEvent
+transactional: false

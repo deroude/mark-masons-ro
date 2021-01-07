@@ -1,0 +1,39 @@
+{
+    "realm": "mark_auth",
+    "enabled": true,
+    "accessTokenLifespan": 60,
+    "accessCodeLifespan": 60,
+    "accessCodeLifespanUserAction": 300,
+    "ssoSessionIdleTimeout": 600,
+    "ssoSessionMaxLifespan": 36000,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "privateKey": "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",
+    "publicKey": "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxT/9o/qondbI+K69FCg3UFSCkOMQz5P6FbxRhx819nR2qtCr5yHnx3Y5Htq5wg/+St4S43yP8q9GOJt21wv4lEqrM7Lyw2Nb3ca9t6+Ousdbf1acysgRY9tSonraCReirTE4XLCPY0aIGs+0VFjUsDybvEjU8+QkfX59SjGStQ10Fe8sb2uUVmdv/XE9sY5cOHy8Wjwr0N7fWOIbTT1gB14j+r+ZV8ZdNwXBVurb7y0MA7QYMfmQL9/3Zx9IWJHRTRSNByfCeOvXdw4EX3CmyaXKy+VuCBvBkF31rYZgZPGEmBzJi4LlDVD9aXLaD7GDqY9J6AiCF66B6UR+Wl8+rLzOi2cSECxgUZGy1I5D9+u+YHTnZpLKLBHi7+kvLPUKh5XjtTsYxXGPAkN0TYrnZKylhP1DvwYrY7Oo60eVjZVW3QJjVsCERizkknMoBpb5gdRrqVohGVMLtPMOB5XY0Q8yTBnWWeB6OdqiVnA0SHpaHVRIvDRnjBiSc8cfMjiaB54v279oGv2ISTz5XWM2Id9gOM1LKWbaL/w/P2SvABJB0Y5EggkphurLgG0nMp8LQjPlHX7qud8Nvhl+N3KrvbFd5x0YoK/49gdGVDtRiOaEcXhpn4hAj93CFxhrphqf8ZWk+XdvfCMecDmr0QH3Ipv4MBfoR0KgDA0yztmKuqkCAwEAAQ&#x3D;&#x3D;",
+    "requiredCredentials": [ "password" ],
+    "users" : [],
+    "roles" : {
+        "realm" : [
+        ]
+    },
+    "scopeMappings": [
+        {
+            "client": "mark_auth-client",
+            "roles": []
+        }
+    ],
+    "clients": [
+        {
+            "clientId": "mark_auth-client",
+            "enabled": true,
+            "publicClient": true,
+            "baseUrl": "http://localhost:9000/",
+            "redirectUris": [
+                "http://localhost:9000//*"
+            ],
+            "webOrigins": [
+                "http://localhost:9000/"
+            ]
+        }
+    ]
+}

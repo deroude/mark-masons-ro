@@ -1,0 +1,14 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT "id","author","category","title","slug","text","tags","language","audience","publish_date" 
+      FROM "article" ;    
+    resultType: set
+    assign: ListArticle
+  - type: mapping
+    from: ListArticle
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListArticle
+returnVar: ListArticle
+transactional: false

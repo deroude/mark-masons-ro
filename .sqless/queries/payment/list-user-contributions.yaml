@@ -1,0 +1,14 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT "id","user","payment","contribution","status" 
+      FROM "user_contribution" ;    
+    resultType: set
+    assign: ListUserContribution
+  - type: mapping
+    from: ListUserContribution
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListUserContribution
+returnVar: ListUserContribution
+transactional: false

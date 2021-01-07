@@ -1,11 +1,10 @@
 <nav id="main-nav">
   <nav id="links">
     <a [routerLink]="['/blog']" mat-stroked-button i18n="@@home" routerLinkActive="active">Home</a>
-    <a [routerLink]="['/history']" mat-stroked-button i18n="@@history" routerLinkActive="active">History</a>
-    <a [routerLink]="['/guidelines']" *ngIf="auth.hasAccess('guidelines')" mat-stroked-button i18n="@@guidelines"
-      routerLinkActive="active">Guidelines</a>
-    <a [routerLink]="['/users']" *ngIf="auth.hasAccess('people')" mat-stroked-button i18n=" @@people"
-      routerLinkActive="active">People</a>
+    <a [routerLink]="['/lodges']" *ngIf="auth.hasAccess('lodges')" mat-stroked-button i18n="@@lodges"
+      routerLinkActive="active">Lodges</a>
+    <a [routerLink]="['/users']" *ngIf="auth.hasAccess('users')" mat-stroked-button i18n=" @@users"
+      routerLinkActive="active">Users</a>
     <a [routerLink]="['/events']" *ngIf="auth.hasAccess('events')" mat-stroked-button i18n=" @@events"
       routerLinkActive="active">Events</a>
     <a [routerLink]="['/charity']" *ngIf="auth.hasAccess('charity')" mat-stroked-button i18n=" @@charity"
@@ -18,7 +17,7 @@
     <button *ngIf="auth.loggedIn" mat-stroked-button (click)="auth.logout()">Logout</button>
 
     <!-- </ng-template>     -->
-    <a class="flag lang-en" href="/"></a>
+    <a class="flag lang-en" href="/en"></a>
     <a class="flag lang-ro" href="/ro"></a>
   </nav>
 

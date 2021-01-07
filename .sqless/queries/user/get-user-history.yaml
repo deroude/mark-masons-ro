@@ -1,0 +1,15 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT h.* from "history" h WHERE h."user" = $1;
+    resultType: set
+    params:
+      - params.userId
+    assign: Result
+  - type: mapping
+    from: Result
+    isArray: true
+    builtIn: snakeToCamel
+    to: Result
+returnVar: Result
+transactional: false

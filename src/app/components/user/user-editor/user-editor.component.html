@@ -1,0 +1,114 @@
+<h1 mat-dialog-title i18n="@@user.editor">Edit User</h1>
+<mat-tab-group>
+    <mat-tab label="User Details" i18n-label="@@user-details">
+        <form mat-dialog-content [formGroup]="userForm" (ngSubmit)="save()">
+            <mat-form-field>
+                <input matInput formControlName="mmh" type="text" i18n-placeholder="@@mmh" placeholder="MMH">
+                <mat-error *ngIf="hasError('required','mmh')" i18n="@@error.field.required">
+                    This field is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="lastName" type="text" i18n-placeholder="@@lastName"
+                    (input)="updateCodes()" placeholder="Last name">
+                <mat-error *ngIf="hasError('required','lastName')" i18n="@@error.field.required">
+                    This field is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="firstName" type="text" i18n-placeholder="@@firstName"
+                    (input)="updateCodes()" placeholder="First name">
+                <mat-error *ngIf="hasError('required','firstName')" i18n="@@error.field.required">
+                    This field is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label i18n="@@dob">Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="nationalId" type="text" i18n-placeholder="@@nationalId"
+                    placeholder="National ID">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="nationalIdDetails" type="text" i18n-placeholder="@@nationalIdDetails"
+                    placeholder="National ID series / number">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="phoneNumber" type="text" i18n-placeholder="@@phoneNumber"
+                    placeholder="Phone number">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="secondaryPhoneNumber" type="text"
+                    i18n-placeholder="@@secondaryPhoneNumber" placeholder="Secondary phone number">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="address" type="text" i18n-placeholder="@@address"
+                    placeholder="Address">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="correspondenceAddress" type="text"
+                    i18n-placeholder="@@correspondenceAddress" placeholder="Correspondence Address">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="profession" type="text" i18n-placeholder="@@profession"
+                    placeholder="Profession">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="workplace" type="text" i18n-placeholder="@@workplace"
+                    placeholder="Workplace">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="email" type="text" i18n-placeholder="@@email" placeholder="Email">
+                <mat-error *ngIf="hasError('required','email')" i18n="@@error.field.required">
+                    This field is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label i18n="@@user.status">Status</mat-label>
+                <mat-select formControlName="userStatus">
+                    <mat-option value="ACTIVE" i18n="@@user.status.active">Active</mat-option>
+                    <mat-option value="INACTIVE" i18n="@@user.status.inactive">Inactive</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('required','userStatus')" i18n="@@error.field.required">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label i18n="@@user.rank">Rank</mat-label>
+                <mat-select formControlName="rank">
+                    <mat-option value="BROTHER" i18n="@@user.rank.brother">Brother</mat-option>
+                    <mat-option value="RBROTHER" i18n="@@user.rank.rbrother">R. Brother</mat-option>
+                    <mat-option value="MRBROTHER" i18n="@@user.rank.mrbrother">M. R. Brother</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('required','rank')" i18n="@@error.field.required">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label i18n="@@user.orderPrivilege">Order Privilege</mat-label>
+                <mat-select formControlName="orderPrivilege">
+                    <mat-option value="USER" i18n="@@user.orderPrivilege.user">User</mat-option>
+                    <mat-option value="OFFICER" i18n="@@user.orderPrivilege.officer">Officer</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('required','orderPrivilege')" i18n="@@error.field.required">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+            <mat-radio-group formControlName="markCode">
+                <mat-radio-button *ngFor="let code of codes" [value]="code">
+                    <mark-user-mark [code]="code"></mark-user-mark>
+                </mat-radio-button>
+            </mat-radio-group>
+        </form>
+    </mat-tab>
+    <mat-tab label="User History" i18n-label="@@user-history">
+        <mark-user-history *ngIf="user?.id" [userId]="user.id"></mark-user-history>
+    </mat-tab>
+</mat-tab-group>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" i18n="@@cancel">Cancel</button>
+    <button mat-raised-button (click)="save()" color="primary" cdkFocusInitial i18n="@@save">Save</button>
+</div>

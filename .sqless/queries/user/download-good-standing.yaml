@@ -1,0 +1,26 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT * FROM "user" u WHERE u."email" = $1
+    resultType: row
+    params:
+      - principal.email
+    assign: me
+  - type: query
+    statement: >-
+      SELECT "content" FROM "template" WHERE "name" = 'good-standing';
+    resultType: scalar
+    assign: tpl
+  - type: handlebars
+    paramVars:
+      data: me
+    templateVar: tpl
+    assign: filledTpl
+  - type: html-pdf
+    sourceVar: filledTpl
+    assign: download
+    options:
+      border:
+        left: 0.5in
+returnVar: download
+transactional: false

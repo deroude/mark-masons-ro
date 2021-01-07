@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='250' height='200' viewBox='0 0 1000 250' style='background-color:#ccc'>
+    <defs>
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+
+            text {
+                font-family: Megrim;
+                font-size: 500px;
+                font-weight: 800;
+            }
+        </style>
+    </defs>
+
+    <g fill='none' stroke='#aaa' stroke-width='10' *ngFor="let item of [].constructor(40); let i = index">
+        <path [attr.transform]="'translate(0,'+(i*30-500)+') scale(1,2)'"
+            d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30' />
+    </g>
+    <text [attr.x]="x1" [attr.y]="y1">{{t1}}</text>
+    <text [attr.x]="x2" [attr.y]="y2">{{t2}}</text>
+</svg>

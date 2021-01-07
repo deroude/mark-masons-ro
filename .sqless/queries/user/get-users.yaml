@@ -1,0 +1,14 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT "id","email","last_name","first_name","address","correspondence_address","phone_number","secondary_phone_number","birthdate","profession","workplace","user_status","rank","order_privilege","national_id","national_id_details","mmh","mark_code","mark_image" 
+      FROM "user" ;    
+    resultType: set
+    assign: ListUser
+  - type: mapping
+    from: ListUser
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListUser
+returnVar: ListUser
+transactional: false

@@ -1,0 +1,23 @@
+pipe:
+  - type: query
+    statement: >-
+      INSERT INTO "contribution" ( 
+        "description","category","destination","value","issue_date","due_date" 
+      )
+      VALUES ($1,$2,$3,$4,$5,$6) RETURNING *;
+    params:      
+      - body.description
+      - body.category
+      - body.destination.id
+      - body.value
+      - body.issueDate
+      - body.dueDate
+    resultType: row
+    assign: NewContribution
+  - type: mapping
+    from: NewContribution
+    isArray: false
+    builtIn: snakeToCamel
+    to: NewContribution
+returnVar: NewContribution
+transactional: true

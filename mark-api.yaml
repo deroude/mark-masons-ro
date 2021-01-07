@@ -32,6 +32,7 @@ paths:
           name: category
           schema:
             type: string
+            default: BLOG
         - in: query
           name: filter
           schema:
@@ -40,6 +41,7 @@ paths:
           name: language
           schema:
             type: string
+            default: en
         - in: query
           name: page
           schema:
@@ -72,7 +74,7 @@ paths:
               $ref: "#/components/schemas/Article"
         required: true
       responses:
-        "201":
+        "200":
           description: Article created
           content:
             application/json:
@@ -596,12 +598,12 @@ paths:
         - mark_auth:
           - "write:user"
 
-  /whoami:
+  /me:
     get:
       tags:
         - user
       summary: Get currently logged in user
-      operationId: whoAmI
+      operationId: myProfile
       responses:
         "200":
           description: Retrieved user
@@ -610,8 +612,111 @@ paths:
               schema:
                 $ref: "#/components/schemas/User"
       security:
-        - mark_auth:
-            - "general"
+        - mark_auth: []
+
+  /me/goodstanding:
+    get:
+      tags:
+        - user
+      summary: Download good standing document
+      operationId: downloadGoodStanding
+      responses:
+        "200":
+         description: GoodStanding doc
+         content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+      security:
+        - mark_auth: []
+
+  /me/history:
+    get:
+      tags:
+        - user
+      summary: Get current user history
+      operationId: myHistory
+      responses:
+        "200":
+          description: History
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/History"
+      security:
+        - mark_auth: []
+
+  /me/lodge:
+    get:
+      tags:
+        - user
+      summary: Get current user lodges
+      operationId: myLodges
+      responses:
+        "200":
+            description: Lodges
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Lodge"
+      security:
+        - mark_auth: []
+
+  /me/contribution:
+    get:
+      tags:
+        - user
+      summary: Get current user contributions
+      operationId: myContributions
+      responses:
+        "200":
+          description: My Contributions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/UserContribution"
+      security:
+        - mark_auth: []
+  
+  /me/payment:
+    get:
+      tags:
+        - user
+      summary: Get current user payments
+      operationId: myPayments
+      responses:
+        "200":
+          description: My Payments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Payment"
+      security:
+        - mark_auth: []
+
+    post:
+      tags:
+        - user
+      summary: Add payment
+      operationId: addPayment
+      responses:
+        "201":
+          description: My Payments
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+      security:
+        - mark_auth: []
 
   /user/{id}:
     put:
@@ -718,7 +823,7 @@ paths:
               $ref: "#/components/schemas/History"
         required: true
       responses:
-        "201":
+        "200":
           description: User history created
           content:
             application/json:
@@ -850,6 +955,7 @@ paths:
       security:
         - mark_auth:
             - "write:template"
+            
   /template/{id}:
     put:
       tags:
@@ -938,6 +1044,184 @@ paths:
       security:
         - mark_auth:
             - "read:template"
+
+  /contribution:
+    get:
+      tags: 
+        - contribution
+      summary: List all contributions
+      operationId: listContributions
+      responses:
+        "200":
+            description: Contribution added
+            content: 
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Contribution"
+      security:
+        - mark_auth:
+            - "read:financial"
+    post:
+      tags: 
+        - contribution
+      summary: Create a contribution
+      operationId: addContribution
+      parameters:
+        - in: query
+          required: true
+          name: audienceType
+          schema:
+            type: string
+        - in: query
+          required: false
+          name: audience
+          schema:
+            type: string
+      requestBody:
+        description: Contribution definition
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contribution"
+      responses:
+        "201":
+            description: Contribution added
+            content: {}
+        "400":
+            description: Contribution invalid
+            content: {}
+        "404":
+            description: Audience not found
+            content: {}
+      security:
+        - mark_auth:
+            - "write:financial"
+
+  /contribution/{id}:
+    put:
+      tags: 
+        - contribution
+      summary: Modify a contributions
+      operationId: updateContribution
+      parameters:
+        - in: path
+          name: id
+          description: contribution to modify
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contribution"
+      responses:
+        "200":
+            description: Contribution modified
+            content: 
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Contribution"
+        "400":
+            description: Contribution invalid
+            content: {}
+        "404":
+            description: Contribution not found
+            content: {}
+      security:
+        - mark_auth:
+            - "write:financial"
+    delete:
+      tags: 
+        - contribution
+      summary: Remove a contribution
+      operationId: removeContribution
+      parameters:
+         - in: path
+           name: id
+           description: contribution to modify
+           required: true
+           schema:
+             type: integer
+             format: int64      
+      responses:
+        "200":
+            description: Contribution removed
+            content: {}
+        "404":
+            description: Contribution not found
+            content: {}
+        "422":
+            description: Cannot delete contribution due to consistency fail
+            content: {}
+      security:
+        - mark_auth:
+            - "write:financial"
+
+  /payment:
+    get:
+      tags:
+        - payment
+      summary: Get all user payments
+      operationId: listPayments
+      responses:
+        "200":
+          description: List Payments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Payment"
+      security:
+        - mark_auth:
+            - "read:financial"
+
+  /payment/{id}:
+    put:
+      tags:
+        - payment
+      summary: Update payment
+      operationId: updatePayment
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Payment update
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payment"
+      security:
+        - mark_auth:
+            - "write:financial"
+
+  /usercontribution:
+    get:
+      tags:
+        - payment
+      summary: List user contributions
+      operationId: listUserContributions
+      responses:
+        "200":
+          description: List of user contributions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserContribution"
+      security:
+        - mark_auth:
+            - "write:financial"
+            
 components:
   schemas:
     Article:
@@ -982,17 +1266,21 @@ components:
           type: string
         correspondenceAddress:
           type: string
+          nullable: true
         phoneNumber:
           type: string
         secondaryPhoneNumber:
           type: string
+          nullable: true
         birthdate:
           type: string
           format: date-time
         profession:
           type: string
+          nullable: true
         workplace:
           type: string
+          nullable: true
         userStatus:
           type: string
         rank:
@@ -1001,10 +1289,18 @@ components:
           type: string
         nationalId:
           type: string
+          nullable: true
         nationalIdDetails:
           type: string
+          nullable: true
         mmh:
           type: string
+        markCode:
+          type: string
+          nullable: true
+        markImage:
+          type: string
+          nullable: true
 
     Lodge:
       type: object
@@ -1022,6 +1318,7 @@ components:
           type: string
         location:
           type: string
+          nullable: true
 
     History:
       type: object
@@ -1031,6 +1328,7 @@ components:
           format: int64
         user:
           $ref: "#/components/schemas/User"
+          nullable: true
         lodge:
           $ref: "#/components/schemas/Lodge"
         eventType:
@@ -1039,12 +1337,14 @@ components:
           type: string
         comment:
           type: string
+          nullable: true
         startDate:
           type: string
           format: date-time
         endDate:
           type: string
           format: date-time
+          nullable: true
 
     Event:
       type: object
@@ -1085,18 +1385,6 @@ components:
         comment:
           type: string
 
-    TemplateBundle:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        description:
-          type: string
-        category:
-          type: string
 
     Template:
       type: object
@@ -1105,46 +1393,69 @@ components:
           type: integer
           format: int64
         bundle:
-          $ref: "#/components/schemas/TemplateBundle"
+          type: string
         name:
           type: string
         description:
           type: string
         content:
           type: string
-
-    TemplateItem:
+    
+    Contribution:
       type: object
       properties:
         id:
           type: integer
           format: int64
-        template:
-          $ref: "#/components/schemas/Template"
-        label:
-          type: string
         description:
           type: string
-        key:
+        category:
+          type: string
+        destination:
+          $ref: "#/components/schemas/Lodge"
+        value:
+          type: number
+          format: double
+        issueDate:
+          type: string
+          format: date
+        dueDate:
+          type: string
+          format: date
+
+    UserContribution:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        user:
+          $ref: "#/components/schemas/User"
+        payment:
+          $ref: "#/components/schemas/Payment"
+        contribution:
+          $ref: "#/components/schemas/Contribution"
+        status:
+          type: string
+    
+    Payment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        user:
+          $ref: "#/components/schemas/User"
+        value:
+          type: number
+          format: double
+        paymentDate:
+          type: string
+          format: date
+        status:
           type: string
 
   securitySchemes:
     mark_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: http://localhost:8000/auth
-          scopes:
-            "general": basic access scope
-            "write:article": modify articles in your account
-            "write:user": modify users
-            "read:event": view events
-            "write:event": add or modify events, view attendance
-            "write:template": add or modify templates
-            "read:template": render templates
-            "read:lodge": view lodges
-            "write:ldoge": modify lodge
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+      type: openIdConnect
+      openIdConnectUrl: https://mark-masons-ro.eu.auth0.com/.well-known/openid-configuration

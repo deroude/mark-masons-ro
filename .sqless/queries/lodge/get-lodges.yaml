@@ -1,0 +1,14 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT "id","name","status","number","orient","location" 
+      FROM "lodge" ;    
+    resultType: set
+    assign: ListLodge
+  - type: mapping
+    from: ListLodge
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListLodge
+returnVar: ListLodge
+transactional: false

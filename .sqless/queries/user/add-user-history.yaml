@@ -1,0 +1,17 @@
+pipe:
+  - type: query
+    statement: >-
+      INSERT INTO "history" ("user","lodge","event","event_type","start_date","end_date","comment")
+      VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;
+    resultType: row
+    params:
+      - params.userId
+      - body.lodge.id
+      - body.event
+      - body.eventType
+      - body.startDate
+      - body.endDate
+      - body.comment
+    assign: Result
+returnVar: Result
+transactional: false

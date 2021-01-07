@@ -20,6 +20,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -40,6 +41,7 @@ const material = [
     MatPaginatorModule,
     MatIconModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatDatepickerModule,
     MatMomentDateModule,
     MatListModule,

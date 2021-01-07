@@ -1,0 +1,132 @@
+version: 0.0.1
+dbConnection:
+    type: postgres
+    database: postgres
+    host: localhost
+    port: 5432
+    user: postgres
+    password: postgres
+migrations: 
+  - id: 001_initial
+    applyPath: migrations/001_initial.sql
+    rollbackPath: migrations/001_initial_rollback.sql
+apiPath: ../mark-api.yaml
+permissionClaim: https://mark-masons.ro/permissions
+methodPaths:
+  /article:
+    get:
+      path: queries/article/get-articles.yaml
+    post:
+      path: queries/article/add-article.yaml
+  /article/{id}:
+    put:
+      path: queries/article/update-article.yaml
+    delete:
+      path: queries/article/delete-article.yaml
+  /lodge:
+    get:
+      path: queries/lodge/get-lodges.yaml
+    post:
+      path: queries/lodge/add-lodge.yaml
+  /lodge/{id}:
+    put:
+      path: queries/lodge/update-lodge.yaml
+    delete:
+      path: queries/lodge/delete-lodge.yaml
+  /event:
+    get:
+      path: queries/event/get-events.yaml
+    post:
+      path: queries/event/add-event.yaml
+  /event/{id}:
+    put:
+      path: queries/event/update-event.yaml
+    delete:
+      path: queries/event/delete-event.yaml
+  /event/{eventId}/attendance:
+    get:
+      path: queries/event/get-attendance.yaml
+    post:
+      path: queries/event/add-attendance.yaml
+    put:
+      path: queries/event/update-attendance.yaml
+  /event/{eventId}/attendance/{attendanceId}:
+    put:
+      path: queries/event/update-attendance-item\.yaml
+  /rsvp/{code}:
+    put:
+      path: queries/event/rsvp-event.yaml
+  /user:
+    get:
+      path: queries/user/get-users.yaml
+    post:
+      path: queries/user/add-user.yaml
+    put:
+      path: queries/user/upload-users.yaml
+  /me:
+    get:
+      path: queries/user/my-profile.yaml
+  /me/goodstanding:
+    get:
+      path: queries/user/download-good-standing.yaml
+  /me/history:
+    get:
+      path: queries/user/my-history.yaml
+  /me/lodge:
+    get:
+      path: queries/user/my-lodges.yaml
+  /me/contribution:
+    get:
+      path: queries/user/my-contributions.yaml
+  /me/payment:
+    get:
+      path: queries/user/my-payments.yaml
+    post:
+      path: queries/user/add-payment.yaml
+  /user/{id}:
+    put:
+      path: queries/user/update-user.yaml
+    delete:
+      path: queries/user/delete-user.yaml
+  /user/{userId}/history:
+    get:
+      path: queries/user/get-user-history.yaml
+    post:
+      path: queries/user/add-user-history.yaml
+  /user/{userId}/history/{id}:
+    put:
+      path: queries/user/update-user-history.yaml
+    delete:
+      path: queries/user/delete-user-history.yaml
+  /template:
+    get:
+      path: queries/template/get-templates.yaml
+    post:
+      path: queries/template/add-template.yaml
+  /template/{id}:
+    put:
+      path: queries/template/update-template.yaml
+    delete:
+      path: queries/template/delete-template.yaml
+  /template/{id}/render:
+    post:
+      path: queries/template/render-template.yaml
+  /contribution:
+    get:
+      path: queries/contribution/list-contributions.yaml
+    post:
+      path: queries/contribution/add-contribution.yaml
+  /contribution/{id}:
+    put:
+      path: queries/contribution/update-contribution.yaml
+    delete:
+      path: queries/contribution/remove-contribution.yaml
+  /payment:
+    get:
+      path: queries/payment/list-payments.yaml
+  /payment/{id}:
+    put:
+      path: queries/payment/update-payment.yaml
+  /usercontribution:
+    get:
+      path: queries/payment/list-user-contributions.yaml

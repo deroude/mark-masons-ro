@@ -1,0 +1,22 @@
+pipe:
+  - type: query
+    statement: >-
+      INSERT INTO "lodge" ( 
+        "name","status","number","orient","location" 
+      )
+      VALUES ($1,$2,$3,$4,$5) RETURNING *;
+    params:      
+      - body.name
+      - body.status
+      - body.number
+      - body.orient
+      - body.location
+    resultType: row
+    assign: NewLodge
+  - type: mapping
+    from: NewLodge
+    isArray: false
+    builtIn: snakeToCamel
+    to: NewLodge
+returnVar: NewLodge
+transactional: true

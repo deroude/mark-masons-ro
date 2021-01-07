@@ -19,33 +19,36 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
-import { EventsComponent } from './components/events/events.component';
-import { UsersComponent } from './components/users/users.component';
+import { EventListComponent } from './components/event/event-list/event-list.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
 import { AttendanceAftermathComponent } from './components/attendance/attendance.aftermath.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { RsvpMessageComponent } from './components/rsvp/rsvp.message.component';
 import { AttendanceSavedMessageComponent } from './components/attendance/attendance.saved.message.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { ArticleComponent } from './components/article/article.component';
+import { BlogComponent } from './components/article/blog/blog.component';
+import { ArticleCardComponent } from './components/article/article-card/article-card.component';
 import { TemplateComponent } from './components/template/template.component';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
-import { ArticleEditorComponent } from './components/article-editor/article-editor.component';
-import { EventEditorComponent } from './components/event-editor/event-editor.component';
-import { UserEditorComponent } from './components/user-editor/user-editor.component';
+import { ArticleEditorComponent } from './components/article/article-editor/article-editor.component';
+import { EventEditorComponent } from './components/event/event-editor/event-editor.component';
+import { UserEditorComponent } from './components/user/user-editor/user-editor.component';
 
 import { ApiModule } from './generated/api.module';
 import { BASE_PATH } from './generated/variables';
-import { UserHistoryComponent } from './components/user-history/user-history.component';
-import { UserHistoryEditorComponent } from './components/user-history-editor/user-history-editor.component';
+import { UserHistoryListComponent } from './components/user/user-history-list/user-history-list.component';
+import { UserHistoryEditorComponent } from './components/user/user-history-editor/user-history-editor.component';
 import { HomeComponent } from './components/home/home.component';
 import { MarkdownDirective } from './directives/markdown.directive';
 import { DefaultOAuthInterceptor } from './services/auth-interceptor';
 import { MeComponent } from './components/me/me.component';
+import { LodgeListComponent } from './components/lodge/lodge-list/lodge-list.component';
+import { LodgeEditorComponent } from './components/lodge/lodge-editor/lodge-editor.component';
+import { UserMarkComponent } from './components/user/user-mark/user-mark.component';
 
 
 const config: AuthConfig = {
@@ -53,7 +56,7 @@ const config: AuthConfig = {
   // clientId: '1054193493527-lqdqib6a7hqfa33h9coko00kunvloaaa.apps.googleusercontent.com',
   // issuer: 'https://accounts.google.com',
   issuer: 'https://mark-masons-ro.eu.auth0.com/',
-  tokenEndpoint: 'https://mark-masons-ro.eu.auth0.com/oauth/token',
+  // tokenEndpoint: 'https://mark-masons-ro.eu.auth0.com/oauth/token',
   // issuer: 'http://localhost:8180/auth/realms/mark_auth',
   // clientId: 'mark_auth-client',
   responseType: 'code',
@@ -86,24 +89,27 @@ FullCalendarModule.registerPlugins([
     TopNavComponent,
     BottomNavComponent,
     ProgressComponent,
-    EventsComponent,
-    UsersComponent,
+    EventListComponent,
+    UserListComponent,
     AttendanceComponent,
     AttendanceAftermathComponent,
     AttendanceSavedMessageComponent,
     RsvpComponent,
     RsvpMessageComponent,
     BlogComponent,
-    ArticleComponent,
+    ArticleCardComponent,
     ArticleEditorComponent,
     EventEditorComponent,
     TemplateComponent,
     UserEditorComponent,
-    UserHistoryComponent,
+    UserHistoryListComponent,
     UserHistoryEditorComponent,
     HomeComponent,
     MarkdownDirective,
-    MeComponent
+    MeComponent,
+    LodgeListComponent,
+    LodgeEditorComponent,
+    UserMarkComponent
   ],
   imports: [
     BrowserModule,
