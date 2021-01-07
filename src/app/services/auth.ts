@@ -22,9 +22,9 @@ export class AuthService implements CanActivate {
         oauthService.events.subscribe(e => e instanceof OAuthErrorEvent ? console.error(e) : console.log(e));
 
         // Load information from Auth0 (could also be configured manually)
-        // oauthService.loadDiscoveryDocument();
+        oauthService.loadDiscoveryDocument();
 
-        // oauthService.setupAutomaticSilentRefresh();
+        oauthService.setupAutomaticSilentRefresh();
     }
 
     canActivate(
@@ -39,7 +39,7 @@ export class AuthService implements CanActivate {
 
     login(): void { this.oauthService.initLoginFlow(); }
     logout(): void { this.oauthService.logOut(); this.router.navigate(['']); }
-    // refresh(): Promise<any> { return this.oauthService.silentRefresh(); }
+    refresh(): Promise<any> { return this.oauthService.silentRefresh(); }
 
     get userEmail(): string {
         const claims = this.oauthService.getIdentityClaims();
