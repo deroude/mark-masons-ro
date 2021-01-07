@@ -52,7 +52,7 @@ methodPaths:
       path: queries/event/update-attendance.yaml
   /event/{eventId}/attendance/{attendanceId}:
     put:
-      path: queries/event/update-attendance-item\.yaml
+      path: queries/event/update-attendance-item.yaml
   /rsvp/{code}:
     put:
       path: queries/event/rsvp-event.yaml
