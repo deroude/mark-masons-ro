@@ -70,8 +70,8 @@ const config: AuthConfig = {
 const authModuleConfig: OAuthModuleConfig = {
   // Inject "Authorization: Bearer ..." header for these APIs:
   resourceServer: {
-    // allowedUrls: ['https://sqless.net'],
-    allowedUrls: ['http://localhost:9000'],
+    allowedUrls: ['https://mark-masons.ro'],
+    // allowedUrls: ['http://localhost:9000'],
     sendAccessToken: true
   },
 };
@@ -128,8 +128,8 @@ FullCalendarModule.registerPlugins([
     { provide: OAuthModuleConfig, useValue: authModuleConfig },
     { provide: OAuthStorage, useValue: sessionStorage },
     { provide: AuthConfig, useValue: config },
-    // { provide: BASE_PATH, useValue: 'https://sqless.net' },
-    { provide: BASE_PATH, useValue: 'http://localhost:9000' },
+    { provide: BASE_PATH, useValue: 'https://mark-masons.ro/api' },
+    // { provide: BASE_PATH, useValue: 'http://localhost:9000' },
     { provide: HTTP_INTERCEPTORS, useClass: DefaultOAuthInterceptor, multi: true }
   ],
   entryComponents: [

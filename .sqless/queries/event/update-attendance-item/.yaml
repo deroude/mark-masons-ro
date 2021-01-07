@@ -1,8 +1,0 @@
-pipe:
-  - type: query
-    statement: >-
-      SELECT 1;
-    resultType: scalar
-    assign: Result
-returnVar: Result
-transactional: false
