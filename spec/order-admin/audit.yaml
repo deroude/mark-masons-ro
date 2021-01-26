@@ -32,7 +32,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Audit"
+              $ref: ../schemas/Audit.yaml
   security:
     - mark_auth:
         - "order"

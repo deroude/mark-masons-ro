@@ -27,7 +27,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Lodge"
+              $ref: ../schemas/Lodge.yaml
   security:
     - mark_auth:
         - "order"
@@ -42,7 +42,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Lodge"
+          $ref: ../schemas/Lodge.yaml
     required: true
   responses:
     "201":
@@ -50,7 +50,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Lodge"
+            $ref: ../schemas/Lodge.yaml
     "400":
       description: Invalid object supplied
       content: {}

@@ -1,7 +1,7 @@
 get:
   tags:
     - payment
-    - order-admin
+    - lodge-admin
   summary: Get all user payments
   operationId: listPayments
   responses:
@@ -12,7 +12,27 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Payment"
+              $ref: ../schemas/Payment.yaml
   security:
     - mark_auth:
-        - "order"
+        - "lodge"
+post:
+  tags:
+    - payment
+    - lodge-admin
+  summary: Add payment
+  operationId: addPayment
+  requestBody:
+    description: Payment to be added
+    content:
+      application/json:
+        $ref: ../schemas/Payment.yaml
+    required: true
+  responses:
+    "201":
+      description: Payment created
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "lodge"

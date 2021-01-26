@@ -36,7 +36,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Article"
+              $ref: ../schemas/Article.yaml
   security:
     - mark_auth:
         - "order"
@@ -50,7 +50,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Article"
+          $ref: ../schemas/Article.yaml
     required: true
   responses:
     "200":
@@ -58,7 +58,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Article"
+            $ref: ../schemas/Article.yaml
     "400":
       description: Invalid object supplied
       content: {}

@@ -15,14 +15,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Article"
+          $ref: "../schemas/article.yaml"
   responses:
     "200":
       description: Article updated
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Article"
+            $ref: "../schemas/article.yaml"
     "404":
       description: Article not found
     "400":

@@ -10,6 +10,6 @@ get:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: ../schemas/User.yaml
   security:
     - mark_auth: []

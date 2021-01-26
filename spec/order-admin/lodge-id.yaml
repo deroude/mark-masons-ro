@@ -15,14 +15,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Lodge"
+          $ref: ../schemas/Lodge.yaml
   responses:
     "200":
       description: Lodge updated
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Lodge"
+            $ref: ../schemas/Lodge.yaml
     "404":
       description: Lodge not found
     "400":

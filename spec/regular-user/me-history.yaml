@@ -12,6 +12,6 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/History"
+              $ref: ../schemas/History.yaml
   security:
     - mark_auth: []

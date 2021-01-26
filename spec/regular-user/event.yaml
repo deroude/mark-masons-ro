@@ -28,6 +28,6 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Event"
+              $ref: ../schemas/Event.yaml
   security:
     - mark_auth: []

@@ -12,7 +12,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Payment"
+              $ref: ../schemas/Payment.yaml
   security:
     - mark_auth: []
 post:
@@ -27,6 +27,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Payment"
+            $ref: ../schemas/Payment.yaml
   security:
     - mark_auth: []

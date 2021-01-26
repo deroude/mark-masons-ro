@@ -15,14 +15,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Event"
+          $ref: ../schemas/Event.yaml
   responses:
     "200":
       description: Event updated
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Event"
+            $ref: ../schemas/Event.yaml
     "404":
       description: Event not found
     "400":

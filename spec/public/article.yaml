@@ -37,4 +37,4 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Article"
+              $ref: "../schemas/article.yaml"

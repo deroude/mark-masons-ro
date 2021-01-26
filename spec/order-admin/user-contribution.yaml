@@ -10,7 +10,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/UserContribution"
+            $ref: ../schemas/UserContribution.yaml
   security:
     - mark_auth:
         - "order"
@@ -28,7 +28,7 @@ put:
         schema:
           type: array
           items:
-            $ref: "#/components/schemas/UserContribution"
+            $ref: ../schemas/UserContribution.yaml
     required: true
   responses:
     "200":

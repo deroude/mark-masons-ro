@@ -1,0 +1,32 @@
+Article:
+  $ref: ./Article.yaml
+
+Audit:
+  $ref: ./Audit.yaml
+
+User:
+  $ref: ./User.yaml
+
+Lodge:
+  $ref: ./Lodge.yaml
+
+History:
+  $ref: ./History.yaml
+
+Event:
+  $ref: ./Event.yaml
+
+Attendance:
+  $ref: ./Attendance.yaml
+
+Template:
+  $ref: ./Template.yaml
+
+Contribution:
+  $ref: ./Contribution.yaml
+
+UserContribution:
+  $ref: UserContribution.yaml
+
+Payment:
+  $ref: ./Payment.yaml

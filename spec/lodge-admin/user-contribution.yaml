@@ -1,7 +1,7 @@
 get:
   tags:
     - payment
-    - order-admin
+    - lodge-admin
   summary: List user contributions
   operationId: listUserContributions
   responses:
@@ -10,15 +10,15 @@ get:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/UserContribution"
+            $ref: ../schemas/UserContribution.yaml
   security:
     - mark_auth:
-        - "order"
+        - "lodge"
 
 put:
   tags:
     - payment
-    - order-admin
+    - lodge-admin
   summary: Replace list of users due for contribution
   operationId: updateUserContributions
   requestBody:
@@ -28,11 +28,11 @@ put:
         schema:
           type: array
           items:
-            $ref: "#/components/schemas/UserContribution"
+            $ref: ../schemas/UserContribution.yaml
     required: true
   responses:
     "200":
       description: List of user contributions
   security:
     - mark_auth:
-        - "order"
+        - "lodge"

@@ -16,7 +16,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Payment"
+            $ref: ../schemas/Payment.yaml
   security:
     - mark_auth:
         - "order"

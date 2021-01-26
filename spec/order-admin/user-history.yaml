@@ -28,7 +28,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/History"
+              $ref: ../schemas/History.yaml
   security:
     - mark_auth:
         - "order"
@@ -49,7 +49,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/History"
+          $ref: ../schemas/History.yaml
     required: true
   responses:
     "200":
@@ -57,7 +57,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/History"
+            $ref: ../schemas/History.yaml
     "400":
       description: Invalid object supplied
   security:

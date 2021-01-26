@@ -94,7 +94,7 @@ paths:
 
 components:
   schemas:
-    $ref: "./schemas.yaml"
+    $ref: "./schemas/_index.yaml"
   securitySchemes:
     mark_auth:
       type: openIdConnect

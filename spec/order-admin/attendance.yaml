@@ -19,7 +19,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Attendance"
+              $ref: ../schemas/Attendance.yaml
     "404":
       description: event id not found
   security:
@@ -45,7 +45,7 @@ post:
         schema:
           type: array
           items:
-            $ref: "#/components/schemas/Attendance"
+            $ref: ../schemas/Attendance.yaml
     required: true
   responses:
     "201":
@@ -75,7 +75,7 @@ put:
         schema:
           type: array
           items:
-            $ref: "#/components/schemas/Attendance"
+            $ref: ../schemas/Attendance.yaml
     required: true
   responses:
     "200":

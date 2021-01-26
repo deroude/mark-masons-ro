@@ -15,14 +15,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/User"
+          $ref: ../schemas/User.yaml
   responses:
     "200":
       description: User updated
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: ../schemas/User.yaml
     "404":
       description: User not found
     "400":

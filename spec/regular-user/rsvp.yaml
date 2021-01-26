@@ -19,7 +19,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Attendance"
+          $ref: ../schemas/Attendance.yaml
     required: true
   responses:
     "200":

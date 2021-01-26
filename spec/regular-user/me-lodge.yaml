@@ -12,6 +12,6 @@ get:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/Lodge"
+                $ref: ../schemas/Lodge.yaml
   security:
     - mark_auth: []

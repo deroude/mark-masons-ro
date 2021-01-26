@@ -16,7 +16,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Contribution"
+          $ref: ../schemas/Contribution.yaml
   responses:
     "200":
         description: Contribution modified
@@ -25,7 +25,7 @@ put:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/Contribution"
+                $ref: ../schemas/Contribution.yaml
     "400":
         description: Contribution invalid
         content: {}

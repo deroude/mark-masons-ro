@@ -12,7 +12,7 @@ get:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/Contribution"
+                $ref: ../schemas/Contribution.yaml
   security:
     - mark_auth:
         - "lodge"
@@ -38,7 +38,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Contribution"
+          $ref: ../schemas/Contribution.yaml
   responses:
     "201":
         description: Contribution added

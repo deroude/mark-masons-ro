@@ -12,7 +12,27 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/Payment"
+              $ref: ../schemas/Payment.yaml
+  security:
+    - mark_auth:
+        - "order"
+post:
+  tags:
+    - payment
+    - order-admin
+  summary: Add payment
+  operationId: addPayment
+  requestBody:
+    description: Payment to be added
+    content:
+      application/json:
+        $ref: ../schemas/Payment.yaml
+    required: true
+  responses:
+    "201":
+      description: Payment created
+    "400":
+      description: Invalid object supplied
   security:
     - mark_auth:
         - "order"

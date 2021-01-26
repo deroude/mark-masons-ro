@@ -20,14 +20,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/History"
+          $ref: ../schemas/History.yaml
   responses:
     "200":
       description: User updated
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/History"
+            $ref: ../schemas/History.yaml
     "404":
       description: User history not found
     "400":

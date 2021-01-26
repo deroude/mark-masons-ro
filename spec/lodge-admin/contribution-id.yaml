@@ -1,7 +1,7 @@
 put:
   tags: 
     - contribution
-    - order-admin
+    - lodge-admin
   summary: Modify a contributions
   operationId: updateContribution
   parameters:
@@ -16,7 +16,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/Contribution"
+          $ref: ../schemas/Contribution.yaml
   responses:
     "200":
         description: Contribution modified
@@ -25,7 +25,7 @@ put:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/Contribution"
+                $ref: ../schemas/Contribution.yaml
     "400":
         description: Contribution invalid
         content: {}
@@ -34,11 +34,11 @@ put:
         content: {}
   security:
     - mark_auth:
-        - "order"
+        - "lodge"
 delete:
   tags: 
     - contribution
-    - order-admin
+    - lodge-admin
   summary: Remove a contribution
   operationId: removeContribution
   parameters:
@@ -61,4 +61,4 @@ delete:
         content: {}
   security:
     - mark_auth:
-        - "order"
+        - "lodge"
