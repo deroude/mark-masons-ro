@@ -1,0 +1,50 @@
+put:
+  tags:
+    - article
+  summary: Modify an article
+  operationId: updateArticle
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: Article that is updated
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Article"
+  responses:
+    "200":
+      description: Article updated
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Article"
+    "404":
+      description: Article not found
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "order"
+delete:
+  tags:
+    - article
+  summary: Delete an article
+  operationId: deleteArticle
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Article deleted
+    "404":
+      description: Article not found
+  security:
+    - mark_auth:
+        - "order"

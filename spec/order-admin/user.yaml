@@ -1,0 +1,86 @@
+get:
+  tags:
+    - user
+    - order-admin
+  summary: Get all users
+  operationId: getUsers
+  parameters:
+    - in: query
+      name: lodge
+      schema:
+        type: integer
+        format: int64
+    - in: query
+      name: filter
+      schema:
+        type: string
+    - in: query
+      name: page
+      schema:
+        type: integer
+        default: 0
+    - in: query
+      name: itemsPerPage
+      schema:
+        type: integer
+        default: 20
+  responses:
+    "200":
+      description: Retrieved users
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/User"
+  security:
+    - mark_auth:
+        - "order"
+
+post:
+  tags:
+    - user
+    - order-admin
+  summary: Add user
+  operationId: addUser
+  requestBody:
+    description: User to add
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/User"
+    required: true
+  responses:
+    "201":
+      description: User created
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/User"
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "order"
+
+put:
+  tags:
+    - user
+    - order-admin
+  summary: Upload users as CSV
+  operationId: uploadUsers
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:                
+            file:
+              type: string
+              format: binary
+  responses:
+    "200":
+      description: Users uploaded
+  security:
+    - mark_auth:
+      - "order"

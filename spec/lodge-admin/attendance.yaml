@@ -1,0 +1,87 @@
+get:
+  tags:
+    - event
+    - lodge-admin
+  summary: Get attendance report for event
+  operationId: getAttendance
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: integer
+        format: int64
+      required: true
+  responses:
+    "200":
+      description: Retrieved attendance
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Attendance"
+    "404":
+      description: event id not found
+  security:
+    - mark_auth:
+        - "lodge"
+post:
+  tags:
+    - event
+    - lodge-admin
+  summary: Add attendance list for an event
+  operationId: addAttendance
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: integer
+        format: int64
+      required: true
+  requestBody:
+    description: Attendance array to be added
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attendance"
+    required: true
+  responses:
+    "201":
+      description: Attendance created
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "lodge"
+put:
+  tags:
+    - event
+    - lodge-admin
+  summary: Replace attendance list for an event
+  operationId: updateAttendance
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: integer
+        format: int64
+      required: true
+  requestBody:
+    description: Attendance array to be updated
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "#/components/schemas/Attendance"
+    required: true
+  responses:
+    "200":
+      description: Attendance updated
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "lodge"

@@ -1,0 +1,65 @@
+get:
+  tags:
+    - user
+    - order-admin
+  summary: Get all history for given user
+  operationId: getUserHistory
+  parameters:
+    - in: path
+      required: true
+      name: userId
+      schema:
+        type: integer
+    - in: query
+      name: page
+      schema:
+        type: integer
+        default: 0
+    - in: query
+      name: itemsPerPage
+      schema:
+        type: integer
+        default: 20
+  responses:
+    "200":
+      description: Retrieved user history
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/History"
+  security:
+    - mark_auth:
+        - "order"
+post:
+  tags:
+    - user
+    - order-admin
+  summary: Add user history
+  operationId: addUserHistory
+  parameters:
+    - in: path
+      required: true
+      name: userId
+      schema:
+        type: integer
+  requestBody:
+    description: User history itemto add
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/History"
+    required: true
+  responses:
+    "200":
+      description: User history created
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/History"
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "order"

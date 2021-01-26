@@ -1,0 +1,18 @@
+get:
+  tags:
+    - payment
+    - order-admin
+  summary: Get all user payments
+  operationId: listPayments
+  responses:
+    "200":
+      description: List Payments
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Payment"
+  security:
+    - mark_auth:
+        - "order"

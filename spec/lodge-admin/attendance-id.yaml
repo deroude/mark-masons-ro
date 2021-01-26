@@ -1,0 +1,36 @@
+put:
+  tags:
+    - event
+    - lodge-admin
+  summary: Update specific attendance item
+  operationId: updateAttendanceItem
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: integer
+        format: int64
+      required: true
+    - in: path
+      name: attendanceId
+      schema:
+        type: integer
+        format: int64
+      required: true
+  requestBody:
+    description: Attendance item to be updated
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Attendance"
+    required: true
+  responses:
+    "200":
+      description: Attendance updated
+    "404":
+      description: Event or attendance not found
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "lodge"

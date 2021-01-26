@@ -1,0 +1,248 @@
+Article:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    author:
+      $ref: "#/components/schemas/User"
+    category:
+      type: string
+    title:
+      type: string
+    slug:
+      type: string
+    text:
+      type: string
+    tags:
+      type: string
+    language:
+      type: string
+    audience:
+      type: string
+    publishDate:
+      type: string
+      format: date-time
+
+Audit:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    agent:
+      type: string
+    category:
+      type: string
+    operation:
+      type: string
+    payload:
+      type: string
+    date:
+      type: string
+      format: date-time
+
+User:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    email:
+      type: string
+    lastName:
+      type: string
+    firstName:
+      type: string
+    address:
+      type: string
+    correspondenceAddress:
+      type: string
+      nullable: true
+    phoneNumber:
+      type: string
+    secondaryPhoneNumber:
+      type: string
+      nullable: true
+    birthdate:
+      type: string
+      format: date-time
+    profession:
+      type: string
+      nullable: true
+    workplace:
+      type: string
+      nullable: true
+    userStatus:
+      type: string
+    rank:
+      type: string
+    orderPrivilege:
+      type: string
+    nationalId:
+      type: string
+      nullable: true
+    nationalIdDetails:
+      type: string
+      nullable: true
+    mmh:
+      type: string
+    markCode:
+      type: string
+      nullable: true
+    markImage:
+      type: string
+      nullable: true
+
+Lodge:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+    status:
+      type: string
+    number:
+      type: string
+    orient:
+      type: string
+    location:
+      type: string
+      nullable: true
+
+History:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    user:
+      $ref: "#/components/schemas/User"
+      nullable: true
+    lodge:
+      $ref: "#/components/schemas/Lodge"
+    eventType:
+      type: string
+    event:
+      type: string
+    comment:
+      type: string
+      nullable: true
+    startDate:
+      type: string
+      format: date-time
+    endDate:
+      type: string
+      format: date-time
+      nullable: true
+
+Event:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    title:
+      type: string
+    text:
+      type: string
+    location:
+      type: string
+    startDate:
+      type: string
+      format: date-time
+    eventType:
+      type: string
+    status:
+      type: string
+    lodge:
+      $ref: "#/components/schemas/Lodge"
+
+Attendance:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    code:
+      type: string
+    user:
+      $ref: "#/components/schemas/User"
+    status:
+      type: string
+    statusConfirmation:
+      type: string
+    comment:
+      type: string
+
+
+Template:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    bundle:
+      type: string
+    name:
+      type: string
+    description:
+      type: string
+    content:
+      type: string
+
+Contribution:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    description:
+      type: string
+    category:
+      type: string
+    destination:
+      $ref: "#/components/schemas/Lodge"
+    value:
+      type: number
+      format: double
+    issueDate:
+      type: string
+      format: date
+    dueDate:
+      type: string
+      format: date
+
+UserContribution:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    user:
+      $ref: "#/components/schemas/User"
+    payment:
+      $ref: "#/components/schemas/Payment"
+    contribution:
+      $ref: "#/components/schemas/Contribution"
+    status:
+      type: string
+
+Payment:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    user:
+      $ref: "#/components/schemas/User"
+    value:
+      type: number
+      format: double
+    paymentDate:
+      type: string
+      format: date
+    status:
+      type: string

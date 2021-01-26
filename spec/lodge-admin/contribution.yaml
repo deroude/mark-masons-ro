@@ -1,0 +1,54 @@
+get:
+  tags: 
+    - contribution
+    - lodge-admin
+  summary: List all contributions
+  operationId: listContributions
+  responses:
+    "200":
+        description: Contribution added
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Contribution"
+  security:
+    - mark_auth:
+        - "lodge"
+post:
+  tags: 
+    - contribution
+    - lodge-admin
+  summary: Create a contribution
+  operationId: addContribution
+  parameters:
+    - in: query
+      required: true
+      name: audienceType
+      schema:
+        type: string
+    - in: query
+      required: false
+      name: audience
+      schema:
+        type: string
+  requestBody:
+    description: Contribution definition
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Contribution"
+  responses:
+    "201":
+        description: Contribution added
+        content: {}
+    "400":
+        description: Contribution invalid
+        content: {}
+    "404":
+        description: Audience not found
+        content: {}
+  security:
+    - mark_auth:
+        - "lodge"

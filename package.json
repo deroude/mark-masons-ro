@@ -8,6 +8,7 @@
     "build:default": "ng build --configuration=production",
     "build:ro": "ng build --configuration=production,ro",
     "generate:api": "openapi-generator generate -g typescript-angular -i mark-api.yaml -o ./src/app/generated",
+    "sqless:start": "sqless start",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -1,0 +1,17 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Get current user contributions
+  operationId: myContributions
+  responses:
+    "200":
+      description: My Contributions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/UserContribution"
+  security:
+    - mark_auth: []

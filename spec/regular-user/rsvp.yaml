@@ -1,0 +1,32 @@
+put:
+  tags:
+    - event
+    - regular-user
+  summary: Respond to Event invitation
+  operationId: rsvpEvent
+  parameters:
+    - in: path
+      name: code
+      schema:
+        type: string
+      required: true
+    - in: query
+      name: response
+      schema:
+        type: string
+  requestBody:
+    description: Attendance item to be updated
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Attendance"
+    required: true
+  responses:
+    "200":
+      description: Attendance updated
+    "404":
+      description: Event or attendance not found
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth: []

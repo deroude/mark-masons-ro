@@ -1,0 +1,52 @@
+put:
+  tags:
+    - event
+    - lodge-admin
+  summary: Modify an event
+  operationId: updateEvent
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: Event that is updated
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Event"
+  responses:
+    "200":
+      description: Event updated
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Event"
+    "404":
+      description: Event not found
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "lodge"
+delete:
+  tags:
+    - event
+    - lodge-admin
+  summary: Delete an event
+  operationId: deleteEvent
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Event deleted
+    "404":
+      description: Article not found
+  security:
+    - mark_auth:
+        - "lodge"

@@ -1,0 +1,33 @@
+get:
+  tags:
+    - event
+    - regular-user
+  summary: Get all events
+  operationId: getEvents
+  parameters:
+    - in: query
+      name: fromDate
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: toDate
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: future
+      schema:
+        type: boolean
+        default: true
+  responses:
+    "200":
+      description: Retrieved events
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Event"
+  security:
+    - mark_auth: []

@@ -1,0 +1,16 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Download good standing document
+  operationId: downloadGoodStanding
+  responses:
+    "200":
+      description: GoodStanding doc
+      content:
+        application/pdf:
+          schema:
+            type: string
+            format: binary
+  security:
+    - mark_auth: []

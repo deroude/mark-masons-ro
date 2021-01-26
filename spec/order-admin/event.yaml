@@ -1,0 +1,56 @@
+get:
+  tags:
+    - event
+    - order-admin
+  summary: Get all events
+  operationId: getEvents
+  parameters:
+    - in: query
+      name: fromDate
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: toDate
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: future
+      schema:
+        type: boolean
+        default: true
+  responses:
+    "200":
+      description: Retrieved events
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Event"
+  security:
+    - mark_auth:
+        - "order"
+post:
+  tags:
+    - event
+    - order-admin
+  summary: Add an event
+  operationId: addEvent
+  requestBody:
+    description: Event object that needs to be added
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Event"
+    required: true
+  responses:
+    "201":
+      description: Event created
+    "400":
+      description: Invalid object supplied
+      content: {}
+  security:
+    - mark_auth:
+        - "order-admin"

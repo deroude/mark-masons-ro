@@ -1,0 +1,64 @@
+put:
+  tags: 
+    - contribution
+    - order-admin
+  summary: Modify a contributions
+  operationId: updateContribution
+  parameters:
+    - in: path
+      name: id
+      description: contribution to modify
+      required: true
+      schema:
+        type: integer
+        format: int64
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Contribution"
+  responses:
+    "200":
+        description: Contribution modified
+        content: 
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Contribution"
+    "400":
+        description: Contribution invalid
+        content: {}
+    "404":
+        description: Contribution not found
+        content: {}
+  security:
+    - mark_auth:
+        - "order"
+delete:
+  tags: 
+    - contribution
+    - order-admin
+  summary: Remove a contribution
+  operationId: removeContribution
+  parameters:
+      - in: path
+        name: id
+        description: contribution to modify
+        required: true
+        schema:
+          type: integer
+          format: int64      
+  responses:
+    "200":
+        description: Contribution removed
+        content: {}
+    "404":
+        description: Contribution not found
+        content: {}
+    "422":
+        description: Cannot delete contribution due to consistency fail
+        content: {}
+  security:
+    - mark_auth:
+        - "order"

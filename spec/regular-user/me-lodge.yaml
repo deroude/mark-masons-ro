@@ -1,0 +1,17 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Get current user lodges
+  operationId: myLodges
+  responses:
+    "200":
+        description: Lodges
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Lodge"
+  security:
+    - mark_auth: []

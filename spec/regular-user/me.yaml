@@ -1,0 +1,15 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Get currently logged in user
+  operationId: myProfile
+  responses:
+    "200":
+      description: Retrieved user
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/User"
+  security:
+    - mark_auth: []

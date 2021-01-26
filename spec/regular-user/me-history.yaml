@@ -1,0 +1,17 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Get current user history
+  operationId: myHistory
+  responses:
+    "200":
+      description: History
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/History"
+  security:
+    - mark_auth: []

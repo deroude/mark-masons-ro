@@ -1,0 +1,101 @@
+openapi: 3.0.1
+info:
+  title: Mark Portal API
+  description: >-
+    Mark Portal API BE.
+  version: 1.0.0
+servers:
+  - url: "http://localhost:9000/"
+  - url: "https://mark-masons.ro"
+tags:
+  - name: article
+    description: Everything concerning articles, comments
+  - name: lodge
+    description: Lodge management
+  - name: event
+    description: Event and invitation management
+  - name: charity
+    description: Charity donations
+  - name: user
+    description: Operations about user
+  - name: template
+    description: Templateable library object
+  - name: lodge-admin
+    description: Operations available only to the Lodge Admin
+  - name: order-admin
+    description: Operations available only to the Order Admin
+
+paths:
+  /public/article:
+    $ref: "./public/article.yaml"
+
+  /regular-user/article:
+    $ref: "./regular-user/article.yaml"
+  /regular-user/article/{id}:
+    $ref: "./regular-user/article-id.yaml"
+  /regular-user/event:
+    $ref: "./regular-user/event.yaml"
+  /regular-user/me:
+    $ref: "./regular-user/me.yaml"
+  /regular-user/goodstanding:
+    $ref: "./regular-user/me-goodstanding.yaml"
+  /regular-user/me/lodge:
+    $ref: "./regular-user/me-lodge.yaml"
+  /regular-user/history:
+    $ref: "./regular-user/me-history.yaml"
+  /regular-user/contribution:
+    $ref: "./regular-user/me-contribution.yaml"
+  /regular-user/payment:
+    $ref: "./regular-user/me-payment.yaml"
+  /regular-user/rsvp/{code}:
+    $ref: "./regular-user/rsvp.yaml"
+  /regular-user/lodge:
+    $ref: "./regular-user/lodge.yaml"
+
+  /lodge-admin/article:
+    $ref: "./lodge-admin/article.yaml"
+  /lodge-admin/article/{id}:
+    $ref: "./lodge-admin/article-id.yaml"
+  /lodge-admin/event:
+    $ref: "./lodge-admin/event.yaml"
+  /lodge-admin/event/{id}:
+    $ref: "./lodge-admin/event-id.yaml"
+  /lodge-admin/event/{eventId}/attendance:
+    $ref: "./lodge-admin/attendance-id.yaml"
+  /lodge-admin/event/{eventId}/attendance/{id}:
+    $ref: "./lodge-admin/attendance-id.yaml"
+
+  /order-admin/article:
+    $ref: "./order-admin/article.yaml"
+  /order-admin/article/{id}:
+    $ref: "./order-admin/article-id.yaml"
+  /order-admin/audit:
+    $ref: "./order-admin/audit.yaml"
+  /order-admin/user:
+    $ref: "./order-admin/user.yaml"
+  /order-admin/user/{id}:
+    $ref: "./order-admin/user-id.yaml"
+  /order-admin/user/{userId}/history:
+    $ref: "./order-admin/user-history.yaml"
+  /order-admin/user/{userId}/history/{id}:
+    $ref: "./order-admin/user-history-id.yaml"
+  /order-admin/event:
+    $ref: "./order-admin/event.yaml"
+  /order-admin/event/{id}:
+    $ref: "./order-admin/event-id.yaml"
+  /order-admin/event/{eventId}/attendance:
+    $ref: "./order-admin/attendance-id.yaml"
+  /order-admin/event/{eventId}/attendance/{id}:
+    $ref: "./order-admin/attendance-id.yaml"
+  /order-admin/lodge:
+    $ref: "./order-admin/lodge.yaml"
+  /order-admin/lodge/{id}:
+    $ref: "./order-admin/lodge-id.yaml"
+
+components:
+  schemas:
+    $ref: "./schemas.yaml"
+  securitySchemes:
+    mark_auth:
+      type: openIdConnect
+      openIdConnectUrl: https://mark-masons-ro.eu.auth0.com/.well-known/openid-configuration

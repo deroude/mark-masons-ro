@@ -1,0 +1,32 @@
+get:
+  tags:
+    - lodge
+    - regular-user
+  summary: Get all lodges
+  operationId: getLodges
+  parameters:
+    - in: query
+      name: filter
+      schema:
+        type: string
+    - in: query
+      name: page
+      schema:
+        type: integer
+        default: 0
+    - in: query
+      name: itemsPerPage
+      schema:
+        type: integer
+        default: 20
+  responses:
+    "200":
+      description: Lodges retrieved
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Lodge"
+  security:
+    - mark_auth: []

@@ -1,0 +1,32 @@
+get:
+  tags:
+    - user
+    - regular-user
+  summary: Get current user payments
+  operationId: myPayments
+  responses:
+    "200":
+      description: My Payments
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Payment"
+  security:
+    - mark_auth: []
+post:
+  tags:
+    - user
+    - regular-user
+  summary: Add payment
+  operationId: addPayment
+  responses:
+    "201":
+      description: My Payments
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Payment"
+  security:
+    - mark_auth: []

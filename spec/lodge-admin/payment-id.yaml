@@ -1,0 +1,22 @@
+put:
+  tags:
+    - payment
+    - order-admin
+  summary: Update payment
+  operationId: updatePayment
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Payment update
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Payment"
+  security:
+    - mark_auth:
+        - "order"
