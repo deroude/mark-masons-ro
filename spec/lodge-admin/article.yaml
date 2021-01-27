@@ -1,6 +1,7 @@
 get:
   tags:
     - article
+    - lodge-admin
   summary: Get all articles
   operationId: getArticles
   parameters:
@@ -43,6 +44,7 @@ get:
 post:
   tags:
     - article
+    - lodge-admin
   summary: Add an article
   operationId: addArticle
   requestBody:

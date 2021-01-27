@@ -1,6 +1,7 @@
 put:
   tags:
     - article
+    - lodge-admin
   summary: Modify an article
   operationId: updateArticle
   parameters:
@@ -28,10 +29,11 @@ put:
       description: Invalid object supplied
   security:
     - mark_auth:
-        - "order"
+        - "lodge"
 delete:
   tags:
     - article
+    - lodge-admin
   summary: Delete an article
   operationId: deleteArticle
   parameters:
@@ -47,4 +49,4 @@ delete:
       description: Article not found
   security:
     - mark_auth:
-        - "order"
+        - "lodge"

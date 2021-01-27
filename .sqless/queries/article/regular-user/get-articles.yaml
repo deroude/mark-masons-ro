@@ -1,0 +1,20 @@
+pipe:
+  - type: query
+    statement: >-
+      SELECT a.*
+      FROM "article" a LEFT JOIN "user" u ON a."author" = u."id"
+      WHERE ($1::varchar IS NULL OR a."category" = $1) AND ($2::varchar IS NULL OR a."language" = $2) 
+        AND ($3::varchar IS NULL OR a."title" LIKE '%' || $3 || '%' OR u."last_name" LIKE '%' || $3 || '%' OR u."first_name" LIKE '%' || $3 || '%');
+    params:
+      - query.category
+      - query.language
+      - query.filter 
+    resultType: set
+    assign: ListArticle
+  - type: mapping
+    from: ListArticle
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListArticle
+returnVar: ListArticle
+transactional: false

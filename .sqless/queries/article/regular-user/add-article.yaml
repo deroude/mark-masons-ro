@@ -1,0 +1,26 @@
+pipe:
+  - type: query
+    statement: >-
+      INSERT INTO "article" ( 
+        "author","category","title","slug","text","tags","language","audience","publish_date" 
+      )
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING *;
+    params:      
+      - body.author.id
+      - body.category
+      - body.title
+      - body.slug
+      - body.text
+      - body.tags
+      - body.language
+      - body.audience
+      - body.publishDate
+    resultType: row
+    assign: NewArticle
+  - type: mapping
+    from: NewArticle
+    isArray: false
+    builtIn: snakeToCamel
+    to: NewArticle
+returnVar: NewArticle
+transactional: true

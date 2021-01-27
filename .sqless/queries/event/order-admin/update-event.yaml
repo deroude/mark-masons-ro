@@ -1,0 +1,24 @@
+pipe:
+  - type: query
+    statement: >-
+      UPDATE "event" SET 
+      "title" = $2,"text" = $3,"location" = $4,"start_date" = $5,"event_type" = $6,"status" = $7,"lodge" = $8
+      WHERE id = $1 RETURNING *
+    params:
+      - params.id      
+      - body.title
+      - body.text
+      - body.location
+      - body.startDate
+      - body.eventType
+      - body.status
+      - body.lodge.id
+    resultType: row      
+    assign: UpdatedEvent
+  - type: mapping
+    isArray: false
+    from: UpdatedEvent
+    builtIn: snakeToCamel
+    to: UpdatedEvent
+returnVar: UpdatedEvent
+transactional: true

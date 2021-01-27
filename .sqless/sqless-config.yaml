@@ -13,120 +13,198 @@ migrations:
 apiPath: ../mark-api.yaml
 
 methodPaths:
-  /article:
+  /public/article:
     get:
-      path: queries/article/get-articles.yaml
+      path: queries/article/public/get-articles.yaml
+  /regular-user/article:
+    get:
+      path: queries/article/regular-user/get-articles.yaml
     post:
-      path: queries/article/add-article.yaml
-  /article/{id}:
+      path: queries/article/regular-user/add-article.yaml
+  /regular-user/article/{id}:
     put:
-      path: queries/article/update-article.yaml
+      path: queries/article/regular-user/update-article.yaml
     delete:
-      path: queries/article/delete-article.yaml
-  /lodge:
+      path: queries/article/regular-user/delete-article.yaml
+  /regular-user/event:
     get:
-      path: queries/lodge/get-lodges.yaml
+      path: queries/event/regular-user/get-events.yaml
+  /regular-user/me:
+    get:
+      path: queries/user/regular-user/my-profile.yaml
+  /regular-user/goodstanding:
+    get:
+      path: queries/user/regular-user/download-good-standing.yaml
+  /regular-user/me/lodge:
+    get:
+      path: queries/user/regular-user/my-lodges.yaml
+  /regular-user/history:
+    get:
+      path: queries/user/regular-user/my-history.yaml
+  /regular-user/contribution:
+    get:
+      path: queries/user/regular-user/my-contributions.yaml
+  /regular-user/payment:
+    get:
+      path: queries/user/regular-user/my-payments.yaml
     post:
-      path: queries/lodge/add-lodge.yaml
-  /lodge/{id}:
+      path: queries/user/regular-user/add-payment.yaml
+  /regular-user/rsvp/{code}:
     put:
-      path: queries/lodge/update-lodge.yaml
+      path: queries/event/regular-user/rsvp-event.yaml
+  /regular-user/lodge:
+    get:
+      path: queries/lodge/regular-user/get-lodges.yaml
+  /lodge-admin/article:
+    get:
+      path: queries/article/lodge-admin/get-articles.yaml
+    post:
+      path: queries/article/lodge-admin/add-article.yaml
+  /lodge-admin/article/{id}:
+    put:
+      path: queries/article/lodge-admin/update-article.yaml
     delete:
-      path: queries/lodge/delete-lodge.yaml
-  /event:
+      path: queries/article/lodge-admin/delete-article.yaml
+  /lodge-admin/event:
     get:
-      path: queries/event/get-events.yaml
+      path: queries/event/lodge-admin/get-events.yaml
     post:
-      path: queries/event/add-event.yaml
-  /event/{id}:
+      path: queries/event/lodge-admin/add-event.yaml
+  /lodge-admin/event/{id}:
     put:
-      path: queries/event/update-event.yaml
+      path: queries/event/lodge-admin/update-event.yaml
     delete:
-      path: queries/event/delete-event.yaml
-  /event/{eventId}/attendance:
+      path: queries/event/lodge-admin/delete-event.yaml
+  /lodge-admin/event/{eventId}/attendance:
     get:
-      path: queries/event/get-attendance.yaml
+      path: queries/event/lodge-admin/get-attendance.yaml
     post:
-      path: queries/event/add-attendance.yaml
+      path: queries/event/lodge-admin/add-attendance.yaml
     put:
-      path: queries/event/update-attendance.yaml
-  /event/{eventId}/attendance/{attendanceId}:
+      path: queries/event/lodge-admin/update-attendance.yaml
+  /lodge-admin/event/{eventId}/attendance/{id}:
     put:
-      path: queries/event/update-attendance-item.yaml
-  /rsvp/{code}:
-    put:
-      path: queries/event/rsvp-event.yaml
-  /user:
+      path: queries/event/lodge-admin/update-attendance-item.yaml
+  /lodge-admin/contribution:
     get:
-      path: queries/user/get-users.yaml
+      path: queries/contribution/lodge-admin/list-contributions.yaml
     post:
-      path: queries/user/add-user.yaml
+      path: queries/contribution/lodge-admin/add-contribution.yaml
+  /lodge-admin/contribution/{id}:
     put:
-      path: queries/user/upload-users.yaml
-  /me:
-    get:
-      path: queries/user/my-profile.yaml
-  /me/goodstanding:
-    get:
-      path: queries/user/download-good-standing.yaml
-  /me/history:
-    get:
-      path: queries/user/my-history.yaml
-  /me/lodge:
-    get:
-      path: queries/user/my-lodges.yaml
-  /me/contribution:
-    get:
-      path: queries/user/my-contributions.yaml
-  /me/payment:
-    get:
-      path: queries/user/my-payments.yaml
-    post:
-      path: queries/user/add-payment.yaml
-  /user/{id}:
-    put:
-      path: queries/user/update-user.yaml
+      path: queries/contribution/lodge-admin/update-contribution.yaml
     delete:
-      path: queries/user/delete-user.yaml
-  /user/{userId}/history:
+      path: queries/contribution/lodge-admin/remove-contribution.yaml
+  /lodge-admin/payment:
     get:
-      path: queries/user/get-user-history.yaml
+      path: queries/payment/lodge-admin/list-payments.yaml
     post:
-      path: queries/user/add-user-history.yaml
-  /user/{userId}/history/{id}:
+      path: queries/payment/lodge-admin/add-payment.yaml
+  /lodge-admin/payment/{id}:
     put:
-      path: queries/user/update-user-history.yaml
+      path: queries/payment/lodge-admin/update-payment.yaml
+  /lodge-admin/user-contribution:
+    get:
+      path: queries/payment/lodge-admin/list-user-contributions.yaml
+    put:
+      path: queries/payment/lodge-admin/update-user-contributions.yaml
+  /order-admin/article:
+    get:
+      path: queries/article/order-admin/get-articles.yaml
+    post:
+      path: queries/article/order-admin/add-article.yaml
+  /order-admin/article/{id}:
+    put:
+      path: queries/article/order-admin/update-article.yaml
     delete:
-      path: queries/user/delete-user-history.yaml
-  /template:
+      path: queries/article/order-admin/delete-article.yaml
+  /order-admin/audit:
     get:
-      path: queries/template/get-templates.yaml
+      path: queries/audit/order-admin/get-audit.yaml
+  /order-admin/user:
+    get:
+      path: queries/user/order-admin/get-users.yaml
     post:
-      path: queries/template/add-template.yaml
-  /template/{id}:
+      path: queries/user/order-admin/add-user.yaml
     put:
-      path: queries/template/update-template.yaml
+      path: queries/user/order-admin/upload-users.yaml
+  /order-admin/user/{id}:
+    put:
+      path: queries/user/order-admin/update-user.yaml
     delete:
-      path: queries/template/delete-template.yaml
-  /template/{id}/render:
-    post:
-      path: queries/template/render-template.yaml
-  /contribution:
+      path: queries/user/order-admin/delete-user.yaml
+  /order-admin/user/{userId}/history:
     get:
-      path: queries/contribution/list-contributions.yaml
+      path: queries/user/order-admin/get-user-history.yaml
     post:
-      path: queries/contribution/add-contribution.yaml
-  /contribution/{id}:
+      path: queries/user/order-admin/add-user-history.yaml
+  /order-admin/user/{userId}/history/{id}:
     put:
-      path: queries/contribution/update-contribution.yaml
+      path: queries/user/order-admin/update-user-history.yaml
     delete:
-      path: queries/contribution/remove-contribution.yaml
-  /payment:
+      path: queries/user/order-admin/delete-user-history.yaml
+  /order-admin/event:
     get:
-      path: queries/payment/list-payments.yaml
-  /payment/{id}:
+      path: queries/event/order-admin/get-events.yaml
+    post:
+      path: queries/event/order-admin/add-event.yaml
+  /order-admin/event/{id}:
     put:
-      path: queries/payment/update-payment.yaml
-  /usercontribution:
+      path: queries/event/order-admin/update-event.yaml
+    delete:
+      path: queries/event/order-admin/delete-event.yaml
+  /order-admin/event/{eventId}/attendance:
     get:
-      path: queries/payment/list-user-contributions.yaml
+      path: queries/event/order-admin/get-attendance.yaml
+    post:
+      path: queries/event/order-admin/add-attendance.yaml
+    put:
+      path: queries/event/order-admin/update-attendance.yaml
+  /order-admin/event/{eventId}/attendance/{id}:
+    put:
+      path: queries/event/order-admin/update-attendance-item.yaml
+  /order-admin/lodge:
+    get:
+      path: queries/lodge/order-admin/get-lodges.yaml
+    post:
+      path: queries/lodge/order-admin/add-lodge.yaml
+  /order-admin/lodge/{id}:
+    put:
+      path: queries/lodge/order-admin/update-lodge.yaml
+    delete:
+      path: queries/lodge/order-admin/delete-lodge.yaml
+  /order-admin/contribution:
+    get:
+      path: queries/contribution/order-admin/list-contributions.yaml
+    post:
+      path: queries/contribution/order-admin/add-contribution.yaml
+  /order-admin/contribution/{id}:
+    put:
+      path: queries/contribution/order-admin/update-contribution.yaml
+    delete:
+      path: queries/contribution/order-admin/remove-contribution.yaml
+  /order-admin/payment:
+    get:
+      path: queries/payment/order-admin/list-payments.yaml
+    post:
+      path: queries/payment/order-admin/add-payment.yaml
+  /order-admin/payment/{id}:
+    put:
+      path: queries/payment/order-admin/update-payment.yaml
+  /order-admin/user-contribution:
+    get:
+      path: queries/payment/order-admin/list-user-contributions.yaml
+    put:
+      path: queries/payment/order-admin/update-user-contributions.yaml
+  /order-admin/template:
+    get:
+      path: queries/template/order-admin/get-templates.yaml
+    post:
+      path: queries/template/order-admin/add-template.yaml
+  /order-admin/template/{id}:
+    put:
+      path: queries/template/order-admin/update-template.yaml
+    delete:
+      path: queries/template/order-admin/delete-template.yaml
+    post:
+      path: queries/template/order-admin/render-template.yaml

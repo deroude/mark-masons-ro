@@ -1,0 +1,89 @@
+put:
+  tags:
+    - template
+    - order-admin
+  summary: Modify a template
+  operationId: updateTemplate
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: Template that is updated
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/Template.yaml"
+  responses:
+    "200":
+      description: User updated
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Template.yaml"
+    "404":
+      description: Template not found
+    "400":
+      description: Invalid object supplied
+  security:
+    - mark_auth:
+        - "order"
+delete:
+  tags:
+    - template
+    - order-admin
+  summary: Delete a template
+  operationId: deleteTemplate
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Template deleted
+    "404":
+      description: Template not found
+  security:
+    - mark_auth:
+        - "order"
+
+post:
+  tags:
+    - template
+    - order-admin
+  summary: Render a template
+  operationId: renderTemplate
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: Template parameters
+    content:
+      application/json:
+        schema:
+          type: object
+    required: false
+  responses:
+    "201":
+      description: Template rendered
+      content:
+        application/pdf:
+          schema:
+            type: string
+            format: binary
+    "404":
+      description: Template not found
+      content: {}
+    "400":
+      description: Invalid object supplied
+      content: {}
+  security:
+    - mark_auth:
+        - "order"

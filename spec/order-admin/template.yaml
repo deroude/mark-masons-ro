@@ -1,24 +1,14 @@
 get:
   tags:
-    - article
+    - template
     - order-admin
-  summary: Get all articles
-  operationId: getArticles
+  summary: Get all templates
+  operationId: getTemplates
   parameters:
-    - in: query
-      name: category
-      schema:
-        type: string
-        default: BLOG
     - in: query
       name: filter
       schema:
         type: string
-    - in: query
-      name: language
-      schema:
-        type: string
-        default: en
     - in: query
       name: page
       schema:
@@ -31,39 +21,41 @@ get:
         default: 20
   responses:
     "200":
-      description: Articles retrieved
+      description: Templates retrieved
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: ../schemas/Article.yaml
+              $ref: "../schemas/Template.yaml"
   security:
     - mark_auth:
         - "order"
 post:
   tags:
-    - article
+    - template
     - order-admin
-  summary: Add an article
-  operationId: addArticle
+  summary: Add a template
+  operationId: addTemplate
   requestBody:
-    description: Article object that needs to be added
+    description: Template object that needs to be added
     content:
       application/json:
         schema:
-          $ref: ../schemas/Article.yaml
+          $ref: "../schemas/Template.yaml"
     required: true
   responses:
-    "200":
-      description: Article created
+    "201":
+      description: Template created
       content:
         application/json:
           schema:
-            $ref: ../schemas/Article.yaml
+            $ref: "../schemas/Template.yaml"
     "400":
       description: Invalid object supplied
       content: {}
   security:
     - mark_auth:
         - "order"
+
+  

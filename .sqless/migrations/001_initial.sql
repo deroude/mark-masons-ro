@@ -20,6 +20,15 @@ CREATE TABLE "user" (
     "mark_image" varchar
 );
 
+CREATE TABLE "audit" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "agent" varchar,
+    "category" varchar,
+    "operation" varchar,
+    "payload" varchar,
+    "date" timestamptz
+);
+
 CREATE TABLE "article" (
     "id" serial NOT NULL PRIMARY KEY,
     "author" int REFERENCES "user"("id"),

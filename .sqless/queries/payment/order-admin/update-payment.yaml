@@ -1,0 +1,21 @@
+pipe:
+  - type: query
+    statement: >-
+      UPDATE "payment" SET 
+      "user" = $2,"value" = $3,"payment_date" = $4,"status" = $5
+      WHERE id = $1 RETURNING *
+    params:
+      - params.id      
+      - body.user.id
+      - body.value
+      - body.paymentDate
+      - body.status
+    resultType: row      
+    assign: UpdatedPayment
+  - type: mapping
+    isArray: false
+    from: UpdatedPayment
+    builtIn: snakeToCamel
+    to: UpdatedPayment
+returnVar: UpdatedPayment
+transactional: true
