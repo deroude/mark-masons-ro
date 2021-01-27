@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "swagger-cli bundle spec/api.yaml -o mark-api-v2.yaml -t yaml && npm run generate:api && ng build --prod --localize",
+    "build": "npm run generate:spec && npm run generate:api && ng build --prod --localize",
     "build:default": "ng build --configuration=production",
     "build:ro": "ng build --configuration=production,ro",
+    "generate:spec": "swagger-cli bundle spec/api.yaml -o mark-api.yaml -t yaml",
     "generate:api": "openapi-generator generate -g typescript-angular -i mark-api.yaml -o ./src/app/generated",
     "sqless:start": "sqless start",
     "test": "ng test",
