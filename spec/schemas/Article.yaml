@@ -7,8 +7,11 @@ properties:
     $ref: ./User.yaml
   category:
     type: string
+    description: Category
+    enum: [BLOG,FRONT_PAGE]
   title:
     type: string
+    description: Title
   slug:
     type: string
   text:
@@ -19,6 +22,9 @@ properties:
     type: string
   audience:
     type: string
+    description: Audience
+    enum: [PUBLIC,REGULAR,SAME_LODGE,ORDER_ADMIN]
   publishDate:
     type: string
     format: date-time
+    description: Published Date

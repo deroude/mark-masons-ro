@@ -4,17 +4,25 @@ properties:
     type: integer
     format: int64
   title:
+    description: Title
     type: string
   text:
     type: string
   location:
+    description: Location
     type: string
   startDate:
+    description: Start Date
     type: string
     format: date-time
   eventType:
+    description: Event Type
     type: string
+    enum: [REGULAR,CASUAL,SUMMIT]
   status:
+    description: Status
     type: string
+    enum: [SCHEDULED,CANCELLED]
   lodge:
+    description: Lodge
     $ref: ./Lodge.yaml

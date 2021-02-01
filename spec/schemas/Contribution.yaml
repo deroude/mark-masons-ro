@@ -5,16 +5,23 @@ properties:
     format: int64
   description:
     type: string
+    description: Description
   category:
     type: string
+    description: Category
+    enum: [ORDER, LODGE]
   destination:
+    description: Destination
     $ref: ./Lodge.yaml
   value:
+    description: Value
     type: number
     format: double
   issueDate:
+    description: Issue Date
     type: string
     format: date
   dueDate:
+    description: Due Date
     type: string
     format: date

@@ -9,7 +9,9 @@ properties:
     $ref: ./User.yaml
   status:
     type: string
+    enum: [SENT,CANCELLED,RSVP_YES,RSVP_NO,ATTENDED,MISSED]
   statusConfirmation:
     type: string
   comment:
     type: string
+    description: Comment

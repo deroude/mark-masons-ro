@@ -6,8 +6,12 @@ properties:
   user:
     $ref: ./User.yaml
   payment:
+    description: Payment
     $ref: ./Payment.yaml
   contribution:
+    description: Requested Contribution
     $ref: ./Contribution.yaml
   status:
+    description: Status
     type: string
+    enum: [ASSIGNED, OVERDUE, PAID]

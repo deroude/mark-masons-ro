@@ -7,18 +7,26 @@ properties:
     $ref: ./User.yaml
     nullable: true
   lodge:
+    description: Lodge
     $ref: ./Lodge.yaml
   eventType:
+    description: Event Type
     type: string
+    enum: [LODGE,ORDER]
   event:
     type: string
+    description: Event
+    enum: [JOINED,CREATED,LEFT,ROLE,TITLE]
   comment:
+    description: Comment
     type: string
     nullable: true
   startDate:
+    description: Start Date
     type: string
     format: date-time
   endDate:
+    description: End Date
     type: string
     format: date-time
     nullable: true

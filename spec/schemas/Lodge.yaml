@@ -4,13 +4,19 @@ properties:
     type: integer
     format: int64
   name:
+    description: Name
     type: string
   status:
+    description: Status
     type: string
+    enum: [NEW,REGULAR,ENDED]
   number:
+    description: Number
     type: string
   orient:
+    description: Orient
     type: string
   location:
+    description: Location
     type: string
     nullable: true

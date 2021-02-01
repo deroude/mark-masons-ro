@@ -4,43 +4,62 @@ properties:
     type: integer
     format: int64
   email:
+    description: Email Address
     type: string
   lastName:
+    description: Last Name
     type: string
   firstName:
+    description: First Name
     type: string
   address:
+    description: Address
     type: string
   correspondenceAddress:
+    description: Correspondence Address
     type: string
     nullable: true
   phoneNumber:
+    description: Phone Number
     type: string
   secondaryPhoneNumber:
+    description: Secondary Phone Number
     type: string
     nullable: true
   birthdate:
+    description: Date of Birth
     type: string
     format: date-time
   profession:
+    description: Profession
     type: string
     nullable: true
   workplace:
+    description: Workplace
     type: string
     nullable: true
   userStatus:
+    description: Status
     type: string
+    enum: [ACTIVE,INACTIVE]
   rank:
+    description: Rank
     type: string
+    enum: [BROTHER,W_BROTHER,M_W_BROTHER]
   orderPrivilege:
+    description: Order Privilege
     type: string
+    enum: [REGULAR,LODGE_ADMIN,ORDER_ADMIN]
   nationalId:
+    description: National ID
     type: string
     nullable: true
   nationalIdDetails:
+    description: National ID Details
     type: string
     nullable: true
   mmh:
+    description: MMH
     type: string
   markCode:
     type: string

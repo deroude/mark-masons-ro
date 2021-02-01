@@ -6,10 +6,14 @@ properties:
   user:
     $ref: ./User.yaml
   value:
+    description: Value
     type: number
     format: double
   paymentDate:
+    description: Payment Date
     type: string
     format: date
   status:
+    description: Status
     type: string
+    enum: [SENT,VERIFIED]
