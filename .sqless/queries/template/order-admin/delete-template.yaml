@@ -1,8 +1,0 @@
-pipe:
-  - type: query
-    statement: >-
-      DELETE FROM "template" where "id" = $1;
-    params:
-      - params.id
-    resultType: none
-transactional: true
