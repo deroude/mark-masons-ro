@@ -3,7 +3,7 @@ get:
     - lodge
     - regular-user
   summary: Get all lodges
-  operationId: getLodges
+  operationId: RAgetLodges
   parameters:
     - in: query
       name: filter

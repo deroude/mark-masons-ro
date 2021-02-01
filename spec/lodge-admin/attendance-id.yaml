@@ -3,7 +3,7 @@ put:
     - event
     - lodge-admin
   summary: Update specific attendance item
-  operationId: updateAttendanceItem
+  operationId: LAupdateAttendanceItem
   parameters:
     - in: path
       name: eventId

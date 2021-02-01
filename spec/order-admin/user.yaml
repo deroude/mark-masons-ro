@@ -3,7 +3,7 @@ get:
     - user
     - order-admin
   summary: Get all users
-  operationId: getUsers
+  operationId: OAgetUsers
   parameters:
     - in: query
       name: lodge
@@ -42,7 +42,7 @@ post:
     - user
     - order-admin
   summary: Add user
-  operationId: addUser
+  operationId: OAaddUser
   requestBody:
     description: User to add
     content:
@@ -68,7 +68,7 @@ put:
     - user
     - order-admin
   summary: Upload users as CSV
-  operationId: uploadUsers
+  operationId: OAuploadUsers
   requestBody:
     content:
       multipart/form-data:

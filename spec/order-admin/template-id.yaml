@@ -3,7 +3,7 @@ put:
     - template
     - order-admin
   summary: Modify a template
-  operationId: updateTemplate
+  operationId: OAupdateTemplate
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - template
     - order-admin
   summary: Delete a template
-  operationId: deleteTemplate
+  operationId: OAdeleteTemplate
   parameters:
     - in: path
       required: true
@@ -56,7 +56,7 @@ post:
     - template
     - order-admin
   summary: Render a template
-  operationId: renderTemplate
+  operationId: OArenderTemplate
   parameters:
     - in: path
       required: true

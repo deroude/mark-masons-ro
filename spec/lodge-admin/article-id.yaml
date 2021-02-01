@@ -3,7 +3,7 @@ put:
     - article
     - lodge-admin
   summary: Modify an article
-  operationId: updateArticle
+  operationId: LAupdateArticle
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - article
     - lodge-admin
   summary: Delete an article
-  operationId: deleteArticle
+  operationId: LAdeleteArticle
   parameters:
     - in: path
       required: true

@@ -3,7 +3,7 @@ put:
     - article
     - regular-user
   summary: Modify an article
-  operationId: updateArticle
+  operationId: RAupdateArticle
   parameters:
     - in: path
       required: true
@@ -15,14 +15,14 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../schemas/article.yaml"
+          $ref: "../schemas/Article.yaml"
   responses:
     "200":
       description: Article updated
       content:
         application/json:
           schema:
-            $ref: "../schemas/article.yaml"
+            $ref: "../schemas/Article.yaml"
     "404":
       description: Article not found
     "400":
@@ -34,7 +34,7 @@ delete:
     - article
     - regular-user
   summary: Delete an article
-  operationId: deleteArticle
+  operationId: RAdeleteArticle
   parameters:
     - in: path
       required: true

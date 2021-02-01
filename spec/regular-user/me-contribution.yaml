@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Get current user contributions
-  operationId: myContributions
+  operationId: RAmyContributions
   responses:
     "200":
       description: My Contributions

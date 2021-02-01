@@ -3,7 +3,7 @@ get:
     - article
     - lodge-admin
   summary: Get all articles
-  operationId: getArticles
+  operationId: LAgetArticles
   parameters:
     - in: query
       name: category
@@ -46,7 +46,7 @@ post:
     - article
     - lodge-admin
   summary: Add an article
-  operationId: addArticle
+  operationId: LAaddArticle
   requestBody:
     description: Article object that needs to be added
     content:

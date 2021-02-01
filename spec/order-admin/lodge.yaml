@@ -3,7 +3,7 @@ get:
     - lodge
     - order-admin
   summary: Get all lodges
-  operationId: getLodges
+  operationId: OAgetLodges
   parameters:
     - in: query
       name: filter
@@ -36,7 +36,7 @@ post:
     - lodge
     - order-admin
   summary: Add a lodge
-  operationId: addLodge
+  operationId: OAaddLodge
   requestBody:
     description: Lodge object that needs to be added
     content:

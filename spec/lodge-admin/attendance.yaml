@@ -3,7 +3,7 @@ get:
     - event
     - lodge-admin
   summary: Get attendance report for event
-  operationId: getAttendance
+  operationId: LAgetAttendance
   parameters:
     - in: path
       name: eventId
@@ -30,7 +30,7 @@ post:
     - event
     - lodge-admin
   summary: Add attendance list for an event
-  operationId: addAttendance
+  operationId: LAaddAttendance
   parameters:
     - in: path
       name: eventId
@@ -60,7 +60,7 @@ put:
     - event
     - lodge-admin
   summary: Replace attendance list for an event
-  operationId: updateAttendance
+  operationId: LAupdateAttendance
   parameters:
     - in: path
       name: eventId

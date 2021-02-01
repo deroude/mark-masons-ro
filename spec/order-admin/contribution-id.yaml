@@ -3,7 +3,7 @@ put:
     - contribution
     - order-admin
   summary: Modify a contributions
-  operationId: updateContribution
+  operationId: OAupdateContribution
   parameters:
     - in: path
       name: id
@@ -40,7 +40,7 @@ delete:
     - contribution
     - order-admin
   summary: Remove a contribution
-  operationId: removeContribution
+  operationId: OAremoveContribution
   parameters:
       - in: path
         name: id

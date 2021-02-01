@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Get currently logged in user
-  operationId: myProfile
+  operationId: RAmyProfile
   responses:
     "200":
       description: Retrieved user

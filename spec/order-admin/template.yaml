@@ -3,7 +3,7 @@ get:
     - template
     - order-admin
   summary: Get all templates
-  operationId: getTemplates
+  operationId: OAgetTemplates
   parameters:
     - in: query
       name: filter
@@ -36,7 +36,7 @@ post:
     - template
     - order-admin
   summary: Add a template
-  operationId: addTemplate
+  operationId: OAaddTemplate
   requestBody:
     description: Template object that needs to be added
     content:

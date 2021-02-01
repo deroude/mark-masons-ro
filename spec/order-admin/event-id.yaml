@@ -3,7 +3,7 @@ put:
     - event
     - order-admin
   summary: Modify an event
-  operationId: updateEvent
+  operationId: OAupdateEvent
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - event
     - order-admin
   summary: Delete an event
-  operationId: deleteEvent
+  operationId: OAdeleteEvent
   parameters:
     - in: path
       required: true

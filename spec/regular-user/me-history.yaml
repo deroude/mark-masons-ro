@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Get current user history
-  operationId: myHistory
+  operationId: RAmyHistory
   responses:
     "200":
       description: History

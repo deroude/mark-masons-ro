@@ -3,7 +3,7 @@ put:
     - event
     - order-admin
   summary: Update specific attendance item
-  operationId: updateAttendanceItem
+  operationId: OAupdateAttendanceItem
   parameters:
     - in: path
       name: eventId

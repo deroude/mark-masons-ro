@@ -3,7 +3,7 @@ put:
     - contribution
     - lodge-admin
   summary: Modify a contributions
-  operationId: updateContribution
+  operationId: LAupdateContribution
   parameters:
     - in: path
       name: id
@@ -40,7 +40,7 @@ delete:
     - contribution
     - lodge-admin
   summary: Remove a contribution
-  operationId: removeContribution
+  operationId: LAremoveContribution
   parameters:
       - in: path
         name: id

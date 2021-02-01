@@ -3,7 +3,7 @@ put:
     - payment
     - lodge-admin
   summary: Update payment
-  operationId: updatePayment
+  operationId: LAupdatePayment
   parameters:
     - in: path
       required: true

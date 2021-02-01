@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Get current user lodges
-  operationId: myLodges
+  operationId: RAmyLodges
   responses:
     "200":
         description: Lodges

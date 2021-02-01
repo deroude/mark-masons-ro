@@ -3,7 +3,7 @@ get:
     - article
     - regular-user
   summary: Get all articles
-  operationId: getArticles
+  operationId: RAgetArticles
   parameters:
     - in: query
       name: category
@@ -45,7 +45,7 @@ post:
     - article
     - regular-user
   summary: Add an article
-  operationId: addArticle
+  operationId: RAaddArticle
   requestBody:
     description: Article object that needs to be added
     content:

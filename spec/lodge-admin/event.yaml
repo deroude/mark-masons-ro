@@ -3,7 +3,7 @@ get:
     - event
     - lodge-admin
   summary: Get all events
-  operationId: getEvents
+  operationId: LAgetEvents
   parameters:
     - in: query
       name: fromDate
@@ -37,7 +37,7 @@ post:
     - event
     - lodge-admin
   summary: Add an event
-  operationId: addEvent
+  operationId: LAaddEvent
   requestBody:
     description: Event object that needs to be added
     content:

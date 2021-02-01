@@ -3,7 +3,7 @@ get:
     - event
     - order-admin
   summary: Get attendance report for event
-  operationId: getAttendance
+  operationId: OAgetAttendance
   parameters:
     - in: path
       name: eventId
@@ -30,7 +30,7 @@ post:
     - event
     - order-admin
   summary: Add attendance list for an event
-  operationId: addAttendance
+  operationId: OAaddAttendance
   parameters:
     - in: path
       name: eventId
@@ -60,7 +60,7 @@ put:
     - event
     - order-admin
   summary: Replace attendance list for an event
-  operationId: updateAttendance
+  operationId: OAupdateAttendance
   parameters:
     - in: path
       name: eventId

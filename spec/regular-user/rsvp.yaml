@@ -3,7 +3,7 @@ put:
     - event
     - regular-user
   summary: Respond to Event invitation
-  operationId: rsvpEvent
+  operationId: RArsvpEvent
   parameters:
     - in: path
       name: code

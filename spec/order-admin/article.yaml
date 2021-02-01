@@ -3,7 +3,7 @@ get:
     - article
     - order-admin
   summary: Get all articles
-  operationId: getArticles
+  operationId: OAgetArticles
   parameters:
     - in: query
       name: category
@@ -46,7 +46,7 @@ post:
     - article
     - order-admin
   summary: Add an article
-  operationId: addArticle
+  operationId: OAaddArticle
   requestBody:
     description: Article object that needs to be added
     content:

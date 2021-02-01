@@ -3,7 +3,7 @@ put:
     - payment
     - order-admin
   summary: Update payment
-  operationId: updatePayment
+  operationId: OAupdatePayment
   parameters:
     - in: path
       required: true

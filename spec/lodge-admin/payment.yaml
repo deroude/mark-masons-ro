@@ -3,7 +3,7 @@ get:
     - payment
     - lodge-admin
   summary: Get all user payments
-  operationId: listPayments
+  operationId: LAlistPayments
   responses:
     "200":
       description: List Payments
@@ -21,7 +21,7 @@ post:
     - payment
     - lodge-admin
   summary: Add payment
-  operationId: addPayment
+  operationId: LAaddPayment
   requestBody:
     description: Payment to be added
     content:

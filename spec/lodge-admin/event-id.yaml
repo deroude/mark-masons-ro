@@ -3,7 +3,7 @@ put:
     - event
     - lodge-admin
   summary: Modify an event
-  operationId: updateEvent
+  operationId: LAupdateEvent
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - event
     - lodge-admin
   summary: Delete an event
-  operationId: deleteEvent
+  operationId: LAdeleteEvent
   parameters:
     - in: path
       required: true

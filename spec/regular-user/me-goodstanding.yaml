@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Download good standing document
-  operationId: downloadGoodStanding
+  operationId: RAdownloadGoodStanding
   responses:
     "200":
       description: GoodStanding doc

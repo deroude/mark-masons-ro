@@ -3,7 +3,7 @@ get:
     - event
     - order-admin
   summary: Get all events
-  operationId: getEvents
+  operationId: OAgetEvents
   parameters:
     - in: query
       name: fromDate
@@ -37,7 +37,7 @@ post:
     - event
     - order-admin
   summary: Add an event
-  operationId: addEvent
+  operationId: OAaddEvent
   requestBody:
     description: Event object that needs to be added
     content:

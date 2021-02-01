@@ -3,7 +3,7 @@ put:
     - user
     - order-admin
   summary: Modify a user
-  operationId: updateUser
+  operationId: OAupdateUser
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - user
     - order-admin
   summary: Delete a user
-  operationId: deleteUser
+  operationId: OAdeleteUser
   parameters:
     - in: path
       required: true

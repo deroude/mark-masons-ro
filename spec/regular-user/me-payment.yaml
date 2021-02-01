@@ -3,7 +3,7 @@ get:
     - user
     - regular-user
   summary: Get current user payments
-  operationId: myPayments
+  operationId: RAmyPayments
   responses:
     "200":
       description: My Payments
@@ -20,7 +20,7 @@ post:
     - user
     - regular-user
   summary: Add payment
-  operationId: addPayment
+  operationId: RAaddPayment
   responses:
     "201":
       description: My Payments

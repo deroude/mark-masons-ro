@@ -3,7 +3,7 @@ get:
     - article
     - public
   summary: Get all articles
-  operationId: getArticles
+  operationId: PgetArticles
   parameters:
     - in: query
       name: category

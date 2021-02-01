@@ -3,7 +3,7 @@ get:
     - event
     - regular-user
   summary: Get all events
-  operationId: getEvents
+  operationId: RAgetEvents
   parameters:
     - in: query
       name: fromDate

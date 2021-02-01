@@ -3,7 +3,7 @@ put:
     - user
     - order-admin
   summary: Modify a user history item
-  operationId: updateUserHistory
+  operationId: OAupdateUserHistory
   parameters:
     - in: path
       required: true
@@ -40,7 +40,7 @@ delete:
     - user
     - order-admin
   summary: Delete a user history item
-  operationId: deleteUserHistory
+  operationId: OAdeleteUserHistory
   parameters:
     - in: path
       required: true

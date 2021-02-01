@@ -3,7 +3,7 @@ get:
     - user
     - order-admin
   summary: Get all history for given user
-  operationId: getUserHistory
+  operationId: OAgetUserHistory
   parameters:
     - in: path
       required: true
@@ -37,7 +37,7 @@ post:
     - user
     - order-admin
   summary: Add user history
-  operationId: addUserHistory
+  operationId: OAaddUserHistory
   parameters:
     - in: path
       required: true

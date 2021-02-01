@@ -3,7 +3,7 @@ get:
     - payment
     - lodge-admin
   summary: List user contributions
-  operationId: listUserContributions
+  operationId: LAlistUserContributions
   responses:
     "200":
       description: List of user contributions
@@ -20,7 +20,7 @@ put:
     - payment
     - lodge-admin
   summary: Replace list of users due for contribution
-  operationId: updateUserContributions
+  operationId: LAupdateUserContributions
   requestBody:
     description: Attendance array to be updated
     content:

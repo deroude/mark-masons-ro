@@ -3,7 +3,7 @@ get:
     - audit
     - order-admin
   summary: Get all audit entries
-  operationId: getAudit
+  operationId: OAgetAudit
   parameters:
     - in: query
       name: category

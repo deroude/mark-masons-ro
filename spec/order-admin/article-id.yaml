@@ -3,7 +3,7 @@ put:
     - article
     - order-admin
   summary: Modify an article
-  operationId: updateArticle
+  operationId: OAupdateArticle
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - article
     - order-admin
   summary: Delete an article
-  operationId: deleteArticle
+  operationId: OAdeleteArticle
   parameters:
     - in: path
       required: true

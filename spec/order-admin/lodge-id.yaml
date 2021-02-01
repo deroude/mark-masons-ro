@@ -3,7 +3,7 @@ put:
     - lodge
     - order-admin
   summary: Modify a lodge
-  operationId: updateLodge
+  operationId: OAupdateLodge
   parameters:
     - in: path
       required: true
@@ -35,7 +35,7 @@ delete:
     - lodge
     - order-admin
   summary: Delete a lodge
-  operationId: deleteLodge
+  operationId: OAdeleteLodge
   parameters:
     - in: path
       required: true

@@ -62,7 +62,7 @@ paths:
     $ref: "./lodge-admin/event-id.yaml"
   /lodge-admin/event/{eventId}/attendance:
     $ref: "./lodge-admin/attendance.yaml"
-  /lodge-admin/event/{eventId}/attendance/{id}:
+  /lodge-admin/event/{eventId}/attendance/{attendanceId}:
     $ref: "./lodge-admin/attendance-id.yaml"
   /lodge-admin/contribution:
     $ref: "./lodge-admin/contribution.yaml"
@@ -95,7 +95,7 @@ paths:
     $ref: "./order-admin/event-id.yaml"
   /order-admin/event/{eventId}/attendance:
     $ref: "./order-admin/attendance.yaml"
-  /order-admin/event/{eventId}/attendance/{id}:
+  /order-admin/event/{eventId}/attendance/{attendanceId}:
     $ref: "./order-admin/attendance-id.yaml"
   /order-admin/lodge:
     $ref: "./order-admin/lodge.yaml"

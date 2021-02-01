@@ -3,7 +3,7 @@ get:
     - contribution
     - order-admin
   summary: List all contributions
-  operationId: listContributions
+  operationId: OAlistContributions
   responses:
     "200":
         description: Contribution added
@@ -21,7 +21,7 @@ post:
     - contribution
     - order-admin
   summary: Create a contribution
-  operationId: addContribution
+  operationId: OAaddContribution
   parameters:
     - in: query
       required: true

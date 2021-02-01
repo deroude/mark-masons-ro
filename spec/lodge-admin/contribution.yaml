@@ -3,7 +3,7 @@ get:
     - contribution
     - lodge-admin
   summary: List all contributions
-  operationId: listContributions
+  operationId: LAlistContributions
   responses:
     "200":
         description: Contribution added
@@ -21,7 +21,7 @@ post:
     - contribution
     - lodge-admin
   summary: Create a contribution
-  operationId: addContribution
+  operationId: LAaddContribution
   parameters:
     - in: query
       required: true
