@@ -2,13 +2,11 @@ pipe:
   - type: query
     statement: >-
       UPDATE "contribution" SET 
-      "description" = $2,"category" = $3,"destination" = $4,"value" = $5,"issue_date" = $6,"due_date" = $7
+      "description" = $2,"value" = $2,"issue_date" = $4,"due_date" = $5
       WHERE id = $1 RETURNING *
     params:
       - params.id      
       - body.description
-      - body.category
-      - body.destination.id
       - body.value
       - body.issueDate
       - body.dueDate

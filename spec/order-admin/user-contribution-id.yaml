@@ -1,0 +1,25 @@
+put:
+  tags:
+    - payment
+    - order-admin
+  summary: Update single User Contribution
+  operationId: OAupdateSingleUserContribution
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: User Contribution to be updated
+    content:
+      application/json:
+        schema:         
+          $ref: ../schemas/UserContribution.yaml
+    required: true
+  responses:
+    "200":
+      description: List of user contributions
+  security:
+    - mark_auth:
+        - "order"

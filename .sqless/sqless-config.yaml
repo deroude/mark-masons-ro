@@ -108,6 +108,9 @@ methodPaths:
       path: queries/payment/lodge-admin/l-alist-user-contributions.yaml
     put:
       path: queries/payment/lodge-admin/l-aupdate-user-contributions.yaml
+  /lodge-admin/user-contribution/{id}:
+    put:
+      path: queries/payment/lodge-admin/l-aupdate-single-user-contribution.yaml
   /order-admin/article:
     get:
       path: queries/article/order-admin/o-aget-articles.yaml
@@ -196,6 +199,9 @@ methodPaths:
       path: queries/payment/order-admin/o-alist-user-contributions.yaml
     put:
       path: queries/payment/order-admin/o-aupdate-user-contributions.yaml
+  /order-admin/user-contribution/{id}:
+    put:
+      path: queries/payment/order-admin/o-aupdate-single-user-contribution.yaml
   /order-admin/template:
     get:
       path: queries/template/order-admin/o-aget-templates.yaml

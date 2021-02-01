@@ -2,7 +2,8 @@ pipe:
   - type: query
     statement: >-
       SELECT "id","description","category","destination","value","issue_date","due_date" 
-      FROM "contribution" ;    
+      FROM "contribution" 
+      WHERE "category" = 'ORDER';    
     resultType: set
     assign: ListContribution
   - type: mapping

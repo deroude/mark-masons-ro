@@ -1,0 +1,25 @@
+put:
+  tags:
+    - payment
+    - lodge-admin
+  summary: Update single User Contribution
+  operationId: LAupdateSingleUserContribution
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  requestBody:
+    description: User Contribution to be updated
+    content:
+      application/json:
+        schema:         
+          $ref: ../schemas/UserContribution.yaml
+    required: true
+  responses:
+    "200":
+      description: User contribution updated
+  security:
+    - mark_auth:
+        - "lodge"

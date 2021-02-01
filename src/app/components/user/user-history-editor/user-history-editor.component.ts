@@ -31,7 +31,7 @@ export class UserHistoryEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.lodgeService.getLodges().subscribe(re => this.lodges = re);
+    this.lodgeService.oAgetLodges().subscribe(re => this.lodges = re);
   }
 
 

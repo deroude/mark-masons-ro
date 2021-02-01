@@ -1,13 +1,12 @@
 pipe:
   - type: query
     statement: >-
-      UPDATE "payment" SET 
-      "value" = $2,"payment_date" = $3,"status" = $4
+      UPDATE "user_contribution" SET 
+      "payment" = $2, "status" = $3
       WHERE id = $1 RETURNING *
     params:
       - params.id      
-      - body.value
-      - body.paymentDate
+      - body.payment.id
       - body.status
     resultType: row      
     assign: UpdatedPayment

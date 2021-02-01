@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private articleService: ArticleService, @Inject(LOCALE_ID) private locale: string) { }
 
   ngOnInit(): void {
-    this.articleService.getArticles('HOME', null, this.locale).subscribe(re => {
+    this.articleService.pgetArticles('HOME', null, this.locale).subscribe(re => {
       if (re && re[0]) {
         this.text = re[0].text;
       }

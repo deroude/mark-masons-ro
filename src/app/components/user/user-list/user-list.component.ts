@@ -28,7 +28,7 @@ export class UserListComponent implements OnInit {
   }
 
   refresh(): void {
-    this.userService.getUsers().subscribe(ulist => {
+    this.userService.oAgetUsers().subscribe(ulist => {
       this.dataSource = new MatTableDataSource(ulist);
       this.dataSource.sort = this.sort;
     });
@@ -46,7 +46,7 @@ export class UserListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.updateUser(user.id, result).subscribe(() => this.refresh());
+        this.userService.oAupdateUser(user.id, result).subscribe(() => this.refresh());
       }
     });
   }
@@ -59,12 +59,12 @@ export class UserListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.addUser(result).subscribe(() => this.refresh());
+        this.userService.oAaddUser(result).subscribe(() => this.refresh());
       }
     });
   }
 
   import(event: any): void {
-    this.userService.uploadUsers(event.target.files[0]).subscribe(re => this.refresh());
+    this.userService.oAuploadUsers(event.target.files[0]).subscribe(re => this.refresh());
   }
 }

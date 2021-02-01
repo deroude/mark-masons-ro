@@ -24,7 +24,7 @@ export class LodgeListComponent implements OnInit {
   }
 
   refresh(): void {
-    this.lodgeService.getLodges().subscribe(ulist => {
+    this.lodgeService.oAgetLodges().subscribe(ulist => {
       this.dataSource = new MatTableDataSource(ulist);
       this.dataSource.sort = this.sort;
     });
@@ -42,7 +42,7 @@ export class LodgeListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.lodgeService.updateLodge(lodge.id, result).subscribe(() => this.refresh());
+        this.lodgeService.oAupdateLodge(lodge.id, result).subscribe(() => this.refresh());
       }
     });
   }
@@ -55,13 +55,13 @@ export class LodgeListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.lodgeService.addLodge(result).subscribe(() => this.refresh());
+        this.lodgeService.oAaddLodge(result).subscribe(() => this.refresh());
       }
     });
   }
 
   deleteLodge(id: number): void {
-    this.lodgeService.deleteLodge(id).subscribe(() => this.refresh());
+    this.lodgeService.oAdeleteLodge(id).subscribe(() => this.refresh());
   }
 
 

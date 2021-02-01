@@ -7,7 +7,7 @@ import { Lodge } from '@model/lodge';
 export const generateUser = (): User => ({
     id: faker.random.number(),
     email: faker.internet.email(),
-    rank: 'MASTER',
+    rank: 'BROTHER',
     userStatus: 'ACTIVE'
 });
 

@@ -29,7 +29,7 @@ export class UserHistoryListComponent implements OnInit {
   }
 
   refresh(): void {
-    this.userService.getUserHistory(this.userId).subscribe(ulist => {
+    this.userService.oAgetUserHistory(this.userId).subscribe(ulist => {
       this.dataSource = new MatTableDataSource(ulist);
       this.dataSource.sort = this.sort;
     });
@@ -43,7 +43,7 @@ export class UserHistoryListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.updateUserHistory(this.userId, item.id, result).subscribe(() => this.refresh());
+        this.userService.oAupdateUserHistory(this.userId, item.id, result).subscribe(() => this.refresh());
       }
     });
   }
@@ -56,7 +56,7 @@ export class UserHistoryListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.addUserHistory(this.userId, { ...result, user: { id: this.userId } }).subscribe(() => this.refresh());
+        this.userService.oAaddUserHistory(this.userId, { ...result, user: { id: this.userId } }).subscribe(() => this.refresh());
       }
     });
   }

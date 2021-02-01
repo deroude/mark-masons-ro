@@ -19,11 +19,11 @@ export class MeComponent implements OnInit {
     @Inject(BASE_PATH) private path: string) { }
 
   ngOnInit(): void {
-    this.userService.myProfile().subscribe(re => this.me = re);
+    this.userService.rAmyProfile().subscribe(re => this.me = re);
   }
 
   public downloadResource(): void {
-    this.userService.downloadGoodStanding().subscribe(file => {
+    this.userService.rAdownloadGoodStanding().subscribe(file => {
       const url = window.URL.createObjectURL(file);
 
       const link = this.downloadLink.nativeElement;

@@ -73,6 +73,6 @@
     "typescript": "~3.9.5",
     "firebase-tools": "^8.6.0",
     "@sqless/core": "1.0.3",
-    "openapi-angular-material-schematic": "0.0.1"
+    "openapi-angular-material-schematic": "0.0.2"
   }
 }

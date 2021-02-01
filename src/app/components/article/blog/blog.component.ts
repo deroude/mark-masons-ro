@@ -3,7 +3,6 @@ import { Article } from '@model/article';
 import { AuthService } from '../../../services/auth';
 import { ArticleService } from '@api/article.service';
 import { ArticleEditorComponent } from '../article-editor/article-editor.component';
-import { MatNoDataRow } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -38,11 +37,11 @@ export class BlogComponent implements OnInit {
   }
 
   search(): void {
-    this.articleService.getArticles('BLOG', this.searchTerm, this.locale).subscribe(arts => this.articles = arts);
+    this.articleService.rAgetArticles('BLOG', this.searchTerm, this.locale).subscribe(arts => this.articles = arts);
   }
 
   deleteArticle(event: Article): void {
-    this.articleService.deleteArticle(event.id).subscribe(() => this.search());
+    this.articleService.rAdeleteArticle(event.id).subscribe(() => this.search());
   }
 
   editArticle(event: Article): void {
@@ -57,9 +56,9 @@ export class BlogComponent implements OnInit {
         result.category = 'BLOG';
         result.publishDate = new Date().toISOString();
         if (result.id) {
-          this.articleService.updateArticle(result.id, result).subscribe(() => this.search());
+          this.articleService.rAupdateArticle(result.id, result).subscribe(() => this.search());
         } else {
-          this.articleService.addArticle(result).subscribe(() => this.search());
+          this.articleService.rAaddArticle(result).subscribe(() => this.search());
         }
       }
     });
