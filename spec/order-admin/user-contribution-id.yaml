@@ -7,6 +7,11 @@ put:
   parameters:
     - in: path
       required: true
+      name: contributionId
+      schema:
+        type: integer
+    - in: path
+      required: true
       name: id
       schema:
         type: integer
@@ -20,6 +25,29 @@ put:
   responses:
     "200":
       description: List of user contributions
+  security:
+    - mark_auth:
+        - "order"
+delete:
+  tags:
+    - payment
+    - order-admin
+  summary: Delete single User Contribution
+  operationId: OAdeleteSingleUserContribution
+  parameters:
+    - in: path
+      required: true
+      name: contributionId
+      schema:
+        type: integer
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Deleted
   security:
     - mark_auth:
         - "order"

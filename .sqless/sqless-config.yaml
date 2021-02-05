@@ -11,6 +11,7 @@ migrations:
     applyPath: migrations/001_initial.sql
     rollbackPath: migrations/001_initial_rollback.sql
 apiPath: ../mark-api.yaml
+permissionClaim: https://mark-masons.ro/roles
 
 methodPaths:
   /public/article:
@@ -103,14 +104,16 @@ methodPaths:
   /lodge-admin/payment/{id}:
     put:
       path: queries/payment/lodge-admin/l-aupdate-payment.yaml
-  /lodge-admin/user-contribution:
+  /lodge-admin/contribution/{contributionId}/user-contribution:
     get:
       path: queries/payment/lodge-admin/l-alist-user-contributions.yaml
     put:
       path: queries/payment/lodge-admin/l-aupdate-user-contributions.yaml
-  /lodge-admin/user-contribution/{id}:
+  /lodge-admin/contribution/{contributionId}/user-contribution/{id}:
     put:
       path: queries/payment/lodge-admin/l-aupdate-single-user-contribution.yaml
+    delete:
+      path: queries/payment/l-adelete-single-user-contribution.yaml
   /order-admin/article:
     get:
       path: queries/article/order-admin/o-aget-articles.yaml
@@ -194,14 +197,16 @@ methodPaths:
   /order-admin/payment/{id}:
     put:
       path: queries/payment/order-admin/o-aupdate-payment.yaml
-  /order-admin/user-contribution:
+  /order-admin/contribution/{contributionId}/user-contribution:
     get:
       path: queries/payment/order-admin/o-alist-user-contributions.yaml
     put:
       path: queries/payment/order-admin/o-aupdate-user-contributions.yaml
-  /order-admin/user-contribution/{id}:
+  /order-admin/contribution/{contributionId}/user-contribution/{id}:
     put:
       path: queries/payment/order-admin/o-aupdate-single-user-contribution.yaml
+    delete:
+      path: queries/payment/o-adelete-single-user-contribution.yaml
   /order-admin/template:
     get:
       path: queries/template/order-admin/o-aget-templates.yaml

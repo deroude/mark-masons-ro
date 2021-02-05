@@ -4,6 +4,12 @@ get:
     - order-admin
   summary: List user contributions
   operationId: OAlistUserContributions
+  parameters:
+    - in: path
+      required: true
+      name: contributionId
+      schema:
+        type: integer
   responses:
     "200":
       description: List of user contributions
@@ -19,16 +25,22 @@ put:
   tags:
     - payment
     - order-admin
-  summary: Replace list of users due for contribution
+  summary: Update list of users due for contribution
   operationId: OAupdateUserContributions
+  parameters:
+    - in: path
+      required: true
+      name: contributionId
+      schema:
+        type: integer
   requestBody:
-    description: Attendance array to be updated
+    description: User id array to be set for contribution
     content:
       application/json:
         schema:
           type: array
           items:
-            $ref: ../schemas/UserContribution.yaml
+            type: integer
     required: true
   responses:
     "200":

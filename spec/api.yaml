@@ -72,9 +72,9 @@ paths:
     $ref: "./lodge-admin/payment.yaml"
   /lodge-admin/payment/{id}:
     $ref: "./lodge-admin/payment-id.yaml"  
-  /lodge-admin/user-contribution:
+  /lodge-admin/contribution/{contributionId}/user-contribution:
     $ref: "./lodge-admin/user-contribution.yaml"
-  /lodge-admin/user-contribution/{id}:
+  /lodge-admin/contribution/{contributionId}/user-contribution/{id}:
     $ref: "./lodge-admin/user-contribution-id.yaml"
 
   /order-admin/article:
@@ -111,9 +111,9 @@ paths:
     $ref: "./order-admin/payment.yaml"
   /order-admin/payment/{id}:
     $ref: "./order-admin/payment-id.yaml"  
-  /order-admin/user-contribution:
+  /order-admin/contribution/{contributionId}/user-contribution:
     $ref: "./order-admin/user-contribution.yaml"
-  /order-admin/user-contribution/{id}:
+  /order-admin/contribution/{contributionId}/user-contribution/{id}:
     $ref: "./order-admin/user-contribution-id.yaml"
   /order-admin/template:
     $ref: "./order-admin/template.yaml"

@@ -10,6 +10,7 @@
     "generate:spec": "swagger-cli bundle spec/api.yaml -o mark-api.yaml -t yaml",
     "generate:api": "openapi-generator generate -g typescript-angular -i mark-api.yaml -o ./src/app/generated",
     "sqless:start": "sqless start",
+    "sqless:update": "sqless update -a mark-api.yaml",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

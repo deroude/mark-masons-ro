@@ -1,7 +1,10 @@
 pipe:
   - type: query
     statement: >-
-      SELECT 1;
+      INSERT INTO "user_contribution" ("user", "contribution") SELECT unnest($2),$1 ON CONFLICT DO NOTHING;
+    parameters:
+      - params.contributionId
+      - body.users
     resultType: scalar
     assign: Result
 returnVar: Result

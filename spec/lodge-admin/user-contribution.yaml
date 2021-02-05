@@ -4,6 +4,12 @@ get:
     - lodge-admin
   summary: List user contributions
   operationId: LAlistUserContributions
+  parameters:
+    - in: path
+      required: true
+      name: contributionId
+      schema:
+        type: integer
   responses:
     "200":
       description: List of user contributions
@@ -21,14 +27,20 @@ put:
     - lodge-admin
   summary: Replace list of users due for contribution
   operationId: LAupdateUserContributions
+  parameters:
+    - in: path
+      required: true
+      name: contributionId
+      schema:
+        type: integer
   requestBody:
-    description: Attendance array to be updated
+    description: User id array to be updated
     content:
       application/json:
         schema:
           type: array
           items:
-            $ref: ../schemas/UserContribution.yaml
+            type: integer
     required: true
   responses:
     "200":

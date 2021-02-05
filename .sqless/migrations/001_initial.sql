@@ -113,6 +113,7 @@ CREATE TABLE "user_contribution" (
     "user" int REFERENCES "user"("id"),
     "payment" int REFERENCES "payment"("id"),
     "contribution" int REFERENCES "contribution"("id"),
-    "status" varchar
+    "status" varchar,
+    UNIQUE("user","contribution")
 );
 
