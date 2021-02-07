@@ -18,6 +18,9 @@
       ],
       "@api/*": [
         "app/generated/api/*"
+      ],
+      "@services/*": [
+        "app/services/*"
       ]
     },
     "lib": [

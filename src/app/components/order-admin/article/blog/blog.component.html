@@ -1,0 +1,15 @@
+<div class="mark-blog">
+
+    <mat-toolbar>
+        <button mat-stroked-button *ngIf="auth.loggedIn" (click)="editArticle(null)">
+            Add article
+        </button>
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input type="text" matInput [(ngModel)]="searchTerm" (input)="search()">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </mat-toolbar>
+
+    <mark-article [article]="article" *ngFor="let article of articles" (edit)="editArticle($event)" (delete)="deleteArticle($event)"></mark-article>
+</div>

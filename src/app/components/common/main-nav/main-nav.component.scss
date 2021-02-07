@@ -1,0 +1,45 @@
+nav#main-nav {
+  padding: 10px 20px 10px 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #26417E;
+
+  a {
+    margin-right: 10px;
+    border: none;
+  }
+
+  nav#links {
+    min-width: 400px;
+
+    a::after {
+      content: "»"
+    }
+  }
+
+  nav#utility {
+    min-width: 350px;
+
+    button {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+
+    a.flag {
+      display: inline-block;
+      width: 24px;
+      height: 16px;
+      margin-bottom: -3px;
+
+      &.lang-en {
+        background: center / contain no-repeat url('../../../../assets/en-UK.svg');
+      }
+
+      &.lang-ro {
+        background: center / contain no-repeat url('../../../../assets/ro-RO.svg');
+      }
+    }
+  }
+}

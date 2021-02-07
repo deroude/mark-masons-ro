@@ -1,0 +1,24 @@
+nav#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url('../../../../assets/leather.svg');
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  a {
+    border: none;
+    color: #002B7F;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  nav#bottom-links {
+    display: flex;
+
+  }
+}

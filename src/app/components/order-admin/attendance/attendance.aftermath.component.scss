@@ -1,0 +1,19 @@
+table {
+  display: table;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 50rem;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+  .mat-column-present,
+  .mat-column-status {
+    width: 50px;
+  }
+  .mat-column-contribution {
+    width: 60px;
+    input {
+      width: 100%;
+    }
+  }
+}

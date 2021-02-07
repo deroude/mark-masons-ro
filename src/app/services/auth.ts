@@ -30,11 +30,29 @@ export class AuthService implements CanActivate {
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | UrlTree | Promise<boolean | UrlTree> | Observable<boolean | UrlTree> {
-        return this.loggedIn;
+            switch(route.url[0].path){
+                case 'lodge-admin':
+                    return this.isLodgeAdmin();
+                case 'order-admin':
+                    return this.isOrderAdmin();
+            }
+            return this.isRegularUser();
     }
 
-    hasAccess(resource: string): boolean {
-        return this.loggedIn;
+    isLodgeAdmin(){
+        return this.hasAccess('lodge');
+    }
+
+    isOrderAdmin(){
+        return this.hasAccess('order');
+    }
+
+    isRegularUser(){
+        return this.loggedIn
+    }
+
+    private hasAccess(resource: string): boolean {
+        return this.loggedIn  && this.oauthService.getIdentityClaims()['https://mark-masons.ro/roles'].includes(resource);
     }
 
     login(): void { this.oauthService.initLoginFlow(); }

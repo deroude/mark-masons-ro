@@ -1,24 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventListComponent } from './components/event/event-list/event-list.component';
-import { AuthService } from './services/auth';
-import { UserListComponent } from './components/user/user-list/user-list.component';
-import { RsvpComponent } from './components/rsvp/rsvp.component';
-import { BlogComponent } from './components/article/blog/blog.component';
-import { TemplateComponent } from './components/template/template.component';
-import { HomeComponent } from './components/home/home.component';
-import { MeComponent } from './components/me/me.component';
-import { LodgeListComponent } from './components/lodge/lodge-list/lodge-list.component';
+import { AuthService } from '@services/auth';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'me', component: MeComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'events', component: EventListComponent },
-  { path: 'template', component: TemplateComponent, canActivate: [AuthService] },
-  { path: 'users', component: UserListComponent, canActivate: [AuthService], },
-  { path: 'lodges', component: LodgeListComponent, canActivate: [AuthService], },
-  { path: 'rsvp/:attendance', component: RsvpComponent }
+  { path:"", loadChildren: () => import('./components/public/public.module').then(m => m.PublicModule) },
+  { path:"order-admin", loadChildren: () => import('./components/order-admin/order-admin.module').then(m => m.OrderAdminModule), canActivate: [AuthService] },
+  { path:"lodge-admin", loadChildren: () => import('./components/lodge-admin/lodge-admin.module').then(m => m.LodgeAdminModule), canActivate: [AuthService] },
+  { path: 'regular-user', loadChildren: () => import('./components/regular-user/regular-user.module').then(m => m.RegularUserModule), canActivate: [AuthService] }
 ];
 
 @NgModule({

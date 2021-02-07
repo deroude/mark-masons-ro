@@ -1,0 +1,37 @@
+<nav id="main-nav">
+  <nav id="links">
+    <ng-container *ngIf="auth.isOrderAdmin()">
+      <a [routerLink]="['/order-admin/blog']" mat-stroked-button i18n="@@blog" routerLinkActive="active">Articles</a>
+      <a [routerLink]="['/order-admin/lodges']" mat-stroked-button i18n="@@lodges" routerLinkActive="active">Lodges</a>
+      <a [routerLink]="['/order-admin/users']" mat-stroked-button i18n=" @@users" routerLinkActive="active">Users</a>
+      <a [routerLink]="['/order-admin/events']" mat-stroked-button i18n=" @@events" routerLinkActive="active">Events</a>
+      <a [routerLink]="['/order-admin/contributions']" mat-stroked-button i18n=" @@contributions"
+        routerLinkActive="active">Contributions</a>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isLodgeAdmin()">
+      <a [routerLink]="['/lodge-admin/blog']" mat-stroked-button i18n="@@blog" routerLinkActive="active">Articles</a>
+      <a [routerLink]="['/lodge-admin/events']" mat-stroked-button i18n=" @@events" routerLinkActive="active">Events</a>
+      <a [routerLink]="['/lodge-admin/contributions']" mat-stroked-button i18n=" @@contributions"
+        routerLinkActive="active">Contributions</a>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isRegularUser() && !auth.isLodgeAdmin() && !auth.isOrderAdmin()">
+      <a [routerLink]="['/regular-user/blog']" mat-stroked-button i18n="@@blog" routerLinkActive="active">Articles</a>
+      <a [routerLink]="['/regular-user/events']" mat-stroked-button i18n=" @@events"
+        routerLinkActive="active">Events</a>
+    </ng-container>
+
+  </nav>
+  <nav id="utility">
+    <!-- <ng-template #login> -->
+    <button *ngIf="!auth.loggedIn" mat-stroked-button (click)="auth.login()">Login</button>
+    <button mat-flat-button [routerLink]="['/regular-user/me']" *ngIf="auth.loggedIn">{{auth.userName}}</button>
+    <button *ngIf="auth.loggedIn" mat-stroked-button (click)="auth.logout()">Logout</button>
+
+    <!-- </ng-template>     -->
+    <a class="flag lang-en" href="/en"></a>
+    <a class="flag lang-ro" href="/ro"></a>
+  </nav>
+
+</nav>
