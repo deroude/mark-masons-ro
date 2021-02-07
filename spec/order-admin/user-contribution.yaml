@@ -16,7 +16,9 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../schemas/UserContribution.yaml
+            type: array
+            items:
+              $ref: ../schemas/UserContribution.yaml
   security:
     - mark_auth:
         - "order"

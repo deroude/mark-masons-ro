@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate } from '@angular/router';
-import { Observable, from, of } from 'rxjs';
-import { ProgressService } from './progress';
-import { UserService } from '@api/user.service';
-import { User } from '@model/user';
-import { filter, map, switchMap, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
-import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -30,29 +25,29 @@ export class AuthService implements CanActivate {
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | UrlTree | Promise<boolean | UrlTree> | Observable<boolean | UrlTree> {
-            switch(route.url[0].path){
-                case 'lodge-admin':
-                    return this.isLodgeAdmin();
-                case 'order-admin':
-                    return this.isOrderAdmin();
-            }
-            return this.isRegularUser();
+        switch (route.url[0].path) {
+            case 'lodge-admin':
+                return this.isLodgeAdmin();
+            case 'order-admin':
+                return this.isOrderAdmin();
+        }
+        return this.isRegularUser();
     }
 
-    isLodgeAdmin(){
+    isLodgeAdmin(): boolean {
         return this.hasAccess('lodge');
     }
 
-    isOrderAdmin(){
+    isOrderAdmin(): boolean {
         return this.hasAccess('order');
     }
 
-    isRegularUser(){
-        return this.loggedIn
+    isRegularUser(): boolean {
+        return this.loggedIn;
     }
 
     private hasAccess(resource: string): boolean {
-        return this.loggedIn  && this.oauthService.getIdentityClaims()['https://mark-masons.ro/roles'].includes(resource);
+        return this.loggedIn && this.oauthService.getIdentityClaims()['https://mark-masons.ro/roles'].includes(resource);
     }
 
     login(): void { this.oauthService.initLoginFlow(); }
@@ -87,6 +82,5 @@ export class AuthService implements CanActivate {
     get validIdToken(): boolean {
         return this.oauthService.hasValidIdToken();
     }
-
 
 }

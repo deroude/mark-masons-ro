@@ -11,7 +11,7 @@
 
     
         <mat-form-field>
-            <input matInput formControlName="value" type="text" i18n-placeholder="@@Contribution.value" placeholder="Value">
+            <input matInput formControlName="value" type="number" i18n-placeholder="@@Contribution.value" placeholder="Value">
             <mat-error *ngIf="hasError('required','value')" i18n="@@error.field.required">
                             This field is required.
             </mat-error>

@@ -22,17 +22,6 @@ post:
     - order-admin
   summary: Create a contribution
   operationId: OAaddContribution
-  parameters:
-    - in: query
-      required: true
-      name: audienceType
-      schema:
-        type: string
-    - in: query
-      required: false
-      name: audience
-      schema:
-        type: string
   requestBody:
     description: Contribution definition
     content:
@@ -45,9 +34,6 @@ post:
         content: {}
     "400":
         description: Contribution invalid
-        content: {}
-    "404":
-        description: Audience not found
         content: {}
   security:
     - mark_auth:

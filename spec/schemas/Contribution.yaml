@@ -3,6 +3,7 @@ properties:
   id:
     type: integer
     format: int64
+    nullable: true
   description:
     type: string
     description: Description

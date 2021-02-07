@@ -6,19 +6,14 @@
   <button mat-button i18n="@@Contribution.add" (click)="create()">Add Contribution</button>
 
   <table mat-table [dataSource]="dataSource" matSort>
-    
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.id"> 0 </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-    </ng-container>    
-    
+        
     <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.description"> 0 </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.description"> Description </th>
       <td mat-cell *matCellDef="let row"> {{row.description}} </td>
     </ng-container>    
 
     <ng-container matColumnDef="category">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.category"> 0 </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.category"> Category </th>
         <td mat-cell *matCellDef="let row">
             <ng-container [ngSwitch]="row.category">
  
@@ -29,23 +24,31 @@
     </ng-container>
     
     <ng-container matColumnDef="value">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.value"> 0 </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.value"> Value </th>
       <td mat-cell *matCellDef="let row"> {{row.value}} </td>
     </ng-container>    
 
     <ng-container matColumnDef="issueDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.issueDate"> 0 </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.issueDate"> Issue Date </th>
         <td mat-cell *matCellDef="let row"> {{row.issueDate|date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="dueDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.dueDate"> 0 </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.dueDate"> Due Date </th>
         <td mat-cell *matCellDef="let row"> {{row.dueDate|date}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@actions"> Actions </th>
+      <td mat-cell *matCellDef="let row"> 
+        <button mat-raised-button (click)="deleteRow(row)">Delete</button>  
+        <button mat-raised-button (click)="selectUsers(row)">View User Contributions</button>  
+      </td>
+  </ng-container>
     
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="onItemSelect(row)">
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="onRowSelect(row)">
     </tr>
   </table>
 

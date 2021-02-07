@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Contribution } from '@model/contribution'; // TODO specify your model source
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { map } from 'rxjs/operators';
 import { ContributionService } from '@api/contribution.service'; // TODO specify your service source
 import { MatDialog } from '@angular/material/dialog';
 import { ContributionEditorComponent } from '../form/contribution-form.component';
+import * as moment from 'moment';
+import { UserContributionListComponent } from '../user-contribution/list/user-contribution-list.component';
 
 @Component({
-  selector: 'app-contribution-list ',
+  selector: 'mark-contribution-list',
   templateUrl: './contribution-list.component.html',
   styleUrls: ['./contribution-list.component.scss']
 })
@@ -17,16 +17,16 @@ export class ContributionListComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Contribution>;
-  displayedColumns = ["id","description","category","value","issueDate","dueDate"];
+  displayedColumns = ['description', 'category', 'value', 'issueDate', 'dueDate', 'actions'];
 
-  constructor(private ContributionService: ContributionService, public dialog: MatDialog) { }
+  constructor(private contributionService: ContributionService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.refresh();
   }
 
   refresh(): void {
-    this.ContributionService.oAlistContributions().subscribe(list => {
+    this.contributionService.oAlistContributions().subscribe(list => {
       this.dataSource = new MatTableDataSource(list);
       this.dataSource.sort = this.sort;
     });
@@ -44,7 +44,7 @@ export class ContributionListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.ContributionService.oAupdateContribution(row.id, result).subscribe(() => this.refresh());
+        this.contributionService.oAupdateContribution(row.id, result).subscribe(() => this.refresh());
       }
     });
   }
@@ -52,12 +52,31 @@ export class ContributionListComponent implements OnInit {
   create(): void {
     const dialogRef = this.dialog.open(ContributionEditorComponent, {
       width: '800px',
-      data: {issueDate: new Date(), category:'ORDER'}
+      data: { issueDate: moment().format('YYYY-MM-DD'), category: 'ORDER' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.ContributionService.oAaddContribution(result).subscribe(() => this.refresh());
+        this.contributionService.oAaddContribution({
+          ...result,
+          dueDate: (result.dueDate as moment.Moment).format('YYYY-MM-DD'),
+
+        }).subscribe(() => this.refresh());
+      }
+    });
+  }
+
+  deleteRow(row: Contribution): void {
+    this.contributionService.oAremoveContribution(row.id).subscribe(() => this.refresh());
+  }
+
+  selectUsers(row: Contribution): void {
+    const dialogRef = this.dialog.open(UserContributionListComponent, {
+      width: '800px',
+      data: row.id
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
       }
     });
   }
