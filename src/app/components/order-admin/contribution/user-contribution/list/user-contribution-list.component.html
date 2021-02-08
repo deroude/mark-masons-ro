@@ -14,10 +14,11 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@UserContribution.status"> Status </th>
         <td mat-cell *matCellDef="let row">
             <ng-container [ngSwitch]="row.status">
- 
+                <ng-container *ngSwitchCase="'INACTIVE'" i18n="@@UserContribution.status.INACTIVE">INACTIVE</ng-container>
                 <ng-container *ngSwitchCase="'ASSIGNED'" i18n="@@UserContribution.status.ASSIGNED">ASSIGNED</ng-container> 
                 <ng-container *ngSwitchCase="'OVERDUE'" i18n="@@UserContribution.status.OVERDUE">OVERDUE</ng-container> 
                 <ng-container *ngSwitchCase="'PAID'" i18n="@@UserContribution.status.PAID">PAID</ng-container>
+                <ng-container *ngSwitchCase="'CANCELLED'" i18n="@@UserContribution.status.CANCELLED">CANCELLED</ng-container>
             </ng-container>
         </td>
     </ng-container>

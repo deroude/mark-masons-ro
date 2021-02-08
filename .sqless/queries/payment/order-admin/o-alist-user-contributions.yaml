@@ -1,8 +1,8 @@
 pipe:
   - type: query
     statement: >-
-      SELECT "id","user","payment","contribution","status" 
-      FROM "user_contribution" ;    
+      SELECT uc."id", u.last_name || ' ' || u.first_name as "user","payment","contribution","status" 
+      FROM "user_contribution" uc INNER JOIN "user" u ON uc."user" = u."id";    
     resultType: set
     assign: ListUserContribution
   - type: mapping

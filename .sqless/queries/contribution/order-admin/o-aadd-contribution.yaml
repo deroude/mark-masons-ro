@@ -12,6 +12,13 @@ pipe:
       - body.dueDate
     resultType: row
     assign: NewContribution
+  - type: query
+    statement: >-
+      INSERT INTO "user_contribution" ( "user", "contribution", "status")
+      SELECT "id", $1, 'INACTIVE' FROM "user";
+    params:      
+      - NewContribution.id
+    resultType: none
   - type: mapping
     from: NewContribution
     isArray: false

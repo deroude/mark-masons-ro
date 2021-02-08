@@ -14,4 +14,4 @@ properties:
   status:
     description: Status
     type: string
-    enum: [ASSIGNED, OVERDUE, PAID]
+    enum: [INACTIVE, ASSIGNED, OVERDUE, PAID, CANCELLED]

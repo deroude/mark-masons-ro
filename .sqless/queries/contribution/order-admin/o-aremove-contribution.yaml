@@ -1,6 +1,12 @@
 pipe:
   - type: query
     statement: >-
+      DELETE FROM "user_contribution" where "contribution" = $1;
+    params:
+      - params.id
+    resultType: none
+  - type: query
+    statement: >-
       DELETE FROM "contribution" where "id" = $1;
     params:
       - params.id
