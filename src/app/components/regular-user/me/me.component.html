@@ -10,7 +10,8 @@
             <mat-list-item><strong i18n="@@profession">Profession</strong>: {{me.profession}} </mat-list-item>
             <mat-list-item><strong i18n="@@workplace">Workplace</strong>: {{me.workplace}} </mat-list-item>
             <mat-list-item><strong i18n="@@nationalId">National ID</strong>: {{me.nationalId}} </mat-list-item>
-            <mat-list-item><strong i18n="@@nationalIdDetails">National ID Details</strong>: {{me.nationalIdDetails}} </mat-list-item>
+            <mat-list-item><strong i18n="@@nationalIdDetails">National ID Details</strong>: {{me.nationalIdDetails}}
+            </mat-list-item>
             <mat-list-item><strong i18n="@@birthdate">Birthdate</strong>: {{me.birthdate|date}} </mat-list-item>
         </mat-list>
     </mat-card-content>
@@ -19,4 +20,60 @@
             document</button>
         <a #downloadLink style="display:none"></a>
     </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="hasContributions">
+    <mat-card-header>
+        <mat-card-title i18n="@@contributions">Contributions</mat-card-title>
+    </mat-card-header>
+
+    <div class="crud-table">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" i18n-placeholder="@@filter" placeholder="Filter">
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.description"> Description
+                </th>
+                <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.category"> Category </th>
+                <td mat-cell *matCellDef="let row">
+                    <ng-container [ngSwitch]="row.category">
+
+                        <ng-container *ngSwitchCase="'ORDER'" i18n="@@Contribution.category.ORDER">Order
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'LODGE'" i18n="@@Contribution.category.LODGE">Lodge
+                        </ng-container>
+                    </ng-container>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.value"> Value </th>
+                <td mat-cell *matCellDef="let row"> {{row.value}} {{row.currency}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="issueDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.issueDate"> Issue Date
+                </th>
+                <td mat-cell *matCellDef="let row"> {{row.issueDate|date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dueDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.dueDate"> Due Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.dueDate|date}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+        </table>
+
+    </div>
 </mat-card>

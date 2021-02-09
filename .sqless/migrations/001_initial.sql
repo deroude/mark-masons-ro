@@ -96,6 +96,8 @@ CREATE TABLE "contribution" (
     "category" varchar,
     "destination" int REFERENCES "lodge"("id"),
     "value" decimal,
+    "currency" varchar,
+    "status" varchar,
     "issue_date" timestamptz,
     "due_date" timestamptz
 );

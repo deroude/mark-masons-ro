@@ -17,7 +17,7 @@ export class ContributionListComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Contribution>;
-  displayedColumns = ['description', 'category', 'value', 'issueDate', 'dueDate', 'actions'];
+  displayedColumns = ['description', 'value', 'issueDate', 'dueDate', 'actions'];
 
   constructor(private contributionService: ContributionService, public dialog: MatDialog) { }
 

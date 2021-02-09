@@ -15,7 +15,7 @@ export class UserContributionListComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<UserContribution>;
-  displayedColumns = ['user', 'status'];
+  displayedColumns = ['user', 'status', 'actions'];
 
   constructor(
     public dialogRef: MatDialogRef<UserContributionListComponent>,
@@ -36,6 +36,18 @@ export class UserContributionListComponent implements OnInit {
 
   applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  toggleExempt(row: UserContribution): void {
+    this.paymentService.oAupdateSingleUserContribution(
+      row.contribution as number, row.id, { status: row.status === 'ASSIGNED' ? 'CANCELLED' : 'ASSIGNED' })
+      .subscribe(() => this.refresh());
+  }
+
+  togglePaid(row: UserContribution): void {
+    this.paymentService.oAupdateSingleUserContribution(
+      row.contribution as number, row.id, { status: row.status === 'ASSIGNED' ? 'PAID' : 'ASSIGNED' })
+      .subscribe(() => this.refresh());
   }
 
 }

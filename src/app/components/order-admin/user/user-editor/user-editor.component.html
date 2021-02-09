@@ -90,8 +90,9 @@
             <mat-form-field>
                 <mat-label i18n="@@user.orderPrivilege">Order Privilege</mat-label>
                 <mat-select formControlName="orderPrivilege">
-                    <mat-option value="USER" i18n="@@user.orderPrivilege.user">User</mat-option>
-                    <mat-option value="OFFICER" i18n="@@user.orderPrivilege.officer">Officer</mat-option>
+                    <mat-option value="REGULAR" i18n="@@user.orderPrivilege.user">User</mat-option>
+                    <mat-option value="ORDER_ADMIN" i18n="@@user.orderPrivilege.officer">Order Officer</mat-option>                    
+                    <mat-option value="LODGE_ADMIN" i18n="@@user.orderPrivilege.officer">Lodge Officer</mat-option>
                 </mat-select>
                 <mat-error *ngIf="hasError('required','orderPrivilege')" i18n="@@error.field.required">
                     This field is required

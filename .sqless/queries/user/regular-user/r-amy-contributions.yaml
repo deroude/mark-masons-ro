@@ -1,8 +1,19 @@
 pipe:
   - type: query
     statement: >-
-      SELECT 1;
-    resultType: scalar
-    assign: Result
-returnVar: Result
+      SELECT c.*
+      FROM "user_contribution" uc 
+      INNER JOIN "contribution" c ON uc."contribution" = c."id"
+      INNER JOIN "user" u ON u."id" = uc."user"
+      WHERE u."email"= $1 AND uc."status" = 'ASSIGNED';
+    params:
+      - principal.email
+    resultType: set
+    assign: ListContribution
+  - type: mapping
+    from: ListContribution
+    isArray: true
+    builtIn: snakeToCamel
+    to: ListContribution
+returnVar: ListContribution
 transactional: false

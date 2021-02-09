@@ -52,7 +52,7 @@ export class UserListComponent implements OnInit {
   create(): void {
     const dialogRef = this.dialog.open(UserEditorComponent, {
       width: '800px',
-      data: { rank: 'BROTHER', orderPrivilege: 'USER', userStatus: 'INACTIVE' }
+      data: { rank: 'BROTHER', orderPrivilege: 'REGULAR', userStatus: 'INACTIVE' }
     });
 
     dialogRef.afterClosed().subscribe(result => {

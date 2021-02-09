@@ -23,6 +23,15 @@
         </td>
     </ng-container>
     
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@actions"> Actions </th>
+      <td mat-cell *matCellDef="let row"> 
+        <button *ngIf="row.status==='ASSIGNED'" mat-raised-button (click)="toggleExempt(row)" i18n="@@UserContribution.action.setExempt"> Exempt </button>
+        <button *ngIf="row.status==='CANCELLED'" mat-raised-button (click)="toggleExempt(row)" i18n="@@UserContribution.action.unsetExempt"> Not Exempt </button>  
+        <button *ngIf="row.status==='ASSIGNED'" mat-raised-button (click)="togglePaid(row)" i18n="@@UserContribution.action.setPaid"> Paid </button> 
+        <button *ngIf="row.status==='PAID'" mat-raised-button (click)="togglePaid(row)" i18n="@@UserContribution.action.unsetPaid"> Not Paid </button>  
+      </td>
+    </ng-container>   
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;">

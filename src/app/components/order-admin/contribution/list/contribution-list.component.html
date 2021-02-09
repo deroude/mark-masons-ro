@@ -11,21 +11,10 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.description"> Description </th>
       <td mat-cell *matCellDef="let row"> {{row.description}} </td>
     </ng-container>    
-
-    <ng-container matColumnDef="category">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.category"> Category </th>
-        <td mat-cell *matCellDef="let row">
-            <ng-container [ngSwitch]="row.category">
- 
-                <ng-container *ngSwitchCase="'ORDER'" i18n="@@Contribution.category.ORDER">ORDER</ng-container> 
-                <ng-container *ngSwitchCase="'LODGE'" i18n="@@Contribution.category.LODGE">LODGE</ng-container>
-            </ng-container>
-        </td>
-    </ng-container>
-    
+   
     <ng-container matColumnDef="value">
       <th mat-header-cell *matHeaderCellDef mat-sort-header i18n="@@Contribution.value"> Value </th>
-      <td mat-cell *matCellDef="let row"> {{row.value}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.value}} {{row.currency}} </td>
     </ng-container>    
 
     <ng-container matColumnDef="issueDate">

@@ -18,6 +18,10 @@ properties:
     description: Value
     type: number
     format: double
+  currency:
+    description: currency
+    type: string
+    enum: [EUR, RON, GBP, USD]
   issueDate:
     description: Issue Date
     type: string
@@ -26,3 +30,7 @@ properties:
     description: Due Date
     type: string
     format: date
+  status:
+    description: Status
+    type: string
+    enum: [CANCELLED, CLOSED, ACTIVE, PLANNED]

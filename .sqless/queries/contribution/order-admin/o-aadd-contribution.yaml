@@ -15,7 +15,7 @@ pipe:
   - type: query
     statement: >-
       INSERT INTO "user_contribution" ( "user", "contribution", "status")
-      SELECT "id", $1, 'INACTIVE' FROM "user";
+      SELECT "id", $1, 'ASSIGNED' FROM "user";
     params:      
       - NewContribution.id
     resultType: none
