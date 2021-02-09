@@ -12,6 +12,6 @@ get:
           schema:
             type: array
             items:
-              $ref: ../schemas/UserContribution.yaml
+              $ref: ../schemas/Contribution.yaml
   security:
     - mark_auth: []
