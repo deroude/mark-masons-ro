@@ -2,7 +2,10 @@ pipe:
   - type: query
     statement: >-
       SELECT uc."id", u.last_name || ' ' || u.first_name as "user","payment","contribution","status" 
-      FROM "user_contribution" uc INNER JOIN "user" u ON uc."user" = u."id";    
+      FROM "user_contribution" uc INNER JOIN "user" u ON uc."user" = u."id"
+      WHERE uc.contribution = $1;    
+    params:
+      - params.contributionId
     resultType: set
     assign: ListUserContribution
   - type: mapping

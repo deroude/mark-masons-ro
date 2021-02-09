@@ -2,7 +2,7 @@ pipe:
   - type: query
     statement: >-
       INSERT INTO "user_contribution" ("user", "contribution") SELECT unnest($2),$1 ON CONFLICT DO NOTHING;
-    parameters:
+    params:
       - params.contributionId
       - body.users
     resultType: scalar
