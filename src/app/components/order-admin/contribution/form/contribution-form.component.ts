@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Contribution } from '@model/contribution'; // TODO specify your model source
 
 @Component({
-  selector: 'app-contribution-form',
+  selector: 'mark-contribution-form',
   templateUrl: './contribution-form.component.html',
   styleUrls: ['./contribution-form.component.scss']
 })
@@ -15,11 +15,10 @@ export class ContributionEditorComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public item: Contribution, private fb: FormBuilder, private changeDetection: ChangeDetectorRef) {
     this.form = this.fb.group({
       id: [this.item.id],
-			description: [this.item.description],
-			category: [this.item.category],
-			value: [this.item.value],
-			issueDate: [this.item.issueDate],
-			dueDate: [this.item.dueDate]
+      description: [this.item.description, Validators.required],
+      value: [this.item.value, Validators.required],
+      currency: [this.item.currency, Validators.required],
+      dueDate: [this.item.dueDate, Validators.required]
     });
   }
 

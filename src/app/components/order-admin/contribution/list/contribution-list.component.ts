@@ -52,7 +52,7 @@ export class ContributionListComponent implements OnInit {
   create(): void {
     const dialogRef = this.dialog.open(ContributionEditorComponent, {
       width: '800px',
-      data: { issueDate: moment().format('YYYY-MM-DD'), category: 'ORDER' }
+      data: { issueDate: moment().format('YYYY-MM-DD'), category: 'ORDER', status: 'ACTIVE', currency: 'RON' }
     });
 
     dialogRef.afterClosed().subscribe(result => {

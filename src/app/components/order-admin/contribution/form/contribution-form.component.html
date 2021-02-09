@@ -8,12 +8,24 @@
                             This field is required.
             </mat-error>
         </mat-form-field>
-
     
         <mat-form-field>
             <input matInput formControlName="value" type="number" i18n-placeholder="@@Contribution.value" placeholder="Value">
             <mat-error *ngIf="hasError('required','value')" i18n="@@error.field.required">
                             This field is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label i18n="@@Contribution.currency">Currency</mat-label>
+            <mat-select formControlName="currency">
+                <mat-option value="RON"> RON </mat-option>
+                <mat-option value="EUR"> EUR </mat-option>
+                <mat-option value="USD"> USD </mat-option>
+                <mat-option value="GBP"> GBP </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hasError('required','currency')" i18n="@@error.field.required">
+                This field is required
             </mat-error>
         </mat-form-field>
     
