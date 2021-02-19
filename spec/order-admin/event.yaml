@@ -53,4 +53,4 @@ post:
       content: {}
   security:
     - mark_auth:
-        - "order-admin"
+        - "order"
