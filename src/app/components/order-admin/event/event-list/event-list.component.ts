@@ -45,7 +45,9 @@ export class EventListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.eventService.oAaddEvent(result).subscribe(()=>this.refresh());
+      if(result){
+        this.eventService.oAaddEvent(result).subscribe(()=>this.refresh());
+      }
     });
   }
 
@@ -59,7 +61,9 @@ export class EventListComponent implements OnInit {
       if(result === false) {
         this.eventService.oAdeleteEvent(Number(ev.event.id)).subscribe(()=>this.refresh());
       }
-      this.eventService.oAupdateEvent(result.id, result).subscribe(()=>this.refresh());
+      if(result){
+        this.eventService.oAupdateEvent(result.id, result).subscribe(()=>this.refresh());
+      }
     });
   }
 
