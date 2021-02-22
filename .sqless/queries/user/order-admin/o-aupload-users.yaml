@@ -1,8 +1,27 @@
 pipe:
   - type: query
     statement: >-
-      SELECT 1;
-    resultType: scalar
-    assign: Result
-returnVar: Result
-transactional: false
+      INSERT INTO "user" ( 
+        "email","last_name","first_name","address","correspondence_address","phone_number","secondary_phone_number","birthdate","profession","workplace","user_status","rank","order_privilege","national_id","national_id_details","mmh" 
+      )
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16);
+    resultType: none
+    forEachInArray: body
+    params:
+      - email
+      - lastName
+      - firstName
+      - address
+      - correspondenceAddress
+      - phoneNumber
+      - secondaryPhoneNumber
+      - birthdate
+      - profession
+      - workplace
+      - userStatus
+      - rank
+      - orderPrivilege
+      - nationalId
+      - nationalIdDetails
+      - mmh
+transactional: true

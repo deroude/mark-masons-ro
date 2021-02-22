@@ -3,9 +3,10 @@ import { CalendarOptions, EventClickArg } from '@fullcalendar/angular';
 import { Event } from '@model/event';
 import { MatDialog } from '@angular/material/dialog';
 import { EventEditorComponent } from '../event-editor/event-editor.component';
+import { EventService } from '@api/event.service';
 
 @Component({
-  selector: 'mark-events',
+  selector: 'mark-order-events',
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.scss']
 })
@@ -23,12 +24,31 @@ export class EventListComponent implements OnInit {
     eventClick: this.onEventSelect.bind(this)
   };
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private eventService: EventService) { }
 
   ngOnInit(): void {
     this.events = [];
-    
-    this.calendarOptions.events = this.events.map(ev => ({ title: ev.title, date: ev.startDate, id: String(ev.id) }));
+    this.refresh();
+  }
+
+  refresh():void {
+    this.eventService.oAgetEvents().subscribe(events => {
+      this.events = events;
+      this.calendarOptions.events = this.events.map(ev => ({ title: ev.title, date: ev.startDate, id: String(ev.id) }))
+    });
+  }
+
+  addEvent(): void {
+    const dialogRef = this.dialog.open(EventEditorComponent, {
+      width: '600px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.eventService.oAaddEvent(result).subscribe(()=>this.refresh());
+      }
+    });
   }
 
   onEventSelect(ev: EventClickArg): void {
@@ -38,7 +58,12 @@ export class EventListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // this.article = result;
+      if(result === false) {
+        this.eventService.oAdeleteEvent(Number(ev.event.id)).subscribe(()=>this.refresh());
+      }
+      if(result){
+        this.eventService.oAupdateEvent(result.id, result).subscribe(()=>this.refresh());
+      }
     });
   }
 

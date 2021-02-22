@@ -71,13 +71,11 @@ put:
   operationId: OAuploadUsers
   requestBody:
     content:
-      multipart/form-data:
+      application/json:
         schema:
-          type: object
-          properties:                
-            file:
-              type: string
-              format: binary
+            type: array
+            items:
+              $ref: ../schemas/User.yaml
   responses:
     "200":
       description: Users uploaded

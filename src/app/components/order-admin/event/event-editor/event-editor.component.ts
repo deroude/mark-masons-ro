@@ -10,43 +10,41 @@ import { Event } from '@model/event';
 })
 export class EventEditorComponent implements OnInit {
 
-  // eventForm: FormGroup;
+  eventForm: FormGroup;
 
-  // constructor(
-  //   public dialogRef: MatDialogRef<EventEditorComponent>,
-  //   @Inject(MAT_DIALOG_DATA) public event: Event, private fb: FormBuilder) {
-  //   this.eventForm = this.fb.group({
-  //     title: [this.event.title, [Validators.required]],
-  //     text: [this.event.invitation.text, [Validators.required]],
-  //     date: [this.event.date ?
-  //       this.event.date.toDate().toISOString().slice(0, -1) :
-  //       new Date().toISOString().slice(0, -1),
-  //     [Validators.required]],
-  //     type: [this.event.type, [Validators.required]],
-  //     audience: [this.event.invitation.audience, [Validators.required]],
-  //     location: [this.event.location, [Validators.required]]
-  //   });
-  // }
+  constructor(
+    public dialogRef: MatDialogRef<EventEditorComponent>,
+    @Inject(MAT_DIALOG_DATA) public event: Event, private fb: FormBuilder) {
+    this.eventForm = this.fb.group({
+      title: [this.event.title, [Validators.required]],
+      text: [this.event.text, [Validators.required]],
+      startDate: [this.event.startDate,[Validators.required]],
+      eventType: [this.event.eventType, [Validators.required]],
+      location: [this.event.location, [Validators.required]]
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  // hasError(error: string, field: string): boolean {
-  //   return this.eventForm.controls[field].touched
-  //     && (this.eventForm.hasError(error, [field]) || this.eventForm.hasError(error));
-  // }
+  hasError(error: string, field: string): boolean {
+    return this.eventForm.controls[field].touched
+      && (this.eventForm.hasError(error, [field]) || this.eventForm.hasError(error));
+  }
 
-  // save(): void {
-  //   if (this.eventForm.valid) {
-  //     this.dialogRef.close({
-  //       ...this.eventForm.value,
-  //       publishTimestamp: firestore.Timestamp.fromDate(new Date(this.eventForm.value.date))
-  //     });
-  //   }
-  // }
+  save(): void {
+    if (this.eventForm.valid) {
+      this.dialogRef.close(
+        this.eventForm.value);
+    }
+  }
 
-  // close(): void {
-  //   this.dialogRef.close();
-  // }
+  delete(): void {
+    this.dialogRef.close(false);
+  }
+
+  close(): void {
+    this.dialogRef.close();
+  }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import * as Papa from 'papaparse';
 import { User } from '@model/user';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -63,6 +63,10 @@ export class UserListComponent implements OnInit {
   }
 
   import(event: any): void {
-    this.userService.oAuploadUsers(event.target.files[0]).subscribe(re => this.refresh());
+      let fileReader = new FileReader();
+      fileReader.onload = (e) => {
+          this.userService.oAuploadUsers(Papa.parse(fileReader.result as string,{header:true}).data).subscribe(()=>this.refresh());
+      }
+      fileReader.readAsText(event.target.files[0]);
   }
 }
