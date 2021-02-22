@@ -20,11 +20,12 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 
 const material = [
     MatButtonModule,
@@ -55,6 +56,16 @@ const material = [
 
 @NgModule({
     exports: material,
-    imports: material
+    imports: material,
+    providers: [
+        {
+            provide: MAT_DATE_FORMATS,
+            useValue: {
+                display: {
+                    dateInput: 'YYYY-MM-DD',
+                },
+            },
+        },
+    ]
 })
 export class AppMaterialModule { }
