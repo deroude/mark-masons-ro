@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit }
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from '@model/user';
+import * as moment from 'moment';
 
 @Component({
   selector: 'mark-user-editor',
@@ -65,7 +66,7 @@ export class UserEditorComponent implements OnInit {
   save(): void {
     if (this.userForm.valid) {
       this.dialogRef.close(
-        this.userForm.value
+        { ...this.userForm.value, birthdate: moment(this.userForm.value.birthdate).format('YYYY-MM-DD')}
       );
     }
   }

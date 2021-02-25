@@ -56,16 +56,6 @@ const material = [
 
 @NgModule({
     exports: material,
-    imports: material,
-    providers: [
-        {
-            provide: MAT_DATE_FORMATS,
-            useValue: {
-                display: {
-                    dateInput: 'YYYY-MM-DD',
-                },
-            },
-        },
-    ]
+    imports: material
 })
 export class AppMaterialModule { }

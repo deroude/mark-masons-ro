@@ -63,10 +63,10 @@ export class UserListComponent implements OnInit {
   }
 
   import(event: any): void {
-      let fileReader = new FileReader();
-      fileReader.onload = (e) => {
-          this.userService.oAuploadUsers(Papa.parse(fileReader.result as string,{header:true}).data).subscribe(()=>this.refresh());
-      }
-      fileReader.readAsText(event.target.files[0]);
+    const fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      this.userService.oAuploadUsers(Papa.parse(fileReader.result as string, { header: true }).data).subscribe(() => this.refresh());
+    };
+    fileReader.readAsText(event.target.files[0]);
   }
 }
